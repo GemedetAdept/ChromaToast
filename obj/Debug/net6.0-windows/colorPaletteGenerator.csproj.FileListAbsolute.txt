@@ -1,0 +1,15 @@
+C:\Users\vivia\c#\c#_scripts\colorPaletteGenerator\obj\Debug\net6.0-windows\colorPaletteGenerator.csproj.AssemblyReference.cache
+C:\Users\vivia\c#\c#_scripts\colorPaletteGenerator\obj\Debug\net6.0-windows\colorPaletteGenerator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vivia\c#\c#_scripts\colorPaletteGenerator\obj\Debug\net6.0-windows\colorPaletteGenerator.AssemblyInfoInputs.cache
+C:\Users\vivia\c#\c#_scripts\colorPaletteGenerator\obj\Debug\net6.0-windows\colorPaletteGenerator.AssemblyInfo.cs
+C:\Users\vivia\c#\c#_scripts\colorPaletteGenerator\obj\Debug\net6.0-windows\colorPaletteGenerator.csproj.CoreCompileInputs.cache
+C:\Users\vivia\c#\c#_scripts\colorPaletteGenerator\bin\Debug\net6.0-windows\colorPaletteGenerator.exe
+C:\Users\vivia\c#\c#_scripts\colorPaletteGenerator\bin\Debug\net6.0-windows\colorPaletteGenerator.deps.json
+C:\Users\vivia\c#\c#_scripts\colorPaletteGenerator\bin\Debug\net6.0-windows\colorPaletteGenerator.runtimeconfig.json
+C:\Users\vivia\c#\c#_scripts\colorPaletteGenerator\bin\Debug\net6.0-windows\colorPaletteGenerator.dll
+C:\Users\vivia\c#\c#_scripts\colorPaletteGenerator\bin\Debug\net6.0-windows\colorPaletteGenerator.pdb
+C:\Users\vivia\c#\c#_scripts\colorPaletteGenerator\obj\Debug\net6.0-windows\colorPaletteGenerator.dll
+C:\Users\vivia\c#\c#_scripts\colorPaletteGenerator\obj\Debug\net6.0-windows\refint\colorPaletteGenerator.dll
+C:\Users\vivia\c#\c#_scripts\colorPaletteGenerator\obj\Debug\net6.0-windows\colorPaletteGenerator.pdb
+C:\Users\vivia\c#\c#_scripts\colorPaletteGenerator\obj\Debug\net6.0-windows\colorPaletteGenerator.genruntimeconfig.cache
+C:\Users\vivia\c#\c#_scripts\colorPaletteGenerator\obj\Debug\net6.0-windows\ref\colorPaletteGenerator.dll
