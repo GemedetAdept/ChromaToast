@@ -34,20 +34,23 @@ double inputValue = 255.0;
 double inputBase = 10.0;
 double outputBase = 16.0;
 
-double quotient = inputValue / outputBase;
-double remainder = inputValue % outputBase;
-double remainderSub = remainder / outputBase;
-double fractalInput = quotient - remainderSub;
+string ConvertBase(double inVal, double outBase) {
+	string baseHolder = "";
 
-Console.WriteLine($@"
-{inputValue}
-{inputBase}
-{outputBase}
+	if (inVal <= outBase) {
+		baseHolder += (string)inVal;
+		return baseHolder;
+	}
 
-{quotient}
-{remainder}
-{remainderSub}
-{fractalInput}
+	double quotient = inVal / outBase;
+	double remainder = inVal % outBase;
+	double remainderSub = remainder / outBase;
 
-base16 values = {fractalInput}, {remainder}
-");
+	double fractalInput = quotient - remainderSub;
+	baseHolder += (string)fractalInput;
+
+	ConvertBase(fractalInput, outBase);
+
+}
+
+ConvertBase(inputValue, outputBase);
