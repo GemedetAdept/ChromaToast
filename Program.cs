@@ -26,4 +26,28 @@ fittedValue =
 	+ curveMinimumValue
 ;
 
-Console.WriteLine(fittedValue);
+// Console.WriteLine(fittedValue);
+
+// Convert an inputted number to a different base
+
+double inputValue = 255.0;
+double inputBase = 10.0;
+double outputBase = 16.0;
+
+double quotient = inputValue / outputBase;
+double remainder = inputValue % outputBase;
+double remainderSub = remainder / outputBase;
+double fractalInput = quotient - remainderSub;
+
+Console.WriteLine($@"
+{inputValue}
+{inputBase}
+{outputBase}
+
+{quotient}
+{remainder}
+{remainderSub}
+{fractalInput}
+
+base16 values = {fractalInput}, {remainder}
+");
