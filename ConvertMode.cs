@@ -1,5 +1,3 @@
-using userinput;
-
 public class ConvertMode {
 
 	// HEX
@@ -21,7 +19,7 @@ public class ConvertMode {
 		return outputHSV;
 	}
 	public static (double, double, double) HEXtoRGB(string inputHEX) {
-		int decimalInteger = UserInput.ConvertToInteger(inputHEX);
+		int decimalInteger = 0;
 		byte[] valueBytes = BitConverter.GetBytes(decimalInteger);
 
 		// Byte array is in reverse "RGB" order, thus backwards indexes.
@@ -49,7 +47,7 @@ public class ConvertMode {
 		};
 
 		int intValue = BitConverter.ToInt32(valueBytes, 0);
-		string outputHEX = UserInput.ConvertToHexadecimal(intValue);
+		string outputHEX = "";
 
 		if (outputHEX.Length < 6) {outputHEX = "0" + outputHEX;}
 
