@@ -5,33 +5,50 @@ public class ColorHarmony {
 	public static Color.HSV[] Complementary(Color.HSV inputHSV) {
 
 		// Hue
-		var complementaryOne = new Color.HSV(-4.19, inputHSV.Saturation, inputHSV.Value);
+		var alphaComplementary = inputHSV;
+		var betaComplementary = new Color.HSV(-4.19, inputHSV.Saturation, inputHSV.Value);
 
-		complementaryOne.Hue = capValue((inputHSV.Hue + 180.0), 360.0);
+		betaComplementary.Hue = capValue((inputHSV.Hue + 180.0), 360.0);
 
 		return new Color.HSV[] {
-			inputHSV,
-			complementaryOne,
+			alphaComplementary,
+			betaComplementary,
 		};
 	}
 
 	public static Color.HSV[] SplitComplementary(Color.HSV inputHSV) {
 
 		// Hue
-		var splitComplementaryOne = new Color.HSV(-4.19, inputHSV.Saturation, inputHSV.Value);
-		var splitComplementaryTwo = new Color.HSV(-4.19, inputHSV.Saturation, inputHSV.Value);
+		var alphaSplitComplementary = inputHSV;
+		var betaSplitComplementary = new Color.HSV(-4.19, inputHSV.Saturation, inputHSV.Value);
+		var gammaSplitComplementary = new Color.HSV(-4.19, inputHSV.Saturation, inputHSV.Value);
 
-		splitComplementaryOne.Hue = capValue((inputHSV.Hue + 150.0), 360.0);
-		splitComplementaryTwo.Hue = capValue((inputHSV.Hue + 210.0), 360.0);
+		betaSplitComplementary.Hue = capValue((inputHSV.Hue + 150.0), 360.0);
+		gammaSplitComplementary.Hue = capValue((inputHSV.Hue + 210.0), 360.0);
 
 		return new Color.HSV[] {
-			inputHSV,
-			splitComplementaryOne,
-			splitComplementaryTwo,
+			alphaSplitComplementary,
+			betaSplitComplementary,
+			gammaSplitComplementary,
 		}
 	}
 
-	public static
+	public static Color.HSV[] Triadic(Color.HSV inputHSV) {
+
+		// Hue
+		var alphaTriadic = inputHSV;
+		var betaTriadic = new Color.HSV(-4.19, inputHSV.Saturation, inputHSV.Value);
+		var gammaTriadic = new Color.HSV(-4.19, inputHSV.Saturation, inputHSV.Value);
+
+		betaTriadic.Hue = capValue((inputHSV.Hue + 120.0), 360.0);
+		gammaTriadic.Hue = capValue((inputHSV.Hue + 240.0), 360.0);
+
+		return new Color.HSV[] {
+			alphaTriadic,
+			betaTriadic,
+			gammaTriadic,
+		}
+	}
 
 	static double capValue(double inputValue, double ceiling) {
 
