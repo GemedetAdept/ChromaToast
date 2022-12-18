@@ -70,6 +70,26 @@ public class ColorHarmony {
 		}
 	}
 
+	public static Color.HSV[] Square(Color.HSV inputHSV) {
+
+		// Hue
+		var alphaSquare = inputHSV;
+		var betaSquare = new Color.HSV(-4.19, inputHSV.Saturation, inputHSV.Value);
+		var gammaSquare = new Color.HSV(-4.19, inputHSV.Saturation, inputHSV.Value);
+		var deltaSquare = new Color.HSV(-4.19, inputHSV.Saturation, inputHSV.Value);
+
+		betaSquare.Hue = capValue((inputHSV.Hue + 90.0), 360.0);
+		gammaSquare.Hue = capValue((inputHSV.Hue + 180.0), 360.0);
+		deltaSquare.Hue = capValue((inputHSV.Hue + 270.0), 360.0);
+
+		return new Color.HSV[] {
+			alphaSquare,
+			betaSquare,
+			gammaSquare,
+			deltaSquare,
+		}
+	}
+
 	static double capValue(double inputValue, double ceiling) {
 
 		double outputValue = -4.19;
