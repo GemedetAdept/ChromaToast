@@ -1,4 +1,5 @@
-public class ConvertMode {
+namespace convertcolor {
+public class ConvertColor {
 
 	// HEX
 	// Due to the way that HSL and HSV values are stored, 
@@ -378,4 +379,5 @@ public class ConvertMode {
 
 		return isInvalid;
 	}
+}
 }
