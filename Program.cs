@@ -1,78 +1,119 @@
 ﻿// using userinput;
 // using menudriver;
 
-// var paletteHEX = new List<string>();
-// var paletteHSL = new List<(double, double, double)>();
-// var paletteHSV = new List<(double, double, double)>();
-// var paletteRGB = new List<(double, double, double)>();
+var paletteHEX = new List<Color.HEX>();
+var paletteHSL = new List<Color.HSL>();
+var paletteHSV = new List<Color.HSV>();
+var paletteRGB = new List<Color.RGB>();
 
-// MenuDriver selectionMenu = new MenuDriver();
-// string[] options = new string[] {
+// Main Menu
+MenuDriver mainMenu = new MenuDriver();
+string[] mainMenuOptions = new string[] {
 
-// 	"Generate New Color Palette",
-// 	"Learn About Color Harmonies",
-// 	"Quit Program",
-// };
-// selectionMenu.AddOptions(options);
+	"Generate New Color Palette",
+	"Learn About Color Harmonies",
+	"Quit Program",
+};
+mainMenu.AddOptions(mainMenuOptions);
 
-// void mainMenu() {
-// 	while (selectionMenu.menuLoop){
+void MainMenu() {
+	while (mainMenu.menuLoop){
 
-// 		Console.Clear();
-// 		selectionMenu.DisplayMenu();
-// 		selectionMenu.SetMenuCursor();
+		Console.Clear();
+		mainMenu.DisplayMenu();
+		mainMenu.SetMenuCursor();
 
-// 		switch(selectionMenu.selectedItem) {
+		switch(mainMenu.selectedItem) {
 
-// 			case 0:
-// 				generationDriver();
-// 				break;
-// 			case 1:
-// 				ColorHarmony.Colorharmonypick();
-// 				break;
-// 			case 2: 
-// 				Console.Clear();
-// 				Environment.Exit(0);
-// 				break;
-// 			default:
-// 				break;
-// 		}
-// 	}
-// }
+			case 0:
+				generationDriver();
+				break;
+			case 1:
+				
+				break;
+			case 2: 
+				Console.Clear();
+				Environment.Exit(0);
+				break;
+			default:
+				break;
+		}
+	}
+}
 
-// mainMenu();
+// Menu for Color Harmony selection
+bool harmonyMenuBool = false;
+MenuDriver harmonyMenu = new MenuDriver();
+string[] harmonyOptions = new string[] {
 
-// void generationDriver() {
+	"Complementary",
+	"Split Complementary",
+	"Triadic",
+	"Tetradic",
+	"Square",
+	"Analogous",
+	"Monochromatic",
+	"Quit Program",
+};
+harmonyMenu.AddOptions(harmonyOptions);
 
-// 	paletteHEX.Clear();
-// 	paletteHSL.Clear();
-// 	paletteHSV.Clear();
-// 	paletteRGB.Clear();
+while (harmonyMenuBool)
+void HarmonyMenu() {
+	while (harmonyMenu.menuLoop){
 
-// 	(double, double, double) baseHSV = UserInput.Input();
-// 	List<double> harmonyOutput = ColorHarmony.Menu(baseHSV);
+		Console.Clear();
+		harmonyMenu.DisplayMenu();
+		harmonyMenu.SetMenuCursor();
 
-// 	foreach (double harmonyVal in harmonyOutput) {
-// 		paletteHSV.Add((harmonyVal, baseHSV.Item2, baseHSV.Item3));
-// 	}
+		switch(harmonyMenu.selectedItem) {
 
-// 	foreach (var harmonyVal in paletteHSV) {
-// 		var colorHEX = ConvertMode.HSVtoHEX(harmonyVal);
-// 		paletteHEX.Add(colorHEX);
-// 	}
+			case 0:
+				ColorHarmony.Complementary();
+				harmonyMenu.menuLoop = false;	
+				break;
+			case 1:
+				ColorHarmony.SplitComplementary();
+				harmonyMenu.menuLoop = false;
+				break;
+			case 2:
+				ColorHarmony.Triadic();
+				harmonyMenu.menuLoop = false;
+				break;
+			case 3:
+				ColorHarmony.Tetradic();
+				harmonyMenu.menuLoop = false;
+				break;
+			case 4:
+				ColorHarmony.Square();
+				harmonyMenu.menuLoop = false;
+				break;
+			case 5:
+				ColorHarmony.Analogous();
+				harmonyMenu.menuLoop = false;
+				break;
+			case 6:
+				ColorHarmony.Monochromatic();
+				harmonyMenu.menuLoop = false;
+				break;
+			case 7: 
+				Console.Clear();
+				Environment.Exit(0);
+				break;
+			default:
+				break;
+		}
+	}
+}
 
-// 	foreach (var harmonyVal in paletteHSV) {
-// 		var colorHSL = ConvertMode.HSVtoHSL(harmonyVal);
-// 		paletteHSL.Add(colorHSL);
-// 	}
+void generationDriver() {
 
-// 	foreach (var harmonyVal in paletteHSV) {
-// 		var colorRGB = ConvertMode.HSVtoRGB(harmonyVal);
-// 		paletteRGB.Add(colorRGB);
-// 	} 
+	paletteHEX.Clear();
+	paletteHSL.Clear();
+	paletteHSV.Clear();
+	paletteRGB.Clear();
 
-// 	displayPalette();
-// }
+	harmonyMenu();
+}
 
 // string alignItem((double, double, double) columnItem, int maxLength) {
 
@@ -146,7 +187,7 @@ using colorvalues;
 using colorharmony;
 
 Color.HSV alphaHSV = new Color.HSV(0.0, 59.3, 69.4);
-var harmony = ColorHarmony.SplitComplementary(alphaHSV);
+var harmony = ColorHarmony.Monochromatic(alphaHSV);
 
 foreach (Color.HSV color in harmony) {
 	Console.WriteLine($"({color.Hue}, {color.Saturation}, {color.Value})");

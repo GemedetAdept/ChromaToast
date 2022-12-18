@@ -1,4 +1,5 @@
 using colorvalues;
+using menudriver;
 namespace colorharmony {
 public class ColorHarmony {
 
@@ -111,9 +112,9 @@ public class ColorHarmony {
 
 		// Value
 		var alphaMonochromatic = inputHSV;
-		var betaMonochromatic = new Color.HSV(-4.19, inputHSV.Saturation, inputHSV.Value);
-		var gammaMonochromatic = new Color.HSV(-4.19, inputHSV.Saturation, inputHSV.Value);
-		var deltaMonochromatic = new Color.HSV(-4.19, inputHSV.Saturation, inputHSV.Value);
+		var betaMonochromatic = new Color.HSV(inputHSV.Hue, inputHSV.Saturation, -4.19);
+		var gammaMonochromatic = new Color.HSV(inputHSV.Hue, inputHSV.Saturation, -4.19);
+		var deltaMonochromatic = new Color.HSV(inputHSV.Hue, inputHSV.Saturation, -4.19);
 
 		betaMonochromatic.Value = capValue((inputHSV.Value - 25.0), 100.0, 0.0);
 		gammaMonochromatic.Value = capValue((inputHSV.Value + 15.0), 100.0, 0.0);
