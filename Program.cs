@@ -143,4 +143,11 @@
 // 	Console.ReadKey();
 // }
 using colorvalues;
-Color.RGB rgbOne = new Color.RGB(255.0, 255.0, 255.0);
+using colorharmony;
+
+Color.HSV alphaHSV = new Color.HSV(0.0, 59.3, 69.4);
+var harmony = ColorHarmony.SplitComplementary(alphaHSV);
+
+foreach (Color.HSV color in harmony) {
+	Console.WriteLine($"({color.Hue}, {color.Saturation}, {color.Value})");
+}

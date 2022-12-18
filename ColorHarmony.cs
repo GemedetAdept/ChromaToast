@@ -30,7 +30,7 @@ public class ColorHarmony {
 			alphaSplitComplementary,
 			betaSplitComplementary,
 			gammaSplitComplementary,
-		}
+		};
 	}
 
 	public static Color.HSV[] Triadic(Color.HSV inputHSV) {
@@ -47,7 +47,7 @@ public class ColorHarmony {
 			alphaTriadic,
 			betaTriadic,
 			gammaTriadic,
-		}
+		};
 	}
 
 	public static Color.HSV[] Tetradic(Color.HSV inputHSV) {
@@ -67,7 +67,7 @@ public class ColorHarmony {
 			betaTetradic,
 			gammaTetradic,
 			deltaTetradic,
-		}
+		};
 	}
 
 	public static Color.HSV[] Square(Color.HSV inputHSV) {
@@ -87,7 +87,24 @@ public class ColorHarmony {
 			betaSquare,
 			gammaSquare,
 			deltaSquare,
-		}
+		};
+	}
+
+	public static Color.HSV[] Analogous(Color.HSV inputHSV) {
+
+		// Hue
+		var alphaAnalogous = inputHSV;
+		var betaAnalogous = new Color.HSV(-4.19, inputHSV.Saturation, inputHSV.Value);
+		var gammaAnalogous = new Color.HSV(-4.19, inputHSV.Saturation, inputHSV.Value);
+
+		betaAnalogous.Hue = capValue((inputHSV.Hue + 30.0), 360.0);
+		gammaAnalogous.Hue = capValue((inputHSV.Hue + 330.0), 360.0);
+
+		return new Color.HSV[] {
+			alphaAnalogous,
+			betaAnalogous,
+			gammaAnalogous,
+		};
 	}
 
 	static double capValue(double inputValue, double ceiling) {
