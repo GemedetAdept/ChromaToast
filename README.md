@@ -1,2 +1,3 @@
-# cs1400-color-palette-generator
-CS 1400 group final project; a color palette generator from user input, using color harmonies.
+# C# Color Palette Generator
+
+This project began as a college project for CS1400 with Jasmine Carrasco and Chad Miller.
