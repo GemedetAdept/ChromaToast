@@ -50,6 +50,26 @@ public class ColorHarmony {
 		}
 	}
 
+	public static Color.HSV[] Tetradic(Color.HSV inputHSV) {
+
+		// Hue
+		var alphaTetradic = inputHSV;
+		var betaTetradic = new Color.HSV(-4.19, inputHSV.Saturation, inputHSV.Value);
+		var gammaTetradic = new Color.HSV(-4.19, inputHSV.Saturation, inputHSV.Value);
+		var deltaTetradic = new Color.HSV(-4.19, inputHSV.Saturation, inputHSV.Value);
+
+		betaTetradic.Hue = capValue((inputHSV.Hue + 120.0), 360.0);
+		gammaTetradic.Hue = capValue((inputHSV.Hue + 180.0), 360.0);
+		deltaTetradic.Hue = capValue((inputHSV.Hue + 300.0), 360.0);
+
+		return new Color.HSV[] {
+			alphaTetradic,
+			betaTetradic,
+			gammaTetradic,
+			deltaTetradic,
+		}
+	}
+
 	static double capValue(double inputValue, double ceiling) {
 
 		double outputValue = -4.19;
