@@ -1,77 +1,104 @@
-namespace colorvalue {
+namespace colorvalues {
 public class Color {
 
-	private string _hexValue;
-	private double _hue;
-	private double _saturation;
-	private double _value;
-	private double _lightness;
-	private double _red;
-	private double _green;
-	private double _blue;
+	public Color() {
 
-	public HEX(string? hexValue) {
-
-		HEXValue = hexValue;
 	}
 
-	public string HEXValue {
-		get {return _hexValue;}
-		set {
-			if value.Contains("#") {_hexValue = value.Substring(1);}
-			else {_hexValue = value;}
+	public class HEX {
+
+		private string _value;
+
+		public HEX(string? hexValue) {
+
+			Value = hexValue;
+		}
+
+		public string Value {
+			get {return _value;}
+			set {
+				if (value.Contains("#")) {_value = value.Substring(1);}
+				else {_value = value;}
+			}
 		}
 	}
+	public class HSL {
 
-	public HSL(double hueHSL, double saturationHSL, double lightnessHSL) {
+		private double _hue;
+		private double _saturation;
+		private double _lightness;
 
-		Hue = hueHSL;
-		Saturation = saturationHSL;
-		Lightness = lightnessHSL;
-	}
+		public HSL(double hueHSL, double saturationHSL, double lightnessHSL) {
 
-	public HSV(double hueHSV, double saturationHSV, double valueHSV) {
+			Hue = hueHSL;
+			Saturation = saturationHSL;
+			Lightness = lightnessHSL;
+		}
 
-		Hue = hueHSV;
-		Saturation = saturationHSV;
-		Value = valueHSV;
+		public double Hue {
+			get {return _hue;}
+			set {_hue = value;}
+		}
+		public double Saturation {
+			get {return _saturation;}
+			set {_saturation = value;}
+		}
+		public double Lightness {
+			get {return _lightness;}
+			set {_lightness = value;}
+		}
 	}
+	public class HSV {
 
-	public double Hue {
-		get {return _hue;}
-		set {_hue = value;}
-	}
-	public double Saturation {
-		get {return _saturation;}
-		set {_saturation = value;}
-	}
-	public double Value {
-		get {return _value;}
-		set {_value = value;}
-	}
-	public double Lightness {
-		get {return _lightness;}
-		set {_lightness = value;}
-	}
+		private double _hue;
+		private double _saturation;
+		private double _value;
 
-	public RGB(double redRGB, double greenRGB, double blueRGB) {
+		public HSV(double hueHSV, double saturationHSV, double valueHSV) {
 
-		Red = redRGB;
-		Green = greenRGB;
-		Blue = blueRGB;
-	}
+			Hue = hueHSV;
+			Saturation = saturationHSV;
+			Value = valueHSV;
+		}
 
-	public double Red {
-		get {return _red;}
-		set {_red = value;}
+		public double Hue {
+			get {return _hue;}
+			set {_hue = value;}
+		}
+		public double Saturation {
+			get {return _saturation;}
+			set {_saturation = value;}
+		}
+		public double Value {
+			get {return _value;}
+			set {_value = value;}
+		}
 	}
-	public double Green {
-		get {return _green;}
-		set {_green = value;}
+	public class RGB {
+
+		private double _red;
+		private double _green;
+		private double _blue;
+
+		public RGB(double redRGB, double greenRGB, double blueRGB) {
+
+			Red = redRGB;
+			Green = greenRGB;
+			Blue = blueRGB;
+		}
+
+		public double Red {
+			get {return _red;}
+			set {_red = value;}
+		}
+		public double Green {
+			get {return _green;}
+			set {_green = value;}
+		}
+		public double Blue {
+			get {return _blue;}
+			set {_blue = value;}
+		}
 	}
-	public double Blue {
-		get {return _blue;}
-		set {_blue = value;}
 	}
-}
 }
