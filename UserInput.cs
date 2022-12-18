@@ -22,5 +22,12 @@ public class UserInput {
 
 		return userInput.InputData;
 	}
+
+	public static Color.HEX InputHEX(string inputHEX) {
+
+		var outputHEX = new Color.HEX(inputHEX);
+		return outputHEX;
+	}
+
 }
 }

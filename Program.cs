@@ -10,59 +10,22 @@ var paletteRGB = new List<Color.RGB>();
 
 // Main Menu
 MenuDriver mainMenu = new MenuDriver();
-string[] mainMenuOptions = new string[] {
+	string[] mainMenuOptions = new string[] {
 
-	"Generate New Color Palette",
-	"Learn About Color Harmonies",
-	"Quit Program",
-};
-mainMenu.AddOptions(mainMenuOptions);
-
-void MainMenu() {
-	while (mainMenu.menuLoop){
-
-		Console.Clear();
-		mainMenu.DisplayMenu();
-		mainMenu.SetMenuCursor();
-
-		switch(mainMenu.selectedItem) {
-
-			case 0:
-				generationDriver();
-				break;
-			case 1:
-				
-				break;
-			case 2: 
-				Console.Clear();
-				Environment.Exit(0);
-				break;
-			default:
-				break;
-		}
-	}
-}
-
-// Menu for color input
-MenuDriver colorInput = new MenuDriver();
-	string[] colorInputOptions = new string[] {
-
-		"Hexadecimal",
-		"HSL",
-		"HSV",
-		"RGB",
-		"Main Menu",
+		"Generate New Color Palette",
+		"Learn About Color Harmonies",
+		"Quit Program",
 	};
-	colorInput.AddOptions(colorInputOptions);
+	mainMenu.AddOptions(mainMenuOptions);
 
-	void ColorInput() {
-		while (colorInput.menuLoop){
+	void MainMenu() {
+		while (mainMenu.menuLoop){
 
 			Console.Clear();
-			colorInput.DisplayMenu();
-			colorInput.SetMenuCursor();
+			mainMenu.DisplayMenu();
+			mainMenu.SetMenuCursor();
 
-			switch(colorInput.selectedItem) {
+			switch(mainMenu.selectedItem) {
 
 				case 0:
 					generationDriver();
@@ -71,7 +34,8 @@ MenuDriver colorInput = new MenuDriver();
 					
 					break;
 				case 2: 
-					MainMenu();
+					Console.Clear();
+					Environment.Exit(0);
 					break;
 				default:
 					break;
@@ -79,69 +43,120 @@ MenuDriver colorInput = new MenuDriver();
 		}
 	}
 
+// Color Input Menu
+MenuDriver inputMenu = new MenuDriver();
+	string[] inputMenuOptions = new string[] {
+
+		"Hexadecimal",
+		"HSL",
+		"HSV",
+		"RGB",
+		"Quit Program",
+	};
+	inputMenu.AddOptions(inputMenuOptions);
+
+	string userColorInput = "Gemedet";
+	object InputMenu() {
+		while (inputMenu.menuLoop){
+
+			Console.Clear();
+			inputMenu.DisplayMenu();
+			inputMenu.SetMenuCursor();
+
+			switch(inputMenu.selectedItem) {
+
+				case 0:
+					userColorInput = UserInput.Query("Enter a value between #000000 - #FFFFFF");
+					return UserInput.InputHEX(userColorInput);
+					break;
+				case 1:
+					userColorInput = UserInput.Query("Enter a value between (0.0, 0.0, 0.0) - (360.0, 100.0, 100.0)");
+					return userColorInput;
+					break;
+				case 2:
+					userColorInput = UserInput.Query("Enter a value between (0.0, 0.0, 0.0) - (360.0, 100.0, 100.0)");
+					return userColorInput;
+					break;
+				case 3:
+					userColorInput = UserInput.Query("Enter a value between (0, 0, 0) - (255, 255, 255)");
+					return userColorInput;
+					break;
+				case 4: 
+					Console.Clear();
+					Environment.Exit(0);
+					return null;
+					break;
+				default:
+					break;
+					return null;
+			}
+		}
+		return null;
+	}
+
 // // Menu for Color Harmony selection
 // bool harmonyMenuBool = false;
 // MenuDriver harmonyMenu = new MenuDriver();
-// string[] harmonyOptions = new string[] {
+	// string[] harmonyOptions = new string[] {
 
-// 	"Complementary",
-// 	"Split Complementary",
-// 	"Triadic",
-// 	"Tetradic",
-// 	"Square",
-// 	"Analogous",
-// 	"Monochromatic",
-// 	"Quit Program",
-// };
-// harmonyMenu.AddOptions(harmonyOptions);
+	// 	"Complementary",
+	// 	"Split Complementary",
+	// 	"Triadic",
+	// 	"Tetradic",
+	// 	"Square",
+	// 	"Analogous",
+	// 	"Monochromatic",
+	// 	"Quit Program",
+	// };
+	// harmonyMenu.AddOptions(harmonyOptions);
 
-// while (harmonyMenuBool)
-// void HarmonyMenu() {
-// 	while (harmonyMenu.menuLoop){
+	// while (harmonyMenuBool)
+	// void HarmonyMenu() {
+	// 	while (harmonyMenu.menuLoop){
 
-// 		Console.Clear();
-// 		harmonyMenu.DisplayMenu();
-// 		harmonyMenu.SetMenuCursor();
+	// 		Console.Clear();
+	// 		harmonyMenu.DisplayMenu();
+	// 		harmonyMenu.SetMenuCursor();
 
-// 		switch(harmonyMenu.selectedItem) {
+	// 		switch(harmonyMenu.selectedItem) {
 
-// 			case 0:
-// 				ColorHarmony.Complementary();
-// 				harmonyMenu.menuLoop = false;	
-// 				break;
-// 			case 1:
-// 				ColorHarmony.SplitComplementary();
-// 				harmonyMenu.menuLoop = false;
-// 				break;
-// 			case 2:
-// 				ColorHarmony.Triadic();
-// 				harmonyMenu.menuLoop = false;
-// 				break;
-// 			case 3:
-// 				ColorHarmony.Tetradic();
-// 				harmonyMenu.menuLoop = false;
-// 				break;
-// 			case 4:
-// 				ColorHarmony.Square();
-// 				harmonyMenu.menuLoop = false;
-// 				break;
-// 			case 5:
-// 				ColorHarmony.Analogous();
-// 				harmonyMenu.menuLoop = false;
-// 				break;
-// 			case 6:
-// 				ColorHarmony.Monochromatic();
-// 				harmonyMenu.menuLoop = false;
-// 				break;
-// 			case 7: 
-// 				Console.Clear();
-// 				Environment.Exit(0);
-// 				break;
-// 			default:
-// 				break;
-// 		}
-// 	}
-// }
+	// 			case 0:
+	// 				ColorHarmony.Complementary();
+	// 				harmonyMenu.menuLoop = false;	
+	// 				break;
+	// 			case 1:
+	// 				ColorHarmony.SplitComplementary();
+	// 				harmonyMenu.menuLoop = false;
+	// 				break;
+	// 			case 2:
+	// 				ColorHarmony.Triadic();
+	// 				harmonyMenu.menuLoop = false;
+	// 				break;
+	// 			case 3:
+	// 				ColorHarmony.Tetradic();
+	// 				harmonyMenu.menuLoop = false;
+	// 				break;
+	// 			case 4:
+	// 				ColorHarmony.Square();
+	// 				harmonyMenu.menuLoop = false;
+	// 				break;
+	// 			case 5:
+	// 				ColorHarmony.Analogous();
+	// 				harmonyMenu.menuLoop = false;
+	// 				break;
+	// 			case 6:
+	// 				ColorHarmony.Monochromatic();
+	// 				harmonyMenu.menuLoop = false;
+	// 				break;
+	// 			case 7: 
+	// 				Console.Clear();
+	// 				Environment.Exit(0);
+	// 				break;
+	// 			default:
+	// 				break;
+	// 		}
+	// 	}
+	// }
 
 void generationDriver() {
 
@@ -150,7 +165,7 @@ void generationDriver() {
 	paletteHSV.Clear();
 	paletteRGB.Clear();
 
-	harmonyMenu();
+	Color inputNormalHSV = InputMenu();
 }
 
-Console.WriteLine(UserInput.Query("Hexadecimal, HSL, HSV, or RGB?"));
+MainMenu();
