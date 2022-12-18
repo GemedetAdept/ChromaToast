@@ -1,3 +1,4 @@
+using colorvalues;
 namespace convertcolor {
 public class ConvertColor {
 
@@ -5,21 +6,21 @@ public class ConvertColor {
 	// Due to the way that HSL and HSV values are stored, 
 	// it is necessary to first convert to RGB and then use the respective "RGBto..." method.
 
-	public static (double, double, double) HEXtoHSL(string inputHEX) {
+	public static Color.HSL HEXtoHSL(Color.HEX inputHEX) {
 
 		var stepRGB = HEXtoRGB(inputHEX);
 		var outputHSL = RGBtoHSL(stepRGB);
 
 		return outputHSL;
 	}
-	public static (double, double, double) HEXtoHSV(string inputHEX) {
+	public static Color.HSV HEXtoHSV(Color.HEX inputHEX) {
 
 		var stepRGB = HEXtoRGB(inputHEX);
 		var outputHSV = RGBtoHSV(stepRGB);
 
 		return outputHSV;
 	}
-	public static (double, double, double) HEXtoRGB(string inputHEX) {
+	public static Color.RGB HEXtoRGB(Color.HEX inputHEX) {
 		int decimalInteger = 0;
 		byte[] valueBytes = BitConverter.GetBytes(decimalInteger);
 
@@ -28,16 +29,16 @@ public class ConvertColor {
 		int greenRGB = valueBytes[1];
 		int blueRGB = valueBytes[0];
 
-		var outputRGB = ((double)redRGB, (double)greenRGB, (double)blueRGB);
+		var outputRGB = new Color.RGB((double)redRGB, (double)greenRGB, (double)blueRGB);
 		return outputRGB;
 	}
 
 	// RGB
-	public static string RGBtoHEX((double, double, double) inputRGB) {
+	public static Color.HEX RGBtoHEX(Color.RGB inputRGB) {
 
-		int redRGB = (int)inputRGB.Item1;
-		int greenRGB = (int)inputRGB.Item2;
-		int blueRGB = (int)inputRGB.Item3;
+		int redRGB = (int)inputRGB.Red;
+		int greenRGB = (int)inputRGB.Green;
+		int blueRGB = (int)inputRGB.Blue;
 
 		byte[] valueBytes = new byte[] {
 
@@ -52,20 +53,21 @@ public class ConvertColor {
 
 		if (outputHEX.Length < 6) {outputHEX = "0" + outputHEX;}
 
-		return outputHEX;
+		return new Color.HEX(outputHEX);
 	}	
-	public static (double, double, double) RGBtoHSV((double, double, double) inputRGB) {
+	public static Color.HSV RGBtoHSV(Color.RGB inputRGB) {
 
-		double redPrimeRGB = inputRGB.Item1/255;
-		double greenPrimeRGB = inputRGB.Item2/255;
-		double bluePrimeRGB = inputRGB.Item3/255;
+		double redPrimeRGB = inputRGB.Red/255;
+		double greenPrimeRGB = inputRGB.Green/255;
+		double bluePrimeRGB = inputRGB.Blue/255;
+		var tupleRGB = (inputRGB.Red, inputRGB.Green, inputRGB.Blue);
 
 		double hueHSV = -4.19;
 		double saturationHSV = -4.19;
 		double valueHSV = -4.19;
 
-		// Catch out-of-bounds // TODO: Send back to input menu.
-		bool outOfBounds = CheckOutOfBounds(inputRGB, "RGB");
+		// Catch out-of-bounds
+		bool outOfBounds = CheckOutOfBounds(tupleRGB, "RGB");
 		if (outOfBounds == true) {Console.WriteLine("One or more invalid values."); Console.ReadKey();}
 
 		// RGB to HSV calculations
@@ -98,21 +100,22 @@ public class ConvertColor {
 		saturationHSV = Math.Round(saturationHSV*Math.Pow(10, 2));
 		valueHSV = Math.Round(valueHSV*Math.Pow(10, 2));
 
-		var outputHSV = (hueHSV, saturationHSV, valueHSV);
+		var outputHSV = new Color.HSV(hueHSV, saturationHSV, valueHSV);
 		return outputHSV;
 	}
-	public static (double, double, double) RGBtoHSL((double, double, double) inputRGB) {
+	public static Color.HSL RGBtoHSL(Color.RGB inputRGB) {
 
-		double redPrimeRGB = inputRGB.Item1/255;
-		double greenPrimeRGB = inputRGB.Item2/255;
-		double bluePrimeRGB = inputRGB.Item3/255;
+		double redPrimeRGB = inputRGB.Red/255;
+		double greenPrimeRGB = inputRGB.Green/255;
+		double bluePrimeRGB = inputRGB.Blue/255;
+		var tupleRGB = (inputRGB.Red, inputRGB.Green, inputRGB.Blue);
 
 		double hueHSL = -4.19;
 		double saturationHSL = -4.19;
 		double lightnessHSL = -4.19;
 
-		// Catch out-of-bounds // TODO: Send back to input menu.
-		bool outOfBounds = CheckOutOfBounds(inputRGB, "RGB");
+		// Catch out-of-bounds
+		bool outOfBounds = CheckOutOfBounds(tupleRGB, "RGB");
 		if (outOfBounds == true) {Console.WriteLine("One or more invalid values."); Console.ReadKey();}
 
 		// RGB to HSV calculations
@@ -145,29 +148,29 @@ public class ConvertColor {
 		saturationHSL = Math.Round(saturationHSL*Math.Pow(10, 2));
 		lightnessHSL = Math.Round(lightnessHSL*Math.Pow(10, 2));
 
-		var outputHSL = (hueHSL, saturationHSL, lightnessHSL);
+		var outputHSL = new Color.HSL(hueHSL, saturationHSL, lightnessHSL);
 		return outputHSL;
 	}
 
 	// HSV
-	public static string HSVtoHEX((double, double, double) inputHSV) {
+	public static Color.HEX HSVtoHEX(Color.HSV inputHSV) {
 
 		var stepRGB = HSVtoRGB(inputHSV);
 		var outputHEX = RGBtoHEX(stepRGB);
 
 		return outputHEX;
 	}
-	public static (double, double, double) HSVtoHSL((double, double, double) inputHSV) {
+	public static Color.HSL HSVtoHSL(Color.HSV inputHSV) {
 
-		double hueHSV = inputHSV.Item1;
-		double saturationHSV = inputHSV.Item2 * Math.Pow(10, -2);
-		double valueHSV = inputHSV.Item3 * Math.Pow(10, -2);
+		double hueHSV = inputHSV.Hue;
+		double saturationHSV = inputHSV.Saturation * Math.Pow(10, -2);
+		double valueHSV = inputHSV.Value * Math.Pow(10, -2);
 
 		double hueHSL = -4.19;
 		double saturationHSL = -4.19;
 		double lightnessHSL = -4.19;
 
-		// Catch out-of-bounds // TODO: Send back to input menu.
+		// Catch out-of-bounds
 		var checkValuesHSV = (hueHSV, saturationHSV, valueHSV);
 		bool outOfBounds = CheckOutOfBounds(checkValuesHSV, "HSV");
 		if (outOfBounds == true) {Console.WriteLine("One or more invalid values."); Console.ReadKey();}
@@ -186,20 +189,20 @@ public class ConvertColor {
 		saturationHSL = Math.Round(saturationHSL*Math.Pow(10, 2));
 		lightnessHSL = Math.Round(lightnessHSL*Math.Pow(10, 2));
 
-		var outputHSL = (hueHSL, saturationHSL, lightnessHSL);
+		var outputHSL = new Color.HSL(hueHSL, saturationHSL, lightnessHSL);
 		return outputHSL;
 	}
-	public static (double, double, double) HSVtoRGB((double, double, double) inputHSV) {
+	public static Color.RGB HSVtoRGB(Color.HSV inputHSV) {
 
-		double hueHSV = inputHSV.Item1;
-		double saturationHSV = inputHSV.Item2 * Math.Pow(10, -2);
-		double valueHSV = inputHSV.Item3 * Math.Pow(10, -2);
+		double hueHSV = inputHSV.Hue;
+		double saturationHSV = inputHSV.Saturation * Math.Pow(10, -2);
+		double valueHSV = inputHSV.Value * Math.Pow(10, -2);
 
 		double redRGB = -4.19;
 		double greenRGB = -4.19;
 		double blueRGB = -4.19;		
 
-		// Catch out-of-bounds // TODO: Send back to input menu.
+		// Catch out-of-bounds
 		var checkValuesHSV = (hueHSV, saturationHSV, valueHSV);
 		bool outOfBounds = CheckOutOfBounds(checkValuesHSV, "HSV");
 		if (outOfBounds == true) {Console.WriteLine("One or more invalid values."); Console.ReadKey();}
@@ -224,29 +227,29 @@ public class ConvertColor {
 		greenRGB = Math.Round(greenRGB*255);
 		blueRGB = Math.Round(blueRGB*255);
 
-		var outputRGB = (redRGB, greenRGB, blueRGB);
+		var outputRGB = new Color.RGB(redRGB, greenRGB, blueRGB);
 		return outputRGB;
 	}
 
 	// HSL
-	public static string HSLtoHEX((double, double, double) inputHSL) {
+	public static Color.HEX HSLtoHEX(Color.HSL inputHSL) {
 
 		var stepRGB = HSLtoRGB(inputHSL);
 		var outputHEX = RGBtoHEX(stepRGB);
 
 		return outputHEX;
 	}
-	public static (double, double, double) HSLtoRGB((double, double, double) inputHSL) {
+	public static Color.RGB HSLtoRGB(Color.HSL inputHSL) {
 
-		double hueHSL = inputHSL.Item1;
-		double saturationHSL = inputHSL.Item2 * Math.Pow(10, -2);
-		double lightnessHSL = inputHSL.Item3 * Math.Pow(10, -2);
+		double hueHSL = inputHSL.Hue;
+		double saturationHSL = inputHSL.Saturation * Math.Pow(10, -2);
+		double lightnessHSL = inputHSL.Lightness * Math.Pow(10, -2);
 
 		double redRGB = -4.19;
 		double greenRGB = -4.19;
 		double blueRGB = -4.19;
 
-		// Catch out-of-bounds // TODO: Send back to input menu.
+		// Catch out-of-bounds
 		var checkValuesHSL = (hueHSL, saturationHSL, lightnessHSL);
 		bool outOfBounds = CheckOutOfBounds(checkValuesHSL, "HSL");
 		if (outOfBounds == true) {Console.WriteLine("One or more invalid values."); Console.ReadKey();}
@@ -273,20 +276,20 @@ public class ConvertColor {
 		greenRGB = Math.Round(greenRGB*255);
 		blueRGB = Math.Round(blueRGB*255);
 
-		var outputRGB = (redRGB, greenRGB, blueRGB);
+		var outputRGB = new Color.RGB(redRGB, greenRGB, blueRGB);
 		return outputRGB;
 	}
-	public static (double, double, double) HSLtoHSV((double, double, double) inputHSL) {
+	public static Color.HSV HSLtoHSV(Color.HSL inputHSL) {
 
-		double hueHSL = inputHSL.Item1;
-		double saturationHSL = inputHSL.Item2 * Math.Pow(10, -2);
-		double lightnessHSL = inputHSL.Item3 * Math.Pow(10, -2);
+		double hueHSL = inputHSL.Hue;
+		double saturationHSL = inputHSL.Saturation * Math.Pow(10, -2);
+		double lightnessHSL = inputHSL.Lightness * Math.Pow(10, -2);
 
 		double hueHSV = -4.19;
 		double saturationHSV = -4.19;
 		double valueHSV = -4.19;
 
-		// Catch out-of-bounds // TODO: Send back to input menu.
+		// Catch out-of-bounds
 		var checkValuesHSL = (hueHSL, saturationHSL, lightnessHSL);
 		bool outOfBounds = CheckOutOfBounds(checkValuesHSL, "HSV");
 		if (outOfBounds == true) {Console.WriteLine("One or more invalid values."); Console.ReadKey();}
@@ -305,7 +308,7 @@ public class ConvertColor {
 		saturationHSV = Math.Round(saturationHSV*Math.Pow(10, 2));
 		valueHSV = Math.Round(valueHSV*Math.Pow(10, 2));
 
-		var outputHSV = (hueHSV, saturationHSV, valueHSV);
+		var outputHSV = new Color.HSV(hueHSV, saturationHSV, valueHSV);
 		return outputHSV;
 	}
 

@@ -2,6 +2,7 @@
 using menudriver;
 using colorvalues;
 using colorharmony;
+using convertcolor;
 
 var paletteHEX = new List<Color.HEX>();
 var paletteHSL = new List<Color.HSL>();
@@ -56,7 +57,7 @@ MenuDriver inputMenu = new MenuDriver();
 	inputMenu.AddOptions(inputMenuOptions);
 
 	string userColorInput = "Gemedet";
-	object InputMenu() {
+	Color.HSV InputMenu() {
 		while (inputMenu.menuLoop){
 
 			Console.Clear();
@@ -67,19 +68,22 @@ MenuDriver inputMenu = new MenuDriver();
 
 				case 0:
 					userColorInput = UserInput.Query("Enter a value between #000000 - #FFFFFF");
-					return UserInput.InputHEX(userColorInput);
+					var inputColor = UserInput.InputHEX(userColorInput);
+					var normalizedInput = ConvertColor.HEXtoHSV(inputColor);
+					return normalizedInput;
 					break;
 				case 1:
 					userColorInput = UserInput.Query("Enter a value between (0.0, 0.0, 0.0) - (360.0, 100.0, 100.0)");
-					return userColorInput;
+					return null;
+					// var color = UserInput.InputHSL(userColorInput);
 					break;
 				case 2:
 					userColorInput = UserInput.Query("Enter a value between (0.0, 0.0, 0.0) - (360.0, 100.0, 100.0)");
-					return userColorInput;
+					return null;
 					break;
 				case 3:
 					userColorInput = UserInput.Query("Enter a value between (0, 0, 0) - (255, 255, 255)");
-					return userColorInput;
+					return null;
 					break;
 				case 4: 
 					Console.Clear();
@@ -165,7 +169,7 @@ void generationDriver() {
 	paletteHSV.Clear();
 	paletteRGB.Clear();
 
-	Color inputNormalHSV = InputMenu();
+	Color.HSV inputNormalHSV = InputMenu();
 }
 
 MainMenu();
