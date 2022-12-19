@@ -175,20 +175,35 @@ void generationDriver() {
 	Console.WriteLine($"{normalizedInputHSV.Hue}, {normalizedInputHSV.Saturation}, {normalizedInputHSV.Value}");
 	
 	paletteHSV = HarmonyMenu(normalizedInputHSV);
-	for (int i = 1; i+1 < paletteHSV.Count; i++) {
-		paletteHEX[i] = ConvertColor.HSVtoHEX(paletteHSV[i]);
+	for (int i = 0; i < paletteHSV.Count; i++) {
+		paletteHEX.Add(ConvertColor.HSVtoHEX(paletteHSV[i]));
 	}
-	for (int i = 1; i+1 < paletteHSV.Count; i++) {
-		paletteHSL[i] = ConvertColor.HSVtoHSL(paletteHSV[i]);
+	for (int i = 0; i < paletteHSV.Count; i++) {
+		paletteHSL.Add(ConvertColor.HSVtoHSL(paletteHSV[i]));
 	}
-	for (int i = 1; i+1 < paletteHSV.Count; i++) {
-		paletteRGB[i] = ConvertColor.HSVtoRGB(paletteHSV[i]);
+	for (int i = 0; i < paletteHSV.Count; i++) {
+		paletteRGB.Add(ConvertColor.HSVtoRGB(paletteHSV[i]));
 	}
 }
 
 void displayPalette() {
 
-	
+	Console.WriteLine("HEX: ");
+	foreach (Color.HEX color in paletteHEX) {Console.WriteLine($"#{color.Value}");}
+	Console.WriteLine("");
+
+	Console.WriteLine("HSL: ");
+	foreach (Color.HSL color in paletteHSL) {Console.WriteLine($"({color.Hue}, {color.Saturation}, {color.Lightness})");}
+	Console.WriteLine("");
+
+	Console.WriteLine("HSV: ");
+	foreach (Color.HSV color in paletteHSV) {Console.WriteLine($"({color.Hue}, {color.Saturation}, {color.Value})");}
+	Console.WriteLine("");
+
+	Console.WriteLine("RGB: ");
+	foreach (Color.RGB color in paletteRGB) {Console.WriteLine($"({color.Red}, {color.Green}, {color.Blue})");}
+
+	Console.ReadKey();
 }
 
 MainMenu();
