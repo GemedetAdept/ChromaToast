@@ -30,6 +30,7 @@ MenuDriver mainMenu = new MenuDriver();
 
 				case 0:
 					generationDriver();
+					displayPalette();
 					break;
 				case 1:
 					
@@ -174,10 +175,20 @@ void generationDriver() {
 	Console.WriteLine($"{normalizedInputHSV.Hue}, {normalizedInputHSV.Saturation}, {normalizedInputHSV.Value}");
 	
 	paletteHSV = HarmonyMenu(normalizedInputHSV);
-	foreach (Color.HSV color in paletteHSV) {
-		Console.WriteLine($"{color.Hue}, {color.Saturation}, {color.Value}");
+	for (int i = 1; i+1 < paletteHSV.Count; i++) {
+		paletteHEX[i] = ConvertColor.HSVtoHEX(paletteHSV[i]);
 	}
-	Console.ReadKey();
+	for (int i = 1; i+1 < paletteHSV.Count; i++) {
+		paletteHSL[i] = ConvertColor.HSVtoHSL(paletteHSV[i]);
+	}
+	for (int i = 1; i+1 < paletteHSV.Count; i++) {
+		paletteRGB[i] = ConvertColor.HSVtoRGB(paletteHSV[i]);
+	}
+}
+
+void displayPalette() {
+
+	
 }
 
 MainMenu();
