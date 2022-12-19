@@ -103,69 +103,65 @@ MenuDriver inputMenu = new MenuDriver();
 		return null;
 	}
 
-// // Menu for Color Harmony selection
-// bool harmonyMenuBool = false;
-// MenuDriver harmonyMenu = new MenuDriver();
-	// string[] harmonyOptions = new string[] {
+// Color Harmony Menu
+MenuDriver harmonyMenu = new MenuDriver();
+	string[] harmonyMenuOptions = new string[] {
 
-	// 	"Complementary",
-	// 	"Split Complementary",
-	// 	"Triadic",
-	// 	"Tetradic",
-	// 	"Square",
-	// 	"Analogous",
-	// 	"Monochromatic",
-	// 	"Quit Program",
-	// };
-	// harmonyMenu.AddOptions(harmonyOptions);
+		"Complementary",
+		"Split Complementary",
+		"Triadic",
+		"Tetradic",
+		"Square",
+		"Analogous",
+		"Monochromatic",
+	};
+	harmonyMenu.AddOptions(harmonyMenuOptions);
 
-	// while (harmonyMenuBool)
-	// void HarmonyMenu() {
-	// 	while (harmonyMenu.menuLoop){
+	List<Color.HSV> outputPaletteHSV = new List<Color.HSV>();
+	List<Color.HSV> HarmonyMenu(Color.HSV inputHSV) {
+		while (harmonyMenu.menuLoop){
 
-	// 		Console.Clear();
-	// 		harmonyMenu.DisplayMenu();
-	// 		harmonyMenu.SetMenuCursor();
+			Console.Clear();
+			harmonyMenu.DisplayMenu();
+			harmonyMenu.SetMenuCursor();
 
-	// 		switch(harmonyMenu.selectedItem) {
+			switch(harmonyMenu.selectedItem) {
 
-	// 			case 0:
-	// 				ColorHarmony.Complementary();
-	// 				harmonyMenu.menuLoop = false;	
-	// 				break;
-	// 			case 1:
-	// 				ColorHarmony.SplitComplementary();
-	// 				harmonyMenu.menuLoop = false;
-	// 				break;
-	// 			case 2:
-	// 				ColorHarmony.Triadic();
-	// 				harmonyMenu.menuLoop = false;
-	// 				break;
-	// 			case 3:
-	// 				ColorHarmony.Tetradic();
-	// 				harmonyMenu.menuLoop = false;
-	// 				break;
-	// 			case 4:
-	// 				ColorHarmony.Square();
-	// 				harmonyMenu.menuLoop = false;
-	// 				break;
-	// 			case 5:
-	// 				ColorHarmony.Analogous();
-	// 				harmonyMenu.menuLoop = false;
-	// 				break;
-	// 			case 6:
-	// 				ColorHarmony.Monochromatic();
-	// 				harmonyMenu.menuLoop = false;
-	// 				break;
-	// 			case 7: 
-	// 				Console.Clear();
-	// 				Environment.Exit(0);
-	// 				break;
-	// 			default:
-	// 				break;
-	// 		}
-	// 	}
-	// }
+				case 0:
+					outputPaletteHSV = ColorHarmony.Complementary(inputHSV).ToList();
+					return outputPaletteHSV;
+					break;
+				case 1: 
+					outputPaletteHSV = ColorHarmony.SplitComplementary(inputHSV).ToList();
+					return outputPaletteHSV;
+					break;
+				case 2: 
+					outputPaletteHSV = ColorHarmony.Triadic(inputHSV).ToList();
+					return outputPaletteHSV;
+					break;
+				case 3: 
+					outputPaletteHSV = ColorHarmony.Tetradic(inputHSV).ToList();
+					return outputPaletteHSV;
+					break;
+				case 4: 
+					outputPaletteHSV = ColorHarmony.Square(inputHSV).ToList();
+					return outputPaletteHSV;
+					break;
+				case 5: 
+					outputPaletteHSV = ColorHarmony.Analogous(inputHSV).ToList();
+					return outputPaletteHSV;
+					break;
+				case 6: 
+					outputPaletteHSV = ColorHarmony.Monochromatic(inputHSV).ToList();
+					return outputPaletteHSV;
+					break;
+				default:
+					break;
+					return null;
+			}
+		}
+		return null;
+	}
 
 void generationDriver() {
 
@@ -177,6 +173,10 @@ void generationDriver() {
 	Color.HSV normalizedInputHSV = InputMenu();
 	Console.WriteLine($"{normalizedInputHSV.Hue}, {normalizedInputHSV.Saturation}, {normalizedInputHSV.Value}");
 	
+	paletteHSV = HarmonyMenu(normalizedInputHSV);
+	foreach (Color.HSV color in paletteHSV) {
+		Console.WriteLine($"{color.Hue}, {color.Saturation}, {color.Value}");
+	}
 	Console.ReadKey();
 }
 
