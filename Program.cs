@@ -57,7 +57,7 @@ MenuDriver inputMenu = new MenuDriver();
 	inputMenu.AddOptions(inputMenuOptions);
 
 	string userColorInput = "Gemedet";
-	var normalizedInput = new Color.HSV(0.0, 0.0, 0.0);
+	var normalizedInput = new Color.HSV(1.0, 0.0, 0.0);
 	Color.HSV InputMenu() {
 		while (inputMenu.menuLoop){
 
@@ -174,8 +174,9 @@ void generationDriver() {
 	paletteHSV.Clear();
 	paletteRGB.Clear();
 
-	Color.HSV inputNormalHSV = InputMenu();
-	Console.WriteLine($"{inputNormalHSV.Hue}, {inputNormalHSV.Saturation}, {inputNormalHSV.Value}");
+	Color.HSV normalizedInputHSV = InputMenu();
+	Console.WriteLine($"{normalizedInputHSV.Hue}, {normalizedInputHSV.Saturation}, {normalizedInputHSV.Value}");
+	
 	Console.ReadKey();
 }
 

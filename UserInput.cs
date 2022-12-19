@@ -31,9 +31,9 @@ public class UserInput {
 
 	public static Color.HSL InputHSL(string inputHSL) {
 
-		if (inputHSL.Contains("(")) {inputHSL.Replace("(", string.Empty);}
-		if (inputHSL.Contains(")")) {inputHSL.Replace(")", string.Empty);}
-		if (inputHSL.Contains(" ")) {inputHSL.Replace(" ", string.Empty);}
+		if (inputHSL.Contains("(")) {inputHSL = inputHSL.Replace("(", "");}
+		if (inputHSL.Contains(")")) {inputHSL = inputHSL.Replace(")", "");}
+		if (inputHSL.Contains(" ")) {inputHSL = inputHSL.Replace(" ", "");}
 
 		var partsHSL = inputHSL.Split(",");
 
@@ -50,9 +50,9 @@ public class UserInput {
 
 	public static Color.HSV InputHSV(string inputHSV) {
 
-		if (inputHSV.Contains("(")) {inputHSV.Replace("(", string.Empty);}
-		if (inputHSV.Contains(")")) {inputHSV.Replace(")", string.Empty);}
-		if (inputHSV.Contains(" ")) {inputHSV.Replace(" ", string.Empty);}
+		if (inputHSV.Contains("(")) {inputHSV = inputHSV.Replace("(", "");}
+		if (inputHSV.Contains(")")) {inputHSV = inputHSV.Replace(")", "");}
+		if (inputHSV.Contains(" ")) {inputHSV = inputHSV.Replace(" ", "");}
 
 		var partsHSV = inputHSV.Split(",");
 
@@ -69,9 +69,9 @@ public class UserInput {
 
 	public static Color.RGB InputRGB(string inputRGB) {
 
-		if (inputRGB.Contains("(")) {inputRGB.Replace("(", string.Empty);}
-		if (inputRGB.Contains(")")) {inputRGB.Replace(")", string.Empty);}
-		if (inputRGB.Contains(" ")) {inputRGB.Replace(" ", string.Empty);}
+		if (inputRGB.Contains("(")) {inputRGB = inputRGB.Replace("(", "");}
+		if (inputRGB.Contains(")")) {inputRGB = inputRGB.Replace(")", "");}
+		if (inputRGB.Contains(" ")) {inputRGB = inputRGB.Replace(" ", "");}
 
 		var partsRGB = inputRGB.Split(",");
 
@@ -83,6 +83,7 @@ public class UserInput {
 		Double.TryParse(partsRGB[2], out Blue);
 
 		Color.RGB outputRGB = new Color.RGB(Red, Green, Blue);
+		Console.WriteLine($"RGB: {outputRGB.Red}, {outputRGB.Green}, {outputRGB.Blue}");
 		return outputRGB;
 	}
 
