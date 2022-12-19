@@ -170,6 +170,8 @@ void generationDriver() {
 	paletteRGB.Clear();
 
 	Color.HSV inputNormalHSV = InputMenu();
+	Console.WriteLine($"{inputNormalHSV.Hue}, {inputNormalHSV.Saturation}, {inputNormalHSV.Value}");
+	Console.ReadKey();
 }
 
 MainMenu();

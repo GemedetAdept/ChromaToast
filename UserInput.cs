@@ -29,5 +29,22 @@ public class UserInput {
 		return outputHEX;
 	}
 
+	public static Color.HSL InputHSL(string inputHSL) {
+
+		string[] partsHSL = new string[3];
+		if (inputHSL.Contains("(")) {
+			partsHSL = inputHSL.Split("(").Split(")").Split(",");
+		}
+		else {
+			partsHSL = inputHSL.Split(",");
+		}
+
+		double Hue = Convert.ToDouble(partsHSL[0]);
+		double Saturation = Convert.ToDouble(partsHSL[1]);
+		double Lightness = Convert.ToDouble(partsHSL[2]);
+
+		Color.HSL outputHSL = new Color.HSL(Hue, Saturation, Lightness);
+	}
+
 }
 }

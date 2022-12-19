@@ -1,4 +1,5 @@
 using colorvalues;
+using convertbase;
 namespace convertcolor {
 public class ConvertColor {
 
@@ -21,7 +22,7 @@ public class ConvertColor {
 		return outputHSV;
 	}
 	public static Color.RGB HEXtoRGB(Color.HEX inputHEX) {
-		int decimalInteger = 0;
+		int decimalInteger = ConvertBase.ConvertToInteger(inputHEX.Value);
 		byte[] valueBytes = BitConverter.GetBytes(decimalInteger);
 
 		// Byte array is in reverse "RGB" order, thus backwards indexes.
@@ -49,7 +50,7 @@ public class ConvertColor {
 		};
 
 		int intValue = BitConverter.ToInt32(valueBytes, 0);
-		string outputHEX = "";
+		string outputHEX = ConvertBase.ConvertToHexadecimal(intValue);
 
 		if (outputHEX.Length < 6) {outputHEX = "0" + outputHEX;}
 
