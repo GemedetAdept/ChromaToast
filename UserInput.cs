@@ -31,53 +31,59 @@ public class UserInput {
 
 	public static Color.HSL InputHSL(string inputHSL) {
 
-		string[] partsHSL = new string[3];
-		if (inputHSL.Contains("(")) {
-			partsHSL = inputHSL.Split("(").Split(")").Split(",");
-		}
-		else {
-			partsHSL = inputHSL.Split(",");
-		}
+		if (inputHSL.Contains("(")) {inputHSL.Replace("(", string.Empty);}
+		if (inputHSL.Contains(")")) {inputHSL.Replace(")", string.Empty);}
+		if (inputHSL.Contains(" ")) {inputHSL.Replace(" ", string.Empty);}
 
-		double Hue = Convert.ToDouble(partsHSL[0]);
-		double Saturation = Convert.ToDouble(partsHSL[1]);
-		double Lightness = Convert.ToDouble(partsHSL[2]);
+		var partsHSL = inputHSL.Split(",");
+
+		double Hue = -4.19;
+		double Saturation = -4.19;
+		double Lightness = -4.19;
+		Double.TryParse(partsHSL[0], out Hue);
+		Double.TryParse(partsHSL[1], out Saturation);
+		Double.TryParse(partsHSL[2], out Lightness);
 
 		Color.HSL outputHSL = new Color.HSL(Hue, Saturation, Lightness);
+		return outputHSL;
 	}
 
 	public static Color.HSV InputHSV(string inputHSV) {
 
-		string[] partsHSV = new string[3];
-		if (inputHSV.Contains("(")) {
-			partsHSV = inputHSV.Split("(").Split(")").Split(",");
-		}
-		else {
-			partsHSV = inputHSV.Split(",");
-		}
+		if (inputHSV.Contains("(")) {inputHSV.Replace("(", string.Empty);}
+		if (inputHSV.Contains(")")) {inputHSV.Replace(")", string.Empty);}
+		if (inputHSV.Contains(" ")) {inputHSV.Replace(" ", string.Empty);}
 
-		double Hue = Convert.ToDouble(partsHSL[0]);
-		double Saturation = Convert.ToDouble(partsHSL[1]);
-		double Value = Convert.ToDouble(partsHSL[2]);
+		var partsHSV = inputHSV.Split(",");
 
-		Color.HSV outputHSV = new Color.HSV(Hue, Saturation, Value);		
+		double Hue = -4.19;
+		double Saturation = -4.19;
+		double Value = -4.19;
+		Double.TryParse(partsHSV[0], out Hue);
+		Double.TryParse(partsHSV[1], out Saturation);
+		Double.TryParse(partsHSV[2], out Value);
+
+		Color.HSV outputHSV = new Color.HSV(Hue, Saturation, Value);
+		return outputHSV;		
 	}
 
 	public static Color.RGB InputRGB(string inputRGB) {
 
-		string[] partsRGB = new string[3];
-		if (inputRGB.Contains("(")) {
-			partsRGB = inputRGB.Split("(").Split(")").Split(",");
-		}
-		else {
-			partsRGB = inputRGB.Split(",");
-		}
+		if (inputRGB.Contains("(")) {inputRGB.Replace("(", string.Empty);}
+		if (inputRGB.Contains(")")) {inputRGB.Replace(")", string.Empty);}
+		if (inputRGB.Contains(" ")) {inputRGB.Replace(" ", string.Empty);}
 
-		double Red = Convert.ToDouble(partsHSL[0]);
-		double Green = Convert.ToDouble(partsHSL[1]);
-		double Blue = Convert.ToDouble(partsHSL[2]);
+		var partsRGB = inputRGB.Split(",");
+
+		double Red = -4.19;
+		double Green = -4.19;
+		double Blue = -4.19;
+		Double.TryParse(partsRGB[0], out Red);
+		Double.TryParse(partsRGB[1], out Green);
+		Double.TryParse(partsRGB[2], out Blue);
 
 		Color.RGB outputRGB = new Color.RGB(Red, Green, Blue);
+		return outputRGB;
 	}
 
 }
