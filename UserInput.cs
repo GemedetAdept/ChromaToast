@@ -60,7 +60,24 @@ public class UserInput {
 		double Saturation = Convert.ToDouble(partsHSL[1]);
 		double Value = Convert.ToDouble(partsHSL[2]);
 
-		Color.HSL outputHSV = new Color.HSL(Hue, Saturation, Value);		
+		Color.HSV outputHSV = new Color.HSV(Hue, Saturation, Value);		
+	}
+
+	public static Color.RGB InputRGB(string inputRGB) {
+
+		string[] partsRGB = new string[3];
+		if (inputRGB.Contains("(")) {
+			partsRGB = inputRGB.Split("(").Split(")").Split(",");
+		}
+		else {
+			partsRGB = inputRGB.Split(",");
+		}
+
+		double Red = Convert.ToDouble(partsHSL[0]);
+		double Green = Convert.ToDouble(partsHSL[1]);
+		double Blue = Convert.ToDouble(partsHSL[2]);
+
+		Color.RGB outputRGB = new Color.RGB(Red, Green, Blue);
 	}
 
 }
