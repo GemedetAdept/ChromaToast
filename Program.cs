@@ -14,7 +14,6 @@ MenuDriver mainMenu = new MenuDriver();
 	string[] mainMenuOptions = new string[] {
 
 		"Generate New Color Palette",
-		"Learn About Color Harmonies",
 		"Quit Program",
 	};
 	mainMenu.AddOptions(mainMenuOptions);
@@ -32,10 +31,7 @@ MenuDriver mainMenu = new MenuDriver();
 					generationDriver();
 					displayPalette();
 					break;
-				case 1:
-					
-					break;
-				case 2: 
+				case 1: 
 					Console.Clear();
 					Environment.Exit(0);
 					break;
