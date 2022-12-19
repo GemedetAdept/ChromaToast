@@ -46,5 +46,22 @@ public class UserInput {
 		Color.HSL outputHSL = new Color.HSL(Hue, Saturation, Lightness);
 	}
 
+	public static Color.HSV InputHSV(string inputHSV) {
+
+		string[] partsHSV = new string[3];
+		if (inputHSV.Contains("(")) {
+			partsHSV = inputHSV.Split("(").Split(")").Split(",");
+		}
+		else {
+			partsHSV = inputHSV.Split(",");
+		}
+
+		double Hue = Convert.ToDouble(partsHSL[0]);
+		double Saturation = Convert.ToDouble(partsHSL[1]);
+		double Value = Convert.ToDouble(partsHSL[2]);
+
+		Color.HSL outputHSV = new Color.HSL(Hue, Saturation, Value);		
+	}
+
 }
 }
