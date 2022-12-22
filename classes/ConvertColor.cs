@@ -17,6 +17,13 @@ public class ConvertColor {
 
 		return new Color.RGB(Math.Round(redRGB), Math.Round(greenRGB), Math.Round(blueRGB));
 	}
+	public static Color.HEX CMYKtoHEX(Color.CMYK inputCMYK) {
+
+		var stepRGB = CMYKtoRGB(inputCMYK);
+		var outputHEX = RGBtoHEX(stepRGB);
+
+		return outputHEX;
+	}
 	public static Color.HSV CMYKtoHSV(Color.CMYK inputCMYK) {
 
 		var stepRGB = CMYKtoRGB(inputCMYK);
