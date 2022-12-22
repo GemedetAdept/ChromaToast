@@ -212,9 +212,16 @@ void DebugBox() {
 	Console.Write("Input RGB: ");
 	Console.WriteLine($"({debugRGB.Red}, {debugRGB.Green}, {debugRGB.Blue})");
 	Console.WriteLine("");
+
 	Color.CMYK debugCMYK = ConvertColor.RGBtoCMYK(debugRGB);
 	Console.Write("Output CMYK: ");
 	Console.WriteLine($"({debugCMYK.Cyan}, {debugCMYK.Magenta}, {debugCMYK.Yellow}, {debugCMYK.Key})");
+	Console.WriteLine("");
+
+	Color.RGB debugOutputRGB = ConvertColor.CMYKtoRGB(debugCMYK);
+	Console.WriteLine("Output RGB:");
+	Console.WriteLine($"({debugOutputRGB.Red}, {debugOutputRGB.Green}, {debugOutputRGB.Blue})");
+	Console.WriteLine("");	
 
 	Console.ReadKey();
 }
