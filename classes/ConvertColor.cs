@@ -77,6 +77,13 @@ public class ConvertColor {
 	}
 
 	// HSL
+	public static Color.CMYK HSLtoCMYK(Color.HSL inputHSL) {
+
+		var stepRGB = HSLtoRGB(inputHSL);
+		var outputCMYK = RGBtoCMYK(stepRGB);
+
+		return outputCMYK;
+	}
 	public static Color.HEX HSLtoHEX(Color.HSL inputHSL) {
 
 		var stepRGB = HSLtoRGB(inputHSL);
