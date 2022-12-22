@@ -385,22 +385,22 @@ public class ConvertColor {
 
 		bool isInvalid = false;
 
-		if (colorType == "RGB") {
+		if (colorType == "HSL") {
 
-			double redRGB = colorValues.Item1;
-			double greenRGB = colorValues.Item2;
-			double blueRGB = colorValues.Item3;
+			double hueHSL = colorValues.Item1;
+			double saturationHSL = colorValues.Item2;
+			double lightnessHSL = colorValues.Item3;
 
-			if (redRGB < 0 || redRGB > 255) {
-				Console.WriteLine($"RGB red value {redRGB} is out-of-bounds (0–255).");
+			if (hueHSL < 0 || hueHSL > 360) {
+				Console.WriteLine($"HSV Hue value {hueHSL} is out-of-bounds (0–360).");
 				isInvalid = true;
 			}
-			if (greenRGB < 0 || greenRGB > 255) {
-				Console.WriteLine($"RGB green value {greenRGB} is out-of-bounds (0–255).");
+			if (saturationHSL < 0 || saturationHSL > 100) { 
+				Console.WriteLine($"HSL Saturation value {saturationHSL} is out-of-bounds (0–1)");
 				isInvalid = true;
 			}
-			if (blueRGB < 0 || blueRGB > 255) {
-				Console.WriteLine($"RGB blue value {blueRGB} is out-of-bounds (0–255).");
+			if (lightnessHSL < 0 || lightnessHSL > 100) {
+				Console.WriteLine($"HSL Lightness value {lightnessHSL} is out-of-bounds (0–1)");
 				isInvalid = true;
 			}
 			else {isInvalid = false;}
@@ -427,22 +427,22 @@ public class ConvertColor {
 			else {isInvalid = false;}
 		}
 
-		if (colorType == "HSL") {
+		if (colorType == "RGB") {
 
-			double hueHSL = colorValues.Item1;
-			double saturationHSL = colorValues.Item2;
-			double lightnessHSL = colorValues.Item3;
+			double redRGB = colorValues.Item1;
+			double greenRGB = colorValues.Item2;
+			double blueRGB = colorValues.Item3;
 
-			if (hueHSL < 0 || hueHSL > 360) {
-				Console.WriteLine($"HSV Hue value {hueHSL} is out-of-bounds (0–360).");
+			if (redRGB < 0 || redRGB > 255) {
+				Console.WriteLine($"RGB red value {redRGB} is out-of-bounds (0–255).");
 				isInvalid = true;
 			}
-			if (saturationHSL < 0 || saturationHSL > 100) { 
-				Console.WriteLine($"HSL Saturation value {saturationHSL} is out-of-bounds (0–1)");
+			if (greenRGB < 0 || greenRGB > 255) {
+				Console.WriteLine($"RGB green value {greenRGB} is out-of-bounds (0–255).");
 				isInvalid = true;
 			}
-			if (lightnessHSL < 0 || lightnessHSL > 100) {
-				Console.WriteLine($"HSL Lightness value {lightnessHSL} is out-of-bounds (0–1)");
+			if (blueRGB < 0 || blueRGB > 255) {
+				Console.WriteLine($"RGB blue value {blueRGB} is out-of-bounds (0–255).");
 				isInvalid = true;
 			}
 			else {isInvalid = false;}
