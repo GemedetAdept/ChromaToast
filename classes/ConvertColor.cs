@@ -17,7 +17,13 @@ public class ConvertColor {
 
 		return new Color.RGB(Math.Round(redRGB), Math.Round(greenRGB), Math.Round(blueRGB));
 	}
-	
+	public static Color.HSV CMYKtoHSV(Color.CMYK inputCMYK) {
+
+		var stepRGB = CMYKtoRGB(inputCMYK);
+		var outputHSV = RGBtoHSV(stepRGB);
+
+		return outputHSV;
+	}
 
 	// HEX
 	// Due to the way that HSL and HSV values are stored, 
