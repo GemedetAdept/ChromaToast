@@ -15,11 +15,7 @@ public class ConvertColor {
 		double greenRGB = 255 * (1 - magentaCMYK) * (1 - keyCMYK);
 		double blueRGB = 255 * (1 - yellowCMYK) * (1 - keyCMYK);
 
-		redRGB = redRGB * Math.Pow(10, -2);
-		greenRGB = greenRGB * Math.Pow(10, -2);
-		blueRGB = blueRGB * Math.Pow(10, -2);
-
-		return new Color.RGB(redRGB, greenRGB, blueRGB);
+		return new Color.RGB(Math.Round(redRGB), Math.Round(greenRGB), Math.Round(blueRGB));
 	}
 
 	// HEX
@@ -224,12 +220,7 @@ public class ConvertColor {
 		double magentaCMYK = (1 - greenPrimeRGB - keyCMYK)/(1 - keyCMYK);
 		double yellowCMYK = (1 - bluePrimeRGB - keyCMYK)/(1 - keyCMYK);
 
-		keyCMYK = keyCMYK * Math.Pow(10, 2);
-		cyanCMYK = cyanCMYK * Math.Pow(10, 2);
-		magentaCMYK = magentaCMYK * Math.Pow(10, 2);
-		yellowCMYK = yellowCMYK * Math.Pow(10, 2);
-
-		return new Color.CMYK(Math.Round(cyanCMYK), Math.Round(magentaCMYK), Math.Round(yellowCMYK), Math.Round(keyCMYK));
+		return new Color.CMYK(cyanCMYK, magentaCMYK, yellowCMYK, keyCMYK);
 	}
 	public static Color.HEX RGBtoHEX(Color.RGB inputRGB) {
 
