@@ -23,6 +23,26 @@ public class UserInput {
 		return userInput.InputData;
 	}
 
+	public static Color.CMYK InputCMYK(string inputCMYK) {
+		if (inputCMYK.Contains("(")) {inputCMYK = inputCMYK.Replace("(", "");}
+		if (inputCMYK.Contains(")")) {inputCMYK = inputCMYK.Replace(")", "");}
+		if (inputCMYK.Contains(" ")) {inputCMYK = inputCMYK.Replace(" ", "");}
+
+		var partsCMYK = inputCMYK.Split(",");
+
+		double Cyan = -4.19;
+		double Magenta = -4.19;
+		double Yellow = -4.19;
+		double Key = -4.19;
+		Double.TryParse(partsCMYK[0] out Cyan);
+		Double.TryParse(partsCMYK[1] out Magenta);
+		Double.TryParse(partsCMYK[2] out Yellow);
+		Double.TryParse(partsCMYK[3] out Key);
+
+		Color.CMYK outputCMYK = new Color.CMYK(Cyan, Magenta, Yellow, Key);
+		return outputCMYK;
+	}
+
 	public static Color.HEX InputHEX(string inputHEX) {
 
 		var outputHEX = new Color.HEX(inputHEX);

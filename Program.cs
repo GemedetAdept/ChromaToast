@@ -3,6 +3,7 @@ using menudriver;
 using colorvalues;
 using colorharmony;
 using convertcolor;
+using savetofile;
 
 var paletteCMYK = new List<Color.CMYK>();
 var paletteHEX = new List<Color.HEX>();
@@ -50,6 +51,7 @@ MenuDriver mainMenu = new MenuDriver();
 MenuDriver inputMenu = new MenuDriver();
 	string[] inputMenuOptions = new string[] {
 
+		"CMYK",
 		"Hexadecimal",
 		"HSL",
 		"HSV",
@@ -70,29 +72,35 @@ MenuDriver inputMenu = new MenuDriver();
 			switch(inputMenu.selectedItem) {
 
 				case 0:
+					userColorInput = UserInput.Query("Enter a value between (0.0, 0.0, 0.0, 0.0) - (100.0, 100.0, 100.0, 100.0");
+					var inputCMYK = UserInput.InputCMYK(userColorInput);
+					normalizedInput = ConvertColor.CMYKtoHSV(inputCMYK);
+					return normalizedInput;
+					break;
+				case 1:
 					userColorInput = UserInput.Query("Enter a value between #000000 - #FFFFFF");
 					var inputHEX = UserInput.InputHEX(userColorInput);
 					normalizedInput = ConvertColor.HEXtoHSV(inputHEX);
 					return normalizedInput;
 					break;
-				case 1:
+				case 2:
 					userColorInput = UserInput.Query("Enter a value between (0.0, 0.0, 0.0) - (360.0, 100.0, 100.0)");
 					var inputHSL = UserInput.InputHSL(userColorInput);
 					normalizedInput = ConvertColor.HSLtoHSV(inputHSL);
 					return normalizedInput;
 					break;
-				case 2:
+				case 3:
 					userColorInput = UserInput.Query("Enter a value between (0.0, 0.0, 0.0) - (360.0, 100.0, 100.0)");
 					var inputHSV = UserInput.InputHSV(userColorInput);
 					return inputHSV;
 					break;
-				case 3:
+				case 4:
 					userColorInput = UserInput.Query("Enter a value between (0, 0, 0) - (255, 255, 255)");
 					var inputRGB = UserInput.InputRGB(userColorInput);
 					normalizedInput = ConvertColor.RGBtoHSV(inputRGB);
 					return normalizedInput;
 					break;
-				case 4: 
+				case 5: 
 					Console.Clear();
 					Environment.Exit(0);
 					return null;
@@ -190,6 +198,8 @@ void generationDriver() {
 	for (int i = 0; i < paletteHSV.Count; i++) {
 		paletteRGB.Add(ConvertColor.HSVtoRGB(paletteHSV[i]));
 	}
+
+	savePalette("output.csv");
 }
 
 void displayPalette() {
@@ -218,22 +228,53 @@ void displayPalette() {
 	Console.ReadKey();
 }
 
+void savePalette(string fileName, string path = "") {
+
+	string[] headers = new string[]{
+		"CMYK",
+		"HEX",
+		"HSL",
+		"HSV",
+		"RGB",
+	};
+
+	var outputFile = new SaveToFile.CSV(fileName, path);
+	if (outputFile.Initalize(outputFile.FileName)) {
+
+		outputFile.SetHeaders(outputFile.FileName, headers);
+
+		for (int i = 1; i+1 < paletteHSV.Count; i++) {
+			string[] colors = new string[4];
+			colors[0] = "\"" + paletteCMYK[i] + "\"";
+			colors[1] = paletteHEX[i].Value;
+			colors[2] = "\"" + paletteHSL[i] + "\"";
+			colors[3] = "\"" + paletteHSV[i] + "\"";
+			colors[4] = "\"" + paletteRGB[i] + "\"";
+
+			outputFile.WriteData(outputFile.FileName, colors);
+		}
+	}
+}
+
 void DebugBox() {
 
-	Color.RGB debugRGB = new Color.RGB(116, 171, 224);
-	Console.Write("Input RGB: ");
-	Console.WriteLine($"({debugRGB.Red}, {debugRGB.Green}, {debugRGB.Blue})");
-	Console.WriteLine("");
+	string[] headers = new string[]{
+		"CMYK",
+		"HEX",
+		"HSL",
+		"HSV",
+		"RGB",
+	};
 
-	Color.CMYK debugCMYK = ConvertColor.RGBtoCMYK(debugRGB);
-	Console.Write("Output CMYK: ");
-	Console.WriteLine($"({debugCMYK.Cyan}, {debugCMYK.Magenta}, {debugCMYK.Yellow}, {debugCMYK.Key})");
-	Console.WriteLine("");
+	var output = new SaveToFile.CSV("output.csv");
 
-	Color.RGB debugOutputRGB = ConvertColor.CMYKtoRGB(debugCMYK);
-	Console.Write("Output RGB: ");
-	Console.WriteLine($"({debugOutputRGB.Red}, {debugOutputRGB.Green}, {debugOutputRGB.Blue})");
-	Console.WriteLine("");	
+	if (output.Initalize(output.FileName)) {
+		Console.WriteLine("Successful initiation.");
+
+		if (output.SetHeaders(output.FileName, headers)) {
+			Console.WriteLine("Headers written.");
+		}
+	}
 
 	Console.ReadKey();
 }

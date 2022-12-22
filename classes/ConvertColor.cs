@@ -17,6 +17,7 @@ public class ConvertColor {
 
 		return new Color.RGB(Math.Round(redRGB), Math.Round(greenRGB), Math.Round(blueRGB));
 	}
+	
 
 	// HEX
 	// Due to the way that HSL and HSV values are stored, 

@@ -29,9 +29,22 @@ public class SaveToFile {
 			else {return false;}
 		}
 
-		public string Headers(string fileName, string[] headers) {
+		public bool SetHeaders(string filePath, string[] headers) {
 
-			string headerLine = Headers.ToString(",");
+			try {
+				var headerLine = String.Join(",", headers);
+				File.AppendAllText(filePath, headerLine);
+			}
+			catch {return false;}
+
+			return true;
+		}
+
+		public bool WriteData(string filePath, string[] data) {
+
+			var rowData = string.Join(",", data);
+			File.AppendAllText(filePath, rowData);
+			return true;
 		}
 	}
 }
