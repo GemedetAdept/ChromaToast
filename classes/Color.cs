@@ -107,6 +107,9 @@ public class Color {
 	}
 	public class RGB {
 
+		private bool _isValid;
+		public const int floorRGB = 0;
+		public const int ceilingRGB = 255;
 		private double _red;
 		private double _green;
 		private double _blue;
@@ -118,6 +121,19 @@ public class Color {
 			Blue = blueRGB;
 		}
 
+		public bool IsValid {
+			get {return _isValid;}
+			set {
+
+				if (Red < floorRGB || Red > ceilingRGB ||
+					Green < floorRGB || Green > ceilingRGB ||
+					Blue < floorRGB || Blue > ceilingRGB) {
+
+					_isValid = false;
+				}
+				else {_isValid = true;}
+			}
+		}
 		public double Red {
 			get {return _red;}
 			set {_red = value;}

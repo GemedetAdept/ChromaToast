@@ -103,7 +103,6 @@ public class UserInput {
 		Double.TryParse(partsRGB[2], out Blue);
 
 		Color.RGB outputRGB = new Color.RGB(Red, Green, Blue);
-		Console.WriteLine($"RGB: {outputRGB.Red}, {outputRGB.Green}, {outputRGB.Blue}");
 		return outputRGB;
 	}
 

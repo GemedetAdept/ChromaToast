@@ -133,7 +133,8 @@ public class ConvertColor {
 		//		Where k,n ∈ R≥₀, and:
 		//			k = (n + (H/30)) % 12
 		//			a = S*min(L, 1-L)
-		// (R,G,B) = (⨍(0), ⨍(8), ⨍(4))			double valueA = saturationHSL * Math.Min(lightnessHSL, 1-lightnessHSL);
+		// (R,G,B) = (⨍(0), ⨍(8), ⨍(4))			
+		double valueA = saturationHSL * Math.Min(lightnessHSL, 1-lightnessHSL);
 		Func<double, double> valueK = n => (n + hueHSL/30)%12;
 		Func<double, double> altConvert = n => lightnessHSL-valueA * Math.Max(-1, Math.Min(valueK(n)-3, Math.Min(9-valueK(n), 1)));
 		

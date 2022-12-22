@@ -97,7 +97,9 @@ MenuDriver inputMenu = new MenuDriver();
 				case 4:
 					userColorInput = UserInput.Query("Enter a value between (0, 0, 0) - (255, 255, 255)");
 					var inputRGB = UserInput.InputRGB(userColorInput);
-					normalizedInput = ConvertColor.RGBtoHSV(inputRGB);
+
+					if (inputRGB.IsValid == false) {break;}
+					else {normalizedInput = ConvertColor.RGBtoHSV(inputRGB);}
 					return normalizedInput;
 					break;
 				case 5: 
