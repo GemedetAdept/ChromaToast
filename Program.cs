@@ -4,6 +4,7 @@ using colorvalues;
 using colorharmony;
 using convertcolor;
 
+var paletteCMYK = new List<Color.CMYK>();
 var paletteHEX = new List<Color.HEX>();
 var paletteHSL = new List<Color.HSL>();
 var paletteHSV = new List<Color.HSV>();
@@ -166,6 +167,7 @@ MenuDriver harmonyMenu = new MenuDriver();
 
 void generationDriver() {
 
+	paletteCMYK.Clear();
 	paletteHEX.Clear();
 	paletteHSL.Clear();
 	paletteHSV.Clear();
@@ -175,6 +177,10 @@ void generationDriver() {
 	Console.WriteLine($"{normalizedInputHSV.Hue}, {normalizedInputHSV.Saturation}, {normalizedInputHSV.Value}");
 	
 	paletteHSV = HarmonyMenu(normalizedInputHSV);
+
+	for (int i = 0; i <paletteHSV.Count; i++) {
+		paletteCMYK.Add(ConvertColor.HSVtoCMYK(paletteHSV[i]));
+	}
 	for (int i = 0; i < paletteHSV.Count; i++) {
 		paletteHEX.Add(ConvertColor.HSVtoHEX(paletteHSV[i]));
 	}
@@ -219,7 +225,7 @@ void DebugBox() {
 	Console.WriteLine("");
 
 	Color.RGB debugOutputRGB = ConvertColor.CMYKtoRGB(debugCMYK);
-	Console.WriteLine("Output RGB:");
+	Console.Write("Output RGB: ");
 	Console.WriteLine($"({debugOutputRGB.Red}, {debugOutputRGB.Green}, {debugOutputRGB.Blue})");
 	Console.WriteLine("");	
 

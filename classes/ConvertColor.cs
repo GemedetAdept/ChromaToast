@@ -130,6 +130,11 @@ public class ConvertColor {
 	}
 
 	// HSV
+	public static Color.CMYK HSVtoCMYK(Color.HSV inputHSV) {
+
+		Color.RGB stepRGB = HSVtoRGB(inputHSV);
+		return RGBtoCMYK(stepRGB);
+	}
 	public static Color.HEX HSVtoHEX(Color.HSV inputHSV) {
 
 		var stepRGB = HSVtoRGB(inputHSV);
