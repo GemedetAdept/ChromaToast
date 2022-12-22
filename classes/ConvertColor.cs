@@ -42,6 +42,13 @@ public class ConvertColor {
 	// HEX
 	// Due to the way that HSL and HSV values are stored, 
 	// it is necessary to first convert to RGB and then use the respective "RGBto..." method.
+	public static Color.CMYK HEXtoCMYK(Color.HEX inputHEX) {
+
+		var stepRGB = HEXtoRGB(inputHEX);
+		var outputCMYK = RGBtoCMYK(stepRGB);
+
+		return outputCMYK;
+	}
 	public static Color.HSL HEXtoHSL(Color.HEX inputHEX) {
 
 		var stepRGB = HEXtoRGB(inputHEX);

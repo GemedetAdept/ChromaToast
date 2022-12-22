@@ -288,26 +288,7 @@ void savePalette(string fileName, string path = "") {
 }
 
 void DebugBox() {
-
-	string[] headers = new string[]{
-		"CMYK",
-		"HEX",
-		"HSL",
-		"HSV",
-		"RGB",
-	};
-
-	var output = new SaveToFile.CSV("output.csv");
-
-	if (output.Initalize(output.FileName)) {
-		Console.WriteLine("Successful initiation.");
-
-		if (output.SetHeaders(output.FileName, headers)) {
-			Console.WriteLine("Headers written.");
-		}
-	}
-
-	Console.ReadKey();
+	return;
 }
 
 MainMenu();
