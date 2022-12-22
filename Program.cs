@@ -15,6 +15,7 @@ MenuDriver mainMenu = new MenuDriver();
 
 		"Generate New Color Palette",
 		"Quit Program",
+		"", // Feature testing & Debugging
 	};
 	mainMenu.AddOptions(mainMenuOptions);
 
@@ -34,6 +35,9 @@ MenuDriver mainMenu = new MenuDriver();
 				case 1: 
 					Console.Clear();
 					Environment.Exit(0);
+					break;
+				case 2:
+					DebugBox();
 					break;
 				default:
 					break;
@@ -198,6 +202,19 @@ void displayPalette() {
 
 	Console.WriteLine("RGB: ");
 	foreach (Color.RGB color in paletteRGB) {Console.WriteLine($"({color.Red}, {color.Green}, {color.Blue})");}
+
+	Console.ReadKey();
+}
+
+void DebugBox() {
+
+	Color.RGB debugRGB = new Color.RGB(116, 171, 224);
+	Console.Write("Input RGB: ");
+	Console.WriteLine($"({debugRGB.Red}, {debugRGB.Green}, {debugRGB.Blue})");
+	Console.WriteLine("");
+	Color.CMYK debugCMYK = ConvertColor.RGBtoCMYK(debugRGB);
+	Console.Write("Output CMYK: ");
+	Console.WriteLine($"({debugCMYK.Cyan}, {debugCMYK.Magenta}, {debugCMYK.Yellow}, {debugCMYK.Key})");
 
 	Console.ReadKey();
 }

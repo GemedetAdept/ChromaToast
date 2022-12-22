@@ -25,7 +25,7 @@ public class Color {
 		}
 		public double Magenta {
 			get {return _magenta;}
-			set {_magneta = value;}
+			set {_magenta = value;}
 		}
 		public double Yellow {
 			get {return _yellow;}

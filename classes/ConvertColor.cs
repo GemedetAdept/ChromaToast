@@ -35,6 +35,19 @@ public class ConvertColor {
 	}
 
 	// RGB
+	public static Color.CMYK RGBtoCMYK(Color.RGB inputRGB) {
+
+		double redPrimeRGB = inputRGB.Red/255;
+		double greenPrimeRGB = inputRGB.Green/255;
+		double bluePrimeRGB = inputRGB.Blue/255;
+
+		double keyCMYK = 1 - Math.Max(Math.Max(redPrimeRGB, greenPrimeRGB), bluePrimeRGB);
+		double cyanCMYK = (1 - redPrimeRGB - keyCMYK)/(1 - keyCMYK);
+		double magentaCMYK = (1 - greenPrimeRGB - keyCMYK)/(1 - keyCMYK);
+		double yellowCMYK = (1 - bluePrimeRGB - keyCMYK)/(1 - keyCMYK);
+
+		return new Color.CMYK(cyanCMYK, magentaCMYK, yellowCMYK, keyCMYK);
+	}
 	public static Color.HEX RGBtoHEX(Color.RGB inputRGB) {
 
 		int redRGB = (int)inputRGB.Red;
