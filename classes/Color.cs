@@ -5,6 +5,37 @@ public class Color {
 
 	}
 
+	public class CMYK {
+
+		private double _cyan;
+		private double _magenta;
+		private double _yellow;
+		private double _key;
+
+		public CMYK(double cyan, double magenta, double yellow, double key) {
+			Cyan = cyan;
+			Magenta = magenta;
+			Yellow = yellow;
+			Key = key;
+		}
+
+		public double Cyan {
+			get {return _cyan;}
+			set {_cyan = value;}
+		}
+		public double Magenta {
+			get {return _magenta;}
+			set {_magneta = value;}
+		}
+		public double Yellow {
+			get {return _yellow;}
+			set {_yellow = value;}
+		}
+		public double Key {
+			get {return _key;}
+			set {_key = value;}
+		}
+	}
 	public class HEX {
 
 		private string _value;
