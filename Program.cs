@@ -74,33 +74,40 @@ MenuDriver inputMenu = new MenuDriver();
 				case 0:
 					userColorInput = UserInput.Query("Enter a value between (0.0, 0.0, 0.0, 0.0) - (100.0, 100.0, 100.0, 100.0");
 					var inputCMYK = UserInput.InputCMYK(userColorInput);
-					normalizedInput = ConvertColor.CMYKtoHSV(inputCMYK);
+
+					if (inputCMYK.IsValid = false) {break;}
+					else {normalizedInput = ConvertColor.CMYKtoHSV(inputCMYK); return normalizedInput;};
 					return normalizedInput;
 					break;
 				case 1:
 					userColorInput = UserInput.Query("Enter a value between #000000 - #FFFFFF");
 					var inputHEX = UserInput.InputHEX(userColorInput);
-					normalizedInput = ConvertColor.HEXtoHSV(inputHEX);
+
+					if (inputHEX.IsValid = false) {break;}
+					else {normalizedInput = ConvertColor.HEXtoHSV(inputHEX); return normalizedInput;};
 					return normalizedInput;
 					break;
 				case 2:
 					userColorInput = UserInput.Query("Enter a value between (0.0, 0.0, 0.0) - (360.0, 100.0, 100.0)");
 					var inputHSL = UserInput.InputHSL(userColorInput);
-					normalizedInput = ConvertColor.HSLtoHSV(inputHSL);
+
+					if (inputHSL.IsValid = false) {break;}
+					else {normalizedInput = ConvertColor.HSLtoHSV(inputHSL); return normalizedInput;};
 					return normalizedInput;
 					break;
 				case 3:
 					userColorInput = UserInput.Query("Enter a value between (0.0, 0.0, 0.0) - (360.0, 100.0, 100.0)");
 					var inputHSV = UserInput.InputHSV(userColorInput);
-					return inputHSV;
+
+					if (inputHSV.IsValid = false) {break;}
+					else {return inputHSV;}
 					break;
 				case 4:
 					userColorInput = UserInput.Query("Enter a value between (0, 0, 0) - (255, 255, 255)");
 					var inputRGB = UserInput.InputRGB(userColorInput);
 
 					if (inputRGB.IsValid == false) {break;}
-					else {normalizedInput = ConvertColor.RGBtoHSV(inputRGB);}
-					return normalizedInput;
+					else {normalizedInput = ConvertColor.RGBtoHSV(inputRGB); return normalizedInput;}
 					break;
 				case 5: 
 					Console.Clear();

@@ -40,12 +40,19 @@ public class UserInput {
 		Double.TryParse(partsCMYK[3], out Key);
 
 		Color.CMYK outputCMYK = new Color.CMYK(Cyan, Magenta, Yellow, Key);
+		if (outputCMYK.IsValid == false) {
+			Console.WriteLine("");
+			Console.WriteLine("Invalid value(s). CMYK takes ranges [(0.0-100.0), (0.0-100.0), (0.0-100.0), (0.0-100.0)].");
+			Console.WriteLine("Press any key to continue...");
+			Console.ReadKey();
+		}
 		return outputCMYK;
 	}
 
 	public static Color.HEX InputHEX(string inputHEX) {
 
 		var outputHEX = new Color.HEX(inputHEX);
+		// TODO: Data validity check.
 		return outputHEX;
 	}
 
@@ -65,6 +72,12 @@ public class UserInput {
 		Double.TryParse(partsHSL[2], out Lightness);
 
 		Color.HSL outputHSL = new Color.HSL(Hue, Saturation, Lightness);
+		if (outputHSL.IsValid == false) {
+			Console.WriteLine("");
+			Console.WriteLine("Invalid value(s). HSL takes ranges [(0.0-360.0), (0.0-100.0), (0.0-100.0)].");
+			Console.WriteLine("Press any key to continue...");
+			Console.ReadKey();
+		}
 		return outputHSL;
 	}
 
@@ -83,7 +96,14 @@ public class UserInput {
 		Double.TryParse(partsHSV[1], out Saturation);
 		Double.TryParse(partsHSV[2], out Value);
 
+
 		Color.HSV outputHSV = new Color.HSV(Hue, Saturation, Value);
+		if (outputHSV.IsValid == false) {
+			Console.WriteLine("");
+			Console.WriteLine("Invalid value(s). HSV takes ranges [(0.0-360.0), (0.0-100.0), (0.0-100.0)].");
+			Console.WriteLine("Press any key to continue...");
+			Console.ReadKey();
+		}
 		return outputHSV;		
 	}
 
@@ -103,6 +123,12 @@ public class UserInput {
 		Double.TryParse(partsRGB[2], out Blue);
 
 		Color.RGB outputRGB = new Color.RGB(Red, Green, Blue);
+		if (outputRGB.IsValid == false) {
+			Console.WriteLine("");
+			Console.WriteLine("Invalid value(s). RGB takes ranges [(0.0-255.0), (0.0-255.0), (0.0-255.0)].");
+			Console.WriteLine("Press any key to continue...");
+			Console.ReadKey();
+		}
 		return outputRGB;
 	}
 
