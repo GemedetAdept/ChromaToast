@@ -194,6 +194,12 @@ void generationDriver() {
 
 void displayPalette() {
 
+	Console.Clear();
+
+	Console.WriteLine("CMYK: ");
+	foreach (Color.CMYK color in paletteCMYK) {Console.WriteLine($"({color.Cyan}, {color.Magenta}, {color.Yellow}, {color.Key})");}
+	Console.WriteLine("");
+
 	Console.WriteLine("HEX: ");
 	foreach (Color.HEX color in paletteHEX) {Console.WriteLine($"#{color.Value}");}
 	Console.WriteLine("");
