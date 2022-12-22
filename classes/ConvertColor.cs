@@ -91,6 +91,38 @@ public class ConvertColor {
 
 		return outputHEX;
 	}
+	public static Color.HSV HSLtoHSV(Color.HSL inputHSL) {
+
+		double hueHSL = inputHSL.Hue;
+		double saturationHSL = inputHSL.Saturation * Math.Pow(10, -2);
+		double lightnessHSL = inputHSL.Lightness * Math.Pow(10, -2);
+
+		double hueHSV = -4.19;
+		double saturationHSV = -4.19;
+		double valueHSV = -4.19;
+
+		// Catch out-of-bounds
+		var checkValuesHSL = (hueHSL, saturationHSL, lightnessHSL);
+		bool outOfBounds = CheckOutOfBounds(checkValuesHSL, "HSV");
+		if (outOfBounds == true) {Console.WriteLine("One or more invalid values."); Console.ReadKey();}
+
+		// HSL to HSV calculations
+		else {
+			hueHSV = hueHSL;
+
+			valueHSV = lightnessHSL + saturationHSL*Math.Min(lightnessHSL, 1-lightnessHSL);
+
+			if (valueHSV == 0) {saturationHSV = 0;}
+			else {saturationHSV = 2*(1-(lightnessHSL/valueHSV));} 
+		}
+
+		hueHSV = Math.Round(hueHSV);
+		saturationHSV = Math.Round(saturationHSV*Math.Pow(10, 2));
+		valueHSV = Math.Round(valueHSV*Math.Pow(10, 2));
+
+		var outputHSV = new Color.HSV(hueHSV, saturationHSV, valueHSV);
+		return outputHSV;
+	}
 	public static Color.RGB HSLtoRGB(Color.HSL inputHSL) {
 
 		double hueHSL = inputHSL.Hue;
@@ -130,38 +162,6 @@ public class ConvertColor {
 
 		var outputRGB = new Color.RGB(redRGB, greenRGB, blueRGB);
 		return outputRGB;
-	}
-	public static Color.HSV HSLtoHSV(Color.HSL inputHSL) {
-
-		double hueHSL = inputHSL.Hue;
-		double saturationHSL = inputHSL.Saturation * Math.Pow(10, -2);
-		double lightnessHSL = inputHSL.Lightness * Math.Pow(10, -2);
-
-		double hueHSV = -4.19;
-		double saturationHSV = -4.19;
-		double valueHSV = -4.19;
-
-		// Catch out-of-bounds
-		var checkValuesHSL = (hueHSL, saturationHSL, lightnessHSL);
-		bool outOfBounds = CheckOutOfBounds(checkValuesHSL, "HSV");
-		if (outOfBounds == true) {Console.WriteLine("One or more invalid values."); Console.ReadKey();}
-
-		// HSL to HSV calculations
-		else {
-			hueHSV = hueHSL;
-
-			valueHSV = lightnessHSL + saturationHSL*Math.Min(lightnessHSL, 1-lightnessHSL);
-
-			if (valueHSV == 0) {saturationHSV = 0;}
-			else {saturationHSV = 2*(1-(lightnessHSL/valueHSV));} 
-		}
-
-		hueHSV = Math.Round(hueHSV);
-		saturationHSV = Math.Round(saturationHSV*Math.Pow(10, 2));
-		valueHSV = Math.Round(valueHSV*Math.Pow(10, 2));
-
-		var outputHSV = new Color.HSV(hueHSV, saturationHSV, valueHSV);
-		return outputHSV;
 	}
 
 	// HSV
@@ -282,54 +282,6 @@ public class ConvertColor {
 		if (outputHEX.Length < 6) {outputHEX = "0" + outputHEX;}
 
 		return new Color.HEX(outputHEX);
-	}	
-	public static Color.HSV RGBtoHSV(Color.RGB inputRGB) {
-
-		double redPrimeRGB = inputRGB.Red/255;
-		double greenPrimeRGB = inputRGB.Green/255;
-		double bluePrimeRGB = inputRGB.Blue/255;
-		var tupleRGB = (inputRGB.Red, inputRGB.Green, inputRGB.Blue);
-
-		double hueHSV = -4.19;
-		double saturationHSV = -4.19;
-		double valueHSV = -4.19;
-
-		// Catch out-of-bounds
-		bool outOfBounds = CheckOutOfBounds(tupleRGB, "RGB");
-		if (outOfBounds == true) {Console.WriteLine("One or more invalid values."); Console.ReadKey();}
-
-		// RGB to HSV calculations
-		else {
-			List<double> checkMinMax = new List<double>();
-				checkMinMax.Add(redPrimeRGB);
-				checkMinMax.Add(greenPrimeRGB);
-				checkMinMax.Add(bluePrimeRGB);
-
-			double maxRGB = checkMinMax.OrderByDescending(x => x).First();
-			double minRGB = checkMinMax.OrderByDescending(x => x).Last();
-			double chroma = maxRGB - minRGB;
-
-			valueHSV = maxRGB;
-
-			if (chroma == 0) {hueHSV = 0;}
-			else if (valueHSV == redPrimeRGB) {
-				// I do not know why this is producing the inverse of what it should, but un-inverting it makes it work, so.
-				hueHSV = 60*(0 + (greenPrimeRGB - bluePrimeRGB)/chroma);
-				hueHSV = 360 + hueHSV;
-			}
-			else if (valueHSV == greenPrimeRGB) {hueHSV = 60*(2 + (bluePrimeRGB - redPrimeRGB)/chroma);}
-			else if (valueHSV == bluePrimeRGB) {hueHSV = 60*(4 + (redPrimeRGB - greenPrimeRGB)/chroma);}
-
-			if (valueHSV == 0) {saturationHSV = 0;}
-			else {saturationHSV = chroma/valueHSV;}
-		}
-
-		hueHSV = Math.Round(hueHSV);
-		saturationHSV = Math.Round(saturationHSV*Math.Pow(10, 2));
-		valueHSV = Math.Round(valueHSV*Math.Pow(10, 2));
-
-		var outputHSV = new Color.HSV(hueHSV, saturationHSV, valueHSV);
-		return outputHSV;
 	}
 	public static Color.HSL RGBtoHSL(Color.RGB inputRGB) {
 
@@ -378,6 +330,54 @@ public class ConvertColor {
 
 		var outputHSL = new Color.HSL(hueHSL, saturationHSL, lightnessHSL);
 		return outputHSL;
+	}
+	public static Color.HSV RGBtoHSV(Color.RGB inputRGB) {
+
+		double redPrimeRGB = inputRGB.Red/255;
+		double greenPrimeRGB = inputRGB.Green/255;
+		double bluePrimeRGB = inputRGB.Blue/255;
+		var tupleRGB = (inputRGB.Red, inputRGB.Green, inputRGB.Blue);
+
+		double hueHSV = -4.19;
+		double saturationHSV = -4.19;
+		double valueHSV = -4.19;
+
+		// Catch out-of-bounds
+		bool outOfBounds = CheckOutOfBounds(tupleRGB, "RGB");
+		if (outOfBounds == true) {Console.WriteLine("One or more invalid values."); Console.ReadKey();}
+
+		// RGB to HSV calculations
+		else {
+			List<double> checkMinMax = new List<double>();
+				checkMinMax.Add(redPrimeRGB);
+				checkMinMax.Add(greenPrimeRGB);
+				checkMinMax.Add(bluePrimeRGB);
+
+			double maxRGB = checkMinMax.OrderByDescending(x => x).First();
+			double minRGB = checkMinMax.OrderByDescending(x => x).Last();
+			double chroma = maxRGB - minRGB;
+
+			valueHSV = maxRGB;
+
+			if (chroma == 0) {hueHSV = 0;}
+			else if (valueHSV == redPrimeRGB) {
+				// I do not know why this is producing the inverse of what it should, but un-inverting it makes it work, so.
+				hueHSV = 60*(0 + (greenPrimeRGB - bluePrimeRGB)/chroma);
+				hueHSV = 360 + hueHSV;
+			}
+			else if (valueHSV == greenPrimeRGB) {hueHSV = 60*(2 + (bluePrimeRGB - redPrimeRGB)/chroma);}
+			else if (valueHSV == bluePrimeRGB) {hueHSV = 60*(4 + (redPrimeRGB - greenPrimeRGB)/chroma);}
+
+			if (valueHSV == 0) {saturationHSV = 0;}
+			else {saturationHSV = chroma/valueHSV;}
+		}
+
+		hueHSV = Math.Round(hueHSV);
+		saturationHSV = Math.Round(saturationHSV*Math.Pow(10, 2));
+		valueHSV = Math.Round(valueHSV*Math.Pow(10, 2));
+
+		var outputHSV = new Color.HSV(hueHSV, saturationHSV, valueHSV);
+		return outputHSV;
 	}
 
 	// Check Out-of-Bounds
