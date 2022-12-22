@@ -198,34 +198,62 @@ void generationDriver() {
 	for (int i = 0; i < paletteHSV.Count; i++) {
 		paletteRGB.Add(ConvertColor.HSVtoRGB(paletteHSV[i]));
 	}
-
-	savePalette("output.csv");
 }
 
 void displayPalette() {
 
-	Console.Clear();
+MenuDriver saveMenu = new MenuDriver();
+	string[] saveMenuOptions = new string[] {
+		"Yes",
+		"No",
+	};
+	saveMenu.AddOptions(saveMenuOptions);
 
-	Console.WriteLine("CMYK: ");
-	foreach (Color.CMYK color in paletteCMYK) {Console.WriteLine($"({color.Cyan}, {color.Magenta}, {color.Yellow}, {color.Key})");}
-	Console.WriteLine("");
+	void SaveMenu() {
+		while (saveMenu.menuLoop) {
 
-	Console.WriteLine("HEX: ");
-	foreach (Color.HEX color in paletteHEX) {Console.WriteLine($"#{color.Value}");}
-	Console.WriteLine("");
+		Console.Clear();
 
-	Console.WriteLine("HSL: ");
-	foreach (Color.HSL color in paletteHSL) {Console.WriteLine($"({color.Hue}, {color.Saturation}, {color.Lightness})");}
-	Console.WriteLine("");
+		Console.WriteLine("CMYK: ");
+		foreach (Color.CMYK color in paletteCMYK) {Console.WriteLine($"({color.Cyan}, {color.Magenta}, {color.Yellow}, {color.Key})");}
+		Console.WriteLine("");
 
-	Console.WriteLine("HSV: ");
-	foreach (Color.HSV color in paletteHSV) {Console.WriteLine($"({color.Hue}, {color.Saturation}, {color.Value})");}
-	Console.WriteLine("");
+		Console.WriteLine("HEX: ");
+		foreach (Color.HEX color in paletteHEX) {Console.WriteLine($"#{color.Value}");}
+		Console.WriteLine("");
 
-	Console.WriteLine("RGB: ");
-	foreach (Color.RGB color in paletteRGB) {Console.WriteLine($"({color.Red}, {color.Green}, {color.Blue})");}
+		Console.WriteLine("HSL: ");
+		foreach (Color.HSL color in paletteHSL) {Console.WriteLine($"({color.Hue}, {color.Saturation}, {color.Lightness})");}
+		Console.WriteLine("");
 
-	Console.ReadKey();
+		Console.WriteLine("HSV: ");
+		foreach (Color.HSV color in paletteHSV) {Console.WriteLine($"({color.Hue}, {color.Saturation}, {color.Value})");}
+		Console.WriteLine("");
+
+		Console.WriteLine("RGB: ");
+		foreach (Color.RGB color in paletteRGB) {Console.WriteLine($"({color.Red}, {color.Green}, {color.Blue})");}
+		Console.WriteLine("");
+
+		Console.WriteLine("Save generated color palette?");
+		saveMenu.DisplayMenu();
+		saveMenu.SetMenuCursor();
+
+		switch(saveMenu.selectedItem) {
+
+			case 0:
+				savePalette("output.csv");
+				saveMenu.menuLoop = false;
+				break;
+			case 1:
+				saveMenu.menuLoop = false;
+				break;
+			default:
+				break;
+			}
+		}
+	}
+
+	SaveMenu();
 }
 
 void savePalette(string fileName, string path = "") {
@@ -236,6 +264,7 @@ void savePalette(string fileName, string path = "") {
 		"HSL",
 		"HSV",
 		"RGB",
+		"\n"
 	};
 
 	var outputFile = new SaveToFile.CSV(fileName, path);
@@ -243,13 +272,14 @@ void savePalette(string fileName, string path = "") {
 
 		outputFile.SetHeaders(outputFile.FileName, headers);
 
-		for (int i = 1; i+1 < paletteHSV.Count; i++) {
-			string[] colors = new string[4];
-			colors[0] = "\"" + paletteCMYK[i] + "\"";
+		for (int i = 0; i < paletteHSV.Count; i++) {
+			string[] colors = new string[6];
+			colors[0] = "\"" + $"({paletteCMYK[i].Cyan}, {paletteCMYK[i].Magenta}, {paletteCMYK[i].Yellow}, {paletteCMYK[i].Key})" + "\"";
 			colors[1] = paletteHEX[i].Value;
-			colors[2] = "\"" + paletteHSL[i] + "\"";
-			colors[3] = "\"" + paletteHSV[i] + "\"";
-			colors[4] = "\"" + paletteRGB[i] + "\"";
+			colors[2] = "\"" + $"({paletteHSL[i].Hue}, {paletteHSL[i].Saturation}, {paletteHSL[i].Lightness})" + "\"";
+			colors[3] = "\"" + $"({paletteHSV[i].Hue}, {paletteHSV[i].Saturation}, {paletteHSV[i].Value})" + "\"";
+			colors[4] = "\"" + $"({paletteRGB[i].Red}, {paletteRGB[i].Green}, {paletteRGB[i].Blue})" + "\"";
+			colors[5] = "\n";
 
 			outputFile.WriteData(outputFile.FileName, colors);
 		}

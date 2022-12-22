@@ -34,10 +34,10 @@ public class UserInput {
 		double Magenta = -4.19;
 		double Yellow = -4.19;
 		double Key = -4.19;
-		Double.TryParse(partsCMYK[0] out Cyan);
-		Double.TryParse(partsCMYK[1] out Magenta);
-		Double.TryParse(partsCMYK[2] out Yellow);
-		Double.TryParse(partsCMYK[3] out Key);
+		Double.TryParse(partsCMYK[0], out Cyan);
+		Double.TryParse(partsCMYK[1], out Magenta);
+		Double.TryParse(partsCMYK[2], out Yellow);
+		Double.TryParse(partsCMYK[3], out Key);
 
 		Color.CMYK outputCMYK = new Color.CMYK(Cyan, Magenta, Yellow, Key);
 		return outputCMYK;
