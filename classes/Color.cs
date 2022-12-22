@@ -38,6 +38,7 @@ public class Color {
 	}
 	public class HEX {
 
+		private bool _isValid;
 		private string _value;
 
 		public HEX(string? hexValue) {
@@ -55,6 +56,11 @@ public class Color {
 	}
 	public class HSL {
 
+		private bool _isValid;
+		public const int floorHue = 0;
+		public const int ceilingHue = 360;
+		public const int floorSL = 0;
+		public const int ceilingSL = 100;
 		private double _hue;
 		private double _saturation;
 		private double _lightness;
@@ -66,6 +72,18 @@ public class Color {
 			Lightness = lightnessHSL;
 		}
 
+		public bool IsValid {
+			get {return _isValid;}
+			set {
+				if (Hue < floorHue || Hue > ceilingHue ||
+					Saturation < floorSL || Saturation > ceilingSL ||
+					Lightness < floorSL || Lightness > ceilingSL) {
+
+					_isValid = false;
+				}
+				else {_isValid = true;}
+			}
+		}
 		public double Hue {
 			get {return _hue;}
 			set {_hue = value;}
@@ -81,6 +99,11 @@ public class Color {
 	}
 	public class HSV {
 
+		private bool _isValid;
+		public const int floorHue = 0;
+		public const int ceilingHue = 360;
+		public const int floorSV = 0;
+		public const int ceilingSV = 100;
 		private double _hue;
 		private double _saturation;
 		private double _value;
@@ -92,6 +115,18 @@ public class Color {
 			Value = valueHSV;
 		}
 
+		public bool IsValid {
+			get {return _isValid;}
+			set {
+				if (Hue < floorHue || Hue > ceilingHue ||
+					Saturation < floorSV || Saturation > ceilingSV ||
+					Value < floorSV || Value > ceilingSV) {
+
+					_isValid = false;
+				}
+				else {_isValid = true;}
+			}
+		}
 		public double Hue {
 			get {return _hue;}
 			set {_hue = value;}
@@ -124,7 +159,6 @@ public class Color {
 		public bool IsValid {
 			get {return _isValid;}
 			set {
-
 				if (Red < floorRGB || Red > ceilingRGB ||
 					Green < floorRGB || Green > ceilingRGB ||
 					Blue < floorRGB || Blue > ceilingRGB) {
