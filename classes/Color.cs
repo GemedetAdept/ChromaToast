@@ -39,6 +39,8 @@ public class Color {
 	public class HEX {
 
 		private bool _isValid;
+		public const int floorHEX = 48;
+		public const int ceilingHEX = 70;
 		private string _value;
 
 		public HEX(string? hexValue) {
@@ -46,6 +48,18 @@ public class Color {
 			Value = hexValue;
 		}
 
+		public bool IsValid {
+			get {return _isValid;}
+			set {
+				foreach(char _char in Value) {
+					int charInt = (int)_char;
+					if (charInt < floorHEX || charInt > ceilingHEX) {
+						_isValid = false;
+						break;
+					}
+				}
+			}
+		}
 		public string Value {
 			get {return _value;}
 			set {
