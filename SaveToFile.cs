@@ -1,6 +1,26 @@
 namespace savetofile {
 public class SaveToFile {
 
+	public class Timestamped {
+
+		private DateTime _currentTime;
+		private string _fullName;
+		public Timestamped(string fileName, string filePath = "") {
+
+			CurrentTime = DateTime.Now;
+			FullName = filePath + fileName + CurrentTime.ToString().Replace(':', '_') + ".csv";
+		}
+
+		public DateTime CurrentTime {
+			get {return _currentTime;}
+			set {_currentTime = value;}
+		}
+		public string FullName {
+			get {return _fullName;}
+			set {_fullName = value;}
+		}
+	}
+
 	public class CSV {
 
 		private string _fileName;

@@ -241,7 +241,8 @@ MenuDriver saveMenu = new MenuDriver();
 		switch(saveMenu.selectedItem) {
 
 			case 0:
-				savePalette("output.csv");
+				string fullFileName = new SaveToFile.Timestamped("palette_").FullName;
+				savePalette(fullFileName);
 				saveMenu.menuLoop = false;
 				break;
 			case 1:
