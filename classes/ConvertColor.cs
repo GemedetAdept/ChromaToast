@@ -4,19 +4,6 @@ namespace convertcolor {
 public class ConvertColor {
 
 	// CMYK
-	public static Color.RGB CMYKtoRGB(Color.CMYK inputCMYK) {
-
-		double cyanCMYK = inputCMYK.Cyan;
-		double magentaCMYK = inputCMYK.Magenta;
-		double yellowCMYK = inputCMYK.Yellow;
-		double keyCMYK = inputCMYK.Key;
-
-		double redRGB = 255 * (1 - cyanCMYK) * (1 - keyCMYK);
-		double greenRGB = 255 * (1 - magentaCMYK) * (1 - keyCMYK);
-		double blueRGB = 255 * (1 - yellowCMYK) * (1 - keyCMYK);
-
-		return new Color.RGB(Math.Round(redRGB), Math.Round(greenRGB), Math.Round(blueRGB));
-	}
 	public static Color.HEX CMYKtoHEX(Color.CMYK inputCMYK) {
 
 		var stepRGB = CMYKtoRGB(inputCMYK);
@@ -30,6 +17,26 @@ public class ConvertColor {
 		var outputHSV = RGBtoHSV(stepRGB);
 
 		return outputHSV;
+	}
+	public static Color.HSL CMYKtoHSL(Color.CMYK inputCMYK) {
+
+		var stepRGB = CMYKtoRGB(inputCMYK);
+		var outputHSL = RGBtoHSL(stepRGB);
+
+		return outputHSL;
+	}
+	public static Color.RGB CMYKtoRGB(Color.CMYK inputCMYK) {
+
+		double cyanCMYK = inputCMYK.Cyan;
+		double magentaCMYK = inputCMYK.Magenta;
+		double yellowCMYK = inputCMYK.Yellow;
+		double keyCMYK = inputCMYK.Key;
+
+		double redRGB = 255 * (1 - cyanCMYK) * (1 - keyCMYK);
+		double greenRGB = 255 * (1 - magentaCMYK) * (1 - keyCMYK);
+		double blueRGB = 255 * (1 - yellowCMYK) * (1 - keyCMYK);
+
+		return new Color.RGB(Math.Round(redRGB), Math.Round(greenRGB), Math.Round(blueRGB));
 	}
 
 	// HEX
