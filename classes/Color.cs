@@ -7,6 +7,9 @@ public class Color {
 
 	public class CMYK {
 
+		private bool _isValid;
+		public const int floorCMYK = 0;
+		public const int ceilingCMYK = 100;
 		private double _cyan;
 		private double _magenta;
 		private double _yellow;
@@ -19,6 +22,19 @@ public class Color {
 			Key = key;
 		}
 
+		public bool IsValid {
+			get {return _isValid;}
+			set {
+				if (Cyan < floorCMYK || Cyan > ceilingCMYK ||
+					Magenta < floorCMYK || Magenta > ceilingCMYK ||
+					Yellow < floorCMYK || Yellow > ceilingCMYK ||
+					Key < floorCMYK || Key > ceilingCMYK) {
+
+					_isValid = false;
+				}
+				else {_isValid = true;}
+			}
+		}
 		public double Cyan {
 			get {return _cyan;}
 			set {_cyan = value;}
