@@ -86,9 +86,9 @@ public bool IsValid {
 	}
 }
 ```
-| Visibility | Type | Variable | Value |
-|------------|------|----------|-------|
-| public | bool | IsValid | `true` / `false` |
+| Visibility | Type | Variable | Value | Range |
+|------------|------|----------|-------|-------|
+| public | bool | IsValid | | `true` / `false`|
 
 ### floorCMYK
 Defines the minimum value for: Cyan, Magenta, Yellow, Key.
@@ -106,8 +106,8 @@ Defines the maximum value for: Cyan, Magnenta, Yellow, Key.
 ```csharp
 public const int ceilingCMYK = 100;
 ```
-| Visibility | Type | Variable | Value |
-|------------|------|----------|-------|
+| Visibility | Type | Variable | Value 
+|------------|------|----------|-------
 | public | const, int | ceilingCMYK | 100.0 |
 
 ### Cyan
@@ -124,7 +124,9 @@ public double Cyan {
 	set {_cyan = value;}
 }
 ```
-
+| Visibility | Type | Variable | Value | Range |
+|------------|------|----------|-------|-------|
+| public | double | Cyan | | 0.0 - 100.0 |
 ### Magnenta
 Value of the Magenta component of a CMYK color code.
 *Default range = **(0.0 - 100.0)***
@@ -139,6 +141,9 @@ public double Magenta {
 	set {_cyan = value;}
 }
 ```
+| Visibility | Type | Variable | Value | Range |
+|------------|------|----------|-------|-------|
+| public | double | Magenta | | 0.0 - 100.0 |
 
 ### Yellow
 Value of the Yellow component of a CMYK color code.
@@ -154,6 +159,9 @@ public double Yellow {
 	set {_cyan = value;}
 }
 ```
+| Visibility | Type | Variable | Value | Range |
+|------------|------|----------|-------|-------|
+| public | double | Yellow | | 0.0 - 100.0 |
 
 ### Key
 Value of the Key component of a CMYK color code.
@@ -169,6 +177,9 @@ public double Key {
 	set {_cyan = value;}
 }
 ```
+| Visibility | Type | Variable | Value | Range |
+|------------|------|----------|-------|-------|
+| public | double | Key | | 0.0 - 100.0 |
 
 ## class Color.HEX
 ### obj HEX()
