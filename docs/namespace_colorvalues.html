@@ -1,21 +1,70 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title> ChromaToast | colorvalues</title>
+<title>ChromaToast | colorvalues</title>
 
 <style>
-
 .pageTheme {
-	background-color: #f8f8f8;
-	border: 1px solid #cccccc;
+
+	color: #c2c7d3;
+	background-color: #292c34;
+	border: 1px solid #3c3f4b;
 	border-radius: 3px;
 
 }
-.blockQuote {
-	background: rgba(127, 127, 127, 0.1);
-	border-color: rgba(0, 122, 204, 0.5);
+/* Page Break : use <div class="pageBreak"/> to insert page break
+-------------------------------------------------------- */
+.pageBreak {
+	page-break-after: always;
 }
 
+/* Custom Code Block: <element class="codeBlock"> */
+.codeBlock {
+	margin: 0 10px 0 5px;
+	padding: 0 0px 0 10px;
+	background-color: #303841;
+	border-color: #86aea7;
+	border-left-width: 5px;
+	border-left-style: solid;
+
+	font-family: Fira Code, Noto Mono, monospace;
+	font-size: 12px;
+	line-height: 19px;
+}
+
+/* Custom Block Quote: <element class="blockQuote"> */
+.blockQuote {
+	margin: 0 10px 0 5px;
+	padding: 0 0px 0 10px;
+	background-color: #30333d;
+	border-color: rgb(238, 182, 144);
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+/* "Namespaces" Text Styling: <element class="namespaceText"> */
+.namespaceText {
+	font-weight: bold;
+	font-style: italic;
+	color: #c695c6;
+}
+/* "Classes" Text Styling: <element class="classText"> */
+.classText {
+	font-style: italic;
+	color: #4393b8;
+}
+/* "Methods" Text Styling: <element class="methodText"> */
+.methodText {
+	font-style: italic;
+	color: #5fb2b0;
+}
+/* "Fields" Text Styling: <element class="fieldText"> 
+	"Properties" Text Styling: <element class="propertyText">*/
+.fieldText, .propertyText {
+	font-weight: bold;
+	color: #ec6066;
+}
+	
 body {
 	font-family: Verdana, Segoe UI, Noto Sans, sans-serif;
 	font-size: 16px;
@@ -73,30 +122,11 @@ table > thead > tr > th {
 	border: 1px solid;
 }
 
-blockquote {
-	margin: 0 7px 0 5px;
-	padding: 0 16px 0 10px;
-	border-left-width: 5px;
-	border-left-style: solid;
-}
-
-code {
-	font-family: Fira Code, Noto Mono, monospace;
-	font-size: 12px;
-	line-height: 19px;
-}
-
-/* Page Break : use <div class="page"/> to insert page break
--------------------------------------------------------- */
-.pageBreak {
-	page-break-after: always;
-}
-
-
 </style>
-
-<h1 id="namespace-colorvalues">namespace colorvalues</h1>
-<h2 id="color">Color</h2>
+<body class=pageTheme>
+	
+<h1 id="namespace-colorvalues"><span class="namespaceText">namespace</span> colorvalues</h1>
+<h2 id="color" class=classText>Color</h2>
 <p>Methods, fields, and properties for color codes.</p>
 <h2 id="colorbasecolor">Color.BaseColor</h2>
 <p>Color.BaseColor defines 14 default/base colors, each returning a set HEX color value.</p>
