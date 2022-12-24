@@ -1,9 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>ChromaToast | colorvalues</title>
-
-<style>
 .pageTheme {
 
 	color: #c2c7d3;
@@ -22,7 +16,7 @@
 .codeBlock {
 	margin: 0 10px 0 5px;
 	padding: 0 0px 0 10px;
-	background-color: #303841;
+	background-color: #212227;
 	border-color: #86aea7;
 	border-left-width: 5px;
 	border-left-style: solid;
@@ -64,10 +58,10 @@
 	font-weight: bold;
 	color: #ec6066;
 }
-
+	
 /* Prevent default hyperlink coloring */
 a { color: inherit; }
-	
+
 body {
 	font-family: Verdana, Segoe UI, Noto Sans, sans-serif;
 	font-size: 16px;
@@ -82,6 +76,11 @@ body {
 img {
 	max-width: 100%;
 	max-height: 100%;
+}
+
+select:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
 }
 
 text {
@@ -106,36 +105,22 @@ h1 {
 
 h2 {
 	padding-bottom: 5px;
-	line-height: 0.5;
+	line-height: 1;
 	border-bottom-style: solid;
 	border-bottom-width: 1px;
 }
 
-</style>
-<body class=pageTheme>
-	
-<h1 id="namespace-colorvalues"><span class="namespaceText">namespace</span> colorvalues</h1>
+hr {
+	/* border: 0; */
+	/* height: 2px; */
+	/* border-bottom: 2px solid; */
+}
 
-<h2 id="color" class=classText>Color</h2>
-<span class=methodText>Methods</span>, <span class=fieldText>fields</span>, and <span class=propertyText>properties</span> for color codes.
+table {
+	border-collapse: collapse;
+}
 
-<h2 id="colorbasecolor" class=classText>Color.BaseColor</h2>
-<span class=classText>Color.BaseColor</span> defines 14 default/base colors, each returning a set <span class=classText>HEX</span> color value.
-
-<h2 id="colorcmyk" class=classText><a href="colorvalues_Color.CMYK.html">Color.CMYK</a></h2>
-<span class=methodText>Methods</span>, <span class=fieldText>fields</span>, and <span class=propertyText>properties</span> for <span class=classText>CMYK</span> color code objects.
-
-<h2 id="colorhex" class=classText>Color.HEX</h2>
-<span class=methodText>Methods</span>, <span class=fieldText>fields</span>, and <span class=propertyText>properties</span> for <span class=classText>HEX</span> (hexadecimal) color code objects.
-
-<h2 id="colorhsl" class=classText>Color.HSL</h2>
-<span class=methodText>Methods</span>, <span class=fieldText>fields</span>, and <span class=propertyText>properties</span> for <span class=classText>HSL</span> color code objects.
-
-<h2 id="colorhsv" class=classText>Color.HSV</h2>
-<span class=methodText>Methods</span>, <span class=fieldText>fields</span>, and <span class=propertyText>properties</span> for <span class=classText>HSV</span> color code objects.
-
-<h2 id="colorrgb" class=classText>Color.RGB</h2>
-<span class=methodText>Methods</span>, <span class=fieldText>fields</span>, and <span class=propertyText>properties</span> for <span class=classText>RGB</span> color code objects.
-
-</body>
-</html>
+table > thead > tr > th {
+	text-align: left;
+	border: 1px solid;
+}
