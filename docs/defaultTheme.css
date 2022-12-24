@@ -58,10 +58,14 @@
 	font-weight: bold;
 	color: #ec6066;
 }
+/* "Data Type" Text Styling: <element class="dataType">*/
+.dataType {
+	color: #ec6066;
+}
 
 /* Shift element up via: <element class="shiftUp"> */
 .shiftUp {
-	margin-top: -50px;
+	margin-top: -40px;
 }
 	
 /* Prevent default hyperlink coloring */

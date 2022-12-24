@@ -8,13 +8,78 @@
 <a></a>
 
 	
-<h1 id="namespace-colorvalues"><span class="classText">class</span> Color.CMYK</h1>
+<h1 id="title"><span class="classText">class</span> Color.CMYK</h1>
 
-<h2 id="color" class=classText>Color.CMYK</h2>
+<h2 id="color.CMYK" class=classText>Color.CMYK</h2>
 <div class="shiftUp">
 Methods, fields, and properties for CMYK color code objects.
 </div>
 
-</body>
+<div class="codeBlock">
+public class CMYK {
 
+	private bool _isValid;
+	public const int floorCMYK = 0;
+	public const int ceilingCMYK = 100;
+	private double _cyan;
+	private double _magenta;
+	private double _yellow;
+	private double _key;
+
+	public CMYK(double cyan, double magenta, double yellow, double key) {
+		Cyan = cyan;
+		Magenta = magenta;
+		Yellow = yellow;
+		Key = key;
+	}
+
+	public bool IsValid {
+		get {return _isValid;}
+		set {
+			if (Cyan < floorCMYK || Cyan > ceilingCMYK ||
+				Magenta < floorCMYK || Magenta > ceilingCMYK ||
+				Yellow < floorCMYK || Yellow > ceilingCMYK ||
+				Key < floorCMYK || Key > ceilingCMYK) {
+
+				_isValid = false;
+			}
+			else {_isValid = true;}
+		}
+	}
+	public double Cyan {
+		get {return _cyan;}
+		set {_cyan = value;}
+	}
+	public double Magenta {
+		get {return _magenta;}
+		set {_magenta = value;}
+	}
+	public double Yellow {
+		get {return _yellow;}
+		set {_yellow = value;}
+	}
+	public double Key {
+		get {return _key;}
+		set {_key = value;}
+	}
+}	
+</div>
+
+<hr>
+
+<h3 id="objCMYK" class="shiftUp">obj CMYK()</h3>
+<div class="codeBlock">
+public CMYK(double cyan, double magenta, double yellow, double key) {
+	Cyan = cyan;
+	Magenta = magenta;
+	Yellow = yellow;
+	Key = key;
+}
+</div>
+
+<hr>
+
+<h3 id="IsValid" class="shiftUp">bool IsValid</h3>
+
+</body>
 </html>
