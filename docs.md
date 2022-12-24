@@ -3,14 +3,115 @@
 ### obj Color()
 
 ## class Color.CMYK
+```csharp
+public class CMYK {
+
+	private bool _isValid;
+	public const int floorCMYK = 0;
+	public const int ceilingCMYK = 100;
+	private double _cyan;
+	private double _magenta;
+	private double _yellow;
+	private double _key;
+
+	public CMYK(double cyan, double magenta, double yellow, double key) {
+		Cyan = cyan;
+		Magenta = magenta;
+		Yellow = yellow;
+		Key = key;
+	}
+
+	public bool IsValid {
+		get {return _isValid;}
+		set {
+			if (Cyan < floorCMYK || Cyan > ceilingCMYK ||
+				Magenta < floorCMYK || Magenta > ceilingCMYK ||
+				Yellow < floorCMYK || Yellow > ceilingCMYK ||
+				Key < floorCMYK || Key > ceilingCMYK) {
+
+				_isValid = false;
+			}
+			else {_isValid = true;}
+		}
+	}
+	public double Cyan {
+		get {return _cyan;}
+		set {_cyan = value;}
+	}
+	public double Magenta {
+		get {return _magenta;}
+		set {_magenta = value;}
+	}
+	public double Yellow {
+		get {return _yellow;}
+		set {_yellow = value;}
+	}
+	public double Key {
+		get {return _key;}
+		set {_key = value;}
+	}
+}
+```
 ### obj CMYK()
-### IsValid
-### floorCMYK
-### CeilingCMYK
-### Cyan
-### Magnenta
-### Yellow
-### Key
+```csharp
+public CMYK(double cyan, double magenta, double yellow, double key) {
+	Cyan = cyan;
+	Magenta = magenta;
+	Yellow = yellow;
+	Key = key;
+}
+```
+### property IsValid
+### field floorCMYK
+Defines the minimum value for: Cyan, Magenta, Yellow, Key.
+*Default = **0***
+```csharp
+public const int floorCMYK = 0;
+```
+| Visibility | Type | Variable | Value |
+|------------|------|----------|-------|
+| public | const, int | floorCMYK | 0 |
+### field CeilingCMYK
+Defines the maximum value for: Cyan, Magnenta, Yellow, Key.
+*Default = **100***
+```csharp
+public const int ceilingCMYK = 100;
+```
+| Visibility | Type | Variable | Value |
+|------------|------|----------|-------|
+| public | const, int | ceilingCMYK | 100 |
+### property Cyan
+Value of the Cyan component of a CMYK color code.
+```csharp
+
+```
+```csharp
+
+```
+### property Magnenta
+Value of the Magenta component of a CMYK color code.
+```csharp
+
+```
+```csharp
+
+```
+### property Yellow
+Value of the Yellow component of a CMYK color code.
+```csharp
+
+```
+```csharp
+
+```
+### property Key
+Value of the Key component of a CMYK color code.
+```csharp
+
+```
+```csharp
+
+```
 
 ## class Color.HEX
 ### obj HEX()
