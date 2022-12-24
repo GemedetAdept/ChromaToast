@@ -1,4 +1,5 @@
 # class Color.CMYK
+Methods, fields, and properties for CMYK color code objects.
 ```csharp
 public class CMYK {
 
