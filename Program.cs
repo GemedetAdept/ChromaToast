@@ -83,8 +83,7 @@ MenuDriver inputMenu = new MenuDriver();
 					userColorInput = UserInput.Query("Enter a value between #000000 - #FFFFFF");
 					var inputHEX = UserInput.InputHEX(userColorInput);
 
-					if (inputHEX.IsValid = false) {break;}
-					else {normalizedInput = ConvertColor.HEXtoHSV(inputHEX); return normalizedInput;};
+					normalizedInput = ConvertColor.HEXtoHSV(inputHEX); 
 					return normalizedInput;
 					break;
 				case 2:
