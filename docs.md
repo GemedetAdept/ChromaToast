@@ -62,6 +62,8 @@ public CMYK(double cyan, double magenta, double yellow, double key) {
 }
 ```
 
+<br></br>
+
 ### IsValid
 Boolean affirming that value is either valid or invalid.
 Setters check for out-of-bounds values for: Cyan, Magneta, Yellow, Key. 
@@ -90,6 +92,8 @@ public bool IsValid {
 |------------|------|----------|-------|-------|
 | public | bool | IsValid | | `true` / `false`|
 
+<br></br>
+
 ### floorCMYK
 Defines the minimum value for: Cyan, Magenta, Yellow, Key.
 *Default = **0***
@@ -100,6 +104,8 @@ public const int floorCMYK = 0;
 |------------|------|----------|-------|
 | public | const, int | floorCMYK | 0.0 |
 
+<br></br>
+
 ### CeilingCMYK
 Defines the maximum value for: Cyan, Magnenta, Yellow, Key.
 *Default = **100***
@@ -109,6 +115,8 @@ public const int ceilingCMYK = 100;
 | Visibility | Type | Variable | Value 
 |------------|------|----------|-------
 | public | const, int | ceilingCMYK | 100.0 |
+
+<br></br>
 
 ### Cyan
 Value of the Cyan component of a CMYK color code.
@@ -127,6 +135,9 @@ public double Cyan {
 | Visibility | Type | Variable | Value | Range |
 |------------|------|----------|-------|-------|
 | public | double | Cyan | | 0.0 - 100.0 |
+
+<br></br>
+
 ### Magnenta
 Value of the Magenta component of a CMYK color code.
 *Default range = **(0.0 - 100.0)***
@@ -144,6 +155,8 @@ public double Magenta {
 | Visibility | Type | Variable | Value | Range |
 |------------|------|----------|-------|-------|
 | public | double | Magenta | | 0.0 - 100.0 |
+
+<br></br>
 
 ### Yellow
 Value of the Yellow component of a CMYK color code.
@@ -163,6 +176,8 @@ public double Yellow {
 |------------|------|----------|-------|-------|
 | public | double | Yellow | | 0.0 - 100.0 |
 
+<br></br>
+
 ### Key
 Value of the Key component of a CMYK color code.
 *Default range = **(0.0 - 100.0)***
@@ -181,9 +196,17 @@ public double Key {
 |------------|------|----------|-------|-------|
 | public | double | Key | | 0.0 - 100.0 |
 
+<br></br>
+***
+
+
 ## class Color.HEX
 ### obj HEX()
 ### Value
+
+<br></br>
+***
+
 
 ## class Color.HSL
 ### obj HSL()
@@ -196,6 +219,10 @@ public double Key {
 ### Saturation
 ### Lightness
 
+<br></br>
+***
+
+
 ## class Color.HSV
 ### obj HSV()
 ### IsValid
@@ -207,6 +234,10 @@ public double Key {
 ### Saturation
 ### Value
 
+<br></br>
+***
+
+
 ## class Color.RGB
 ### obj RGB()
 ### IsValid
@@ -215,6 +246,10 @@ public double Key {
 ### Red
 ### Green
 ### Blue
+
+<br></br>
+***
+
 
 ## class Color.BaseColor
 
