@@ -58,6 +58,11 @@
 	font-weight: bold;
 	color: #ec6066;
 }
+
+/* Shift element up via: <element class="shiftUp"> */
+.shiftUp {
+	margin-top: -50px;
+}
 	
 /* Prevent default hyperlink coloring */
 a { color: inherit; }
