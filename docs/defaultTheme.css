@@ -58,9 +58,13 @@
 	font-weight: bold;
 	color: #ec6066;
 }
-/* "Data Type" Text Styling: <element class="dataType">*/
-.dataType {
+/* "Data Type" Text Styling: <element class="dataTypeText">*/
+.dataTypeText {
 	color: #ec6066;
+}
+/* "Object" Text Styling: <element class="objectText"> */
+.objectText {
+	color: #ec9860;
 }
 
 /* Shift element up via: <element class="shiftUp"> */
