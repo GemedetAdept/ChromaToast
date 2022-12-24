@@ -1,4 +1,6 @@
-﻿using userinput;
+﻿// ChromaToast by Vivian (Pluto) Zitek
+// https://github.com/GemedetAdept
+using userinput;
 using menudriver;
 using colorvalues;
 using colorharmony;
