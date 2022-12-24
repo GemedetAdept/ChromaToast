@@ -55,15 +55,18 @@
 /* "Fields" Text Styling: <element class="fieldText"> 
 	"Properties" Text Styling: <element class="propertyText">*/
 .fieldText, .propertyText {
+	font-style: italic;
 	font-weight: bold;
 	color: #ec6066;
 }
 /* "Data Type" Text Styling: <element class="dataTypeText">*/
 .dataTypeText {
+	font-style: italic;
 	color: #ec6066;
 }
 /* "Object" Text Styling: <element class="objectText"> */
 .objectText {
+	font-style: italic;
 	color: #ec9860;
 }
 
