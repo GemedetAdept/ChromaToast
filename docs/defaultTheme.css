@@ -63,6 +63,9 @@
 a { color: inherit; }
 
 body {
+	margin-right: 10%;
+	margin-left: 20%;
+	
 	font-family: Verdana, Segoe UI, Noto Sans, sans-serif;
 	font-size: 16px;
 	padding: 0 12px;
