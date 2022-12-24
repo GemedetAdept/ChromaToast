@@ -71,7 +71,10 @@
 }
 	
 /* Prevent default hyperlink coloring */
-a { color: inherit; }
+a { 
+	color: inherit; 
+	text-decoration-line: inherit;
+}
 
 body {
 	margin-right: 10%;
