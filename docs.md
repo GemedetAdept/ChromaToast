@@ -61,8 +61,36 @@ public CMYK(double cyan, double magenta, double yellow, double key) {
 	Key = key;
 }
 ```
+
 ### IsValid
-### field floorCMYK
+Boolean affirming that value is either valid or invalid.
+Setters check for out-of-bounds values for: Cyan, Magneta, Yellow, Key. 
+#### Private field
+```csharp
+private bool _isValid;
+```
+
+#### Getters and Setters
+```csharp
+public bool IsValid {
+	get {return _isValid;}
+	set {
+		if (Cyan < floorCMYK || Cyan > ceilingCMYK ||
+			Magenta < floorCMYK || Magenta > ceilingCMYK ||
+			Yellow < floorCMYK || Yellow > ceilingCMYK ||
+			Key < floorCMYK || Key > ceilingCMYK) {
+
+			_isValid = false;
+		}
+		else {_isValid = true;}
+	}
+}
+```
+| Visibility | Type | Variable | Value |
+|------------|------|----------|-------|
+| public | bool | IsValid | `true` / `false` |
+
+### floorCMYK
 Defines the minimum value for: Cyan, Magenta, Yellow, Key.
 *Default = **0***
 ```csharp
@@ -70,8 +98,9 @@ public const int floorCMYK = 0;
 ```
 | Visibility | Type | Variable | Value |
 |------------|------|----------|-------|
-| public | const, int | floorCMYK | 0 |
-### field CeilingCMYK
+| public | const, int | floorCMYK | 0.0 |
+
+### CeilingCMYK
 Defines the maximum value for: Cyan, Magnenta, Yellow, Key.
 *Default = **100***
 ```csharp
@@ -79,10 +108,11 @@ public const int ceilingCMYK = 100;
 ```
 | Visibility | Type | Variable | Value |
 |------------|------|----------|-------|
-| public | const, int | ceilingCMYK | 100 |
+| public | const, int | ceilingCMYK | 100.0 |
 
 ### Cyan
 Value of the Cyan component of a CMYK color code.
+*Default range = **(0.0 - 100.0)***
 #### Private field
 ```csharp
 private double _cyan;
@@ -97,6 +127,7 @@ public double Cyan {
 
 ### Magnenta
 Value of the Magenta component of a CMYK color code.
+*Default range = **(0.0 - 100.0)***
 #### Private field
 ```csharp
 private double _magenta;
@@ -111,6 +142,7 @@ public double Magenta {
 
 ### Yellow
 Value of the Yellow component of a CMYK color code.
+*Default range = **(0.0 - 100.0)***
 #### Private field
 ```csharp
 private double _yellow;
@@ -125,6 +157,7 @@ public double Yellow {
 
 ### Key
 Value of the Key component of a CMYK color code.
+*Default range = **(0.0 - 100.0)***
 #### Private field
 ```csharp
 private double _key;
