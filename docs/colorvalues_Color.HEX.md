@@ -1,4 +1,5 @@
 # class Color.HEX
+Methods, fields, and properties for HEX (hexadecimal) color code objects.
 ```csharp
 public class HEX {
 

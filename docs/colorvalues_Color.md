@@ -1,4 +1,5 @@
 # class Color
+Methods, fields, and properties for color codes.
 ```csharp
 public class Color {
 

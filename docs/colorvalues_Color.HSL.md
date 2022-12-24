@@ -1,4 +1,5 @@
 # class Color.HSL
+Methods, fields, and properties for HSL color code objects.
 ```csharp
 public class HSL {
 
