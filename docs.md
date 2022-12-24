@@ -61,7 +61,7 @@ public CMYK(double cyan, double magenta, double yellow, double key) {
 	Key = key;
 }
 ```
-### property IsValid
+### IsValid
 ### field floorCMYK
 Defines the minimum value for: Cyan, Magenta, Yellow, Key.
 *Default = **0***
@@ -80,37 +80,61 @@ public const int ceilingCMYK = 100;
 | Visibility | Type | Variable | Value |
 |------------|------|----------|-------|
 | public | const, int | ceilingCMYK | 100 |
-### property Cyan
+
+### Cyan
 Value of the Cyan component of a CMYK color code.
+#### Private field
 ```csharp
-
+private double _cyan;
 ```
+#### Getters and Setters
 ```csharp
-
+public double Cyan {
+	get {return _cyan;}
+	set {_cyan = value;}
+}
 ```
-### property Magnenta
+
+### Magnenta
 Value of the Magenta component of a CMYK color code.
+#### Private field
 ```csharp
-
+private double _magenta;
 ```
+#### Getters and Setters
 ```csharp
-
+public double Magenta {
+	get {return _cyan;}
+	set {_cyan = value;}
+}
 ```
-### property Yellow
+
+### Yellow
 Value of the Yellow component of a CMYK color code.
+#### Private field
 ```csharp
-
+private double _yellow;
 ```
+#### Getters and Setters
 ```csharp
-
+public double Yellow {
+	get {return _cyan;}
+	set {_cyan = value;}
+}
 ```
-### property Key
+
+### Key
 Value of the Key component of a CMYK color code.
+#### Private field
 ```csharp
-
+private double _key;
 ```
+#### Getters and Setters
 ```csharp
-
+public double Key {
+	get {return _cyan;}
+	set {_cyan = value;}
+}
 ```
 
 ## class Color.HEX
