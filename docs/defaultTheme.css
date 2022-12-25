@@ -6,12 +6,6 @@
 	border-radius: 3px;
 
 }
-/* Page Break : use <div class="pageBreak"/> to insert page break
--------------------------------------------------------- */
-.pageBreak {
-	page-break-after: always;
-}
-
 /* Custom Code Block: <element class="codeBlock"> */
 .codeBlock {
 	margin: 0 10px 0 5px;
