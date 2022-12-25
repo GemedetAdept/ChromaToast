@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="defaultTheme.css">
+<title>ChromaToast | Color.HEX</title>
+</head>
+
+<body class=pageTheme>
+<a href="docPage.html"> <-- Homepage</a>
+<a href="namespace_colorvalues.html"> <-- <span class="namespaceText">namespace</span> colorvalues </a>
+	
+<h1 id="title">
+<span class=classText>class</span> Color.HEX
+</h1>
+<h2 id="color"><span class=classText>class</span> Color.HEX</h2>
+<span class=methodText>Methods</span>, <span class=fieldText>fields</span>, and <span class=propertyText>properties</span> for HEX (hexadecimal) color code objects.
+
+<i id="source">Source:</i>
+<div class=codeBlock>
+public class HEX {
+
+	private string _value;
+	public HEX(string? hexValue) {
+
+		Value = hexValue;
+	}
+
+	public string Value {
+		get {return _value;}
+		set {
+			if (value.Contains("#")) {_value = value.Substring(1);}
+			else {_value = value;}
+		}
+	}
+}
+</div>
+
+<h2 id="objHEX">obj HEX()</h2>
+<i id="source">Source:</i>
+<div class=codeBlock>
+public HEX(string? hexValue) {
+
+	Value = hexValue;
+}
+</div>
+
+<h2>Value</h2>
+<div class="blockQuote">String value representing a Hexadecimal color code.
+<i>Default range = ("#000000" - "#FFFFFF")</i>
+</div>
+<i>* Note: Pound symbols (#) are optional for input.</i>
+
+</div>
+<h4 id="private-field">Private field</h4>
+<i id="source">Source:</i>
+<div class="codeBlock">
+private string _value;
+</div>
+
+</div>
+<h4 id="getters-setters">Getters and Setters</h4>
+<i id="source">Source:</i>
+<div class="codeBlock">
+public string Value {
+	get {return _value;}
+	set {
+		if (value.Contains("#")) {_value = value.Substring(1);}
+		else {_value = value;}
+	}
+}
+</div>
+
+<table>
+	<tr>
+		<th>Visibility</th>
+		<th>Type</th>
+		<th>Variable</th>
+		<th>Value</th>
+		<th>Range</th>
+	</tr>
+	<tr>
+		<td>public</td>
+		<td>double</td>
+		<td>Value</td>
+		<td> </td>
+		<td>#000000 - #FFFFFF</td>
+	</tr>
+</table>
+
+</body>
+</html>
