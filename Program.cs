@@ -383,6 +383,8 @@ void savePalette(string fileName, string path = "") {
 }
 
 void DebugBox() {
+
+	Achroma newAchroma = new Achroma("CMYK", "(100, 100, 100, 100)");
 	return;
 }
 

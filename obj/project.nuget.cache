@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2mT5AkFBs+hWiZ2QcZTXvKiZmMwZW8eBdArdn/EGCziTpqroHPSKWIAwcHab5NVgppm5zxalQQPTwKSssE83pg==",
+  "dgSpecHash": "tT+w4XQquL7sZqikQ0Ah4syUzWLb1U8evl+LPVTVTTdE4iAIgAjMaXKG5PzoFh+KrmaCiFS8RAdx1I6mdFRVWA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\vivian.zitek\\Programming\\cSharp\\Personal Projects\\colorPaletteGenerator\\colorPaletteGenerator.csproj",
+  "projectFilePath": "C:\\Users\\vivian.zitek\\Programming\\cSharp\\Personal Projects\\ChromaToast\\colorPaletteGenerator.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
