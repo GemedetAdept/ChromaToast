@@ -236,22 +236,11 @@ public class ConvertColor {
 	}
 	public static Color.HEX RGBtoHEX(Color.RGB inputRGB) {
 
-		int redRGB = (int)inputRGB.Red;
-		int greenRGB = (int)inputRGB.Green;
-		int blueRGB = (int)inputRGB.Blue;
+		string redHEX = Convert.ToString((int)inputRGB.Red, 16);
+		string greenHEX = Convert.ToString((int)inputRGB.Green, 16);
+		string blueHEX = Convert.ToString((int)inputRGB.Blue, 16);
 
-		byte[] valueBytes = new byte[] {
-
-			Convert.ToByte(blueRGB),
-			Convert.ToByte(greenRGB),
-			Convert.ToByte(redRGB),
-			0,
-		};
-
-		int intValue = BitConverter.ToInt32(valueBytes, 0);
-		string outputHEX = ConvertBase.ConvertToHexadecimal(intValue);
-
-		if (outputHEX.Length < 6) {outputHEX = "0" + outputHEX;}
+		string outputHEX = redHEX + greenHEX + blueHEX;
 
 		return new Color.HEX(outputHEX);
 	}

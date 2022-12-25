@@ -78,8 +78,7 @@ MenuDriver inputMenu = new MenuDriver();
 					userColorInput = UserInput.Query("Enter a value between (0.0, 0.0, 0.0, 0.0) - (100.0, 100.0, 100.0, 100.0");
 					var inputCMYK = UserInput.InputCMYK(userColorInput);
 
-					if (inputCMYK.IsValid = false) {break;}
-					else {normalizedInput = ConvertColor.CMYKtoHSV(inputCMYK); return normalizedInput;};
+					normalizedInput = ConvertColor.CMYKtoHSV(inputCMYK); 
 					return normalizedInput;
 					break;
 				case 1:
@@ -93,23 +92,20 @@ MenuDriver inputMenu = new MenuDriver();
 					userColorInput = UserInput.Query("Enter a value between (0.0, 0.0, 0.0) - (360.0, 100.0, 100.0)");
 					var inputHSL = UserInput.InputHSL(userColorInput);
 
-					if (inputHSL.IsValid = false) {break;}
-					else {normalizedInput = ConvertColor.HSLtoHSV(inputHSL); return normalizedInput;};
+					normalizedInput = ConvertColor.HSLtoHSV(inputHSL); 
 					return normalizedInput;
 					break;
 				case 3:
 					userColorInput = UserInput.Query("Enter a value between (0.0, 0.0, 0.0) - (360.0, 100.0, 100.0)");
 					var inputHSV = UserInput.InputHSV(userColorInput);
-
-					if (inputHSV.IsValid = false) {break;}
-					else {return inputHSV;}
+					return inputHSV;
 					break;
 				case 4:
 					userColorInput = UserInput.Query("Enter a value between (0, 0, 0) - (255, 255, 255)");
 					var inputRGB = UserInput.InputRGB(userColorInput);
 
-					if (inputRGB.IsValid == false) {break;}
-					else {normalizedInput = ConvertColor.RGBtoHSV(inputRGB); return normalizedInput;}
+					normalizedInput = ConvertColor.RGBtoHSV(inputRGB); 
+					return normalizedInput;
 					break;
 				case 5:
 					var baseColorHEX = BaseColorMenu();
@@ -384,7 +380,11 @@ void savePalette(string fileName, string path = "") {
 
 void DebugBox() {
 
-	Achroma newAchroma = new Achroma("CMYK", "(100, 100, 100, 100)");
+	var inputRGB = new Color.RGB(255, 255, 255);
+	var outputHEX = ConvertColor.RGBtoHEX(inputRGB);
+	Console.WriteLine(outputHEX.Value);
+
+	Console.ReadKey();
 	return;
 }
 
