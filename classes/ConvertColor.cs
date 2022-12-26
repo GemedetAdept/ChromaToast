@@ -64,13 +64,22 @@ public class ConvertColor {
 		return outputHSV;
 	}
 	public static Color.RGB HEXtoRGB(Color.HEX inputHEX) {
-		int decimalInteger = ConvertBase.ConvertToInteger(inputHEX.Value);
-		byte[] valueBytes = BitConverter.GetBytes(decimalInteger);
 
-		// Byte array is in reverse "RGB" order, thus backwards indexes.
-		int redRGB = valueBytes[2];
-		int greenRGB = valueBytes[1];
-		int blueRGB = valueBytes[0];
+		string input = inputHEX.Value;
+
+		string redHEX = $"{input[0]}{input[1]}";
+		string greenHEX = $"{input[2]}{input[3]}";
+		string blueHEX = $"{input[4]}{input[5]}";
+
+		int redRGB = -419;
+		int greenRGB = -419;
+		int blueRGB = -419;
+
+		Func<string,int> ConvertToDecimal = x => Convert.ToInt32(x, 16);
+
+		redRGB = ConvertToDecimal(redHEX);
+		greenRGB = ConvertToDecimal(greenHEX);
+		blueRGB = ConvertToDecimal(blueHEX);
 
 		var outputRGB = new Color.RGB((double)redRGB, (double)greenRGB, (double)blueRGB);
 		return outputRGB;
@@ -236,11 +245,22 @@ public class ConvertColor {
 	}
 	public static Color.HEX RGBtoHEX(Color.RGB inputRGB) {
 
-		string redHEX = Convert.ToString((int)inputRGB.Red, 16);
-		string greenHEX = Convert.ToString((int)inputRGB.Green, 16);
-		string blueHEX = Convert.ToString((int)inputRGB.Blue, 16);
+		int redRGB = (int)inputRGB.Red;
+		int greenRGB = (int)inputRGB.Green;
+		int blueRGB = (int)inputRGB.Blue;
 
-		string outputHEX = redHEX + greenHEX + blueHEX;
+		byte[] valueBytes = new byte[] {
+
+			Convert.ToByte(blueRGB),
+			Convert.ToByte(greenRGB),
+			Convert.ToByte(redRGB),
+			0,
+		};
+
+		int intValue = BitConverter.ToInt32(valueBytes, 0);
+		string outputHEX = ConvertBase.ConvertToHexadecimal(intValue);
+
+		if (outputHEX.Length < 6) {outputHEX = "0" + outputHEX;}
 
 		return new Color.HEX(outputHEX);
 	}

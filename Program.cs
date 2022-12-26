@@ -380,9 +380,10 @@ void savePalette(string fileName, string path = "") {
 
 void DebugBox() {
 
-	var inputRGB = new Color.RGB(255, 255, 255);
-	var outputHEX = ConvertColor.RGBtoHEX(inputRGB);
-	Console.WriteLine(outputHEX.Value);
+	var inputHEX = new Color.HEX("FFFFFF");
+	var outputRGB = ConvertColor.HEXtoRGB(inputHEX);
+
+	Console.WriteLine(outputRGB.Red);
 
 	Console.ReadKey();
 	return;
