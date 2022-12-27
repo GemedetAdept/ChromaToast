@@ -7,6 +7,8 @@ using colorharmony;
 using convertcolor;
 using savetofile;
 
+using System.Text;
+
 var paletteCMYK = new List<Color.CMYK>();
 var paletteHEX = new List<Color.HEX>();
 var paletteHSL = new List<Color.HSL>();
@@ -380,13 +382,11 @@ void savePalette(string fileName, string path = "") {
 
 void DebugBox() {
 
-	var inputHEX = new Color.HEX("FFFFFF");
-	var outputRGB = ConvertColor.HEXtoRGB(inputHEX);
-
-	Console.WriteLine(outputRGB.Red);
+	var newAchroma = new Achroma("RGB", "255, 255, 255");
+	newAchroma.AutoConvertFill();
+	Console.WriteLine(newAchroma.HEX.Value);
 
 	Console.ReadKey();
-	return;
 }
 
 MainMenu();
