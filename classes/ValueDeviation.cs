@@ -28,21 +28,30 @@ public class ValueDeviation {
 		return logisticOutput;
 	}
 
-	public static bool CheckLogisticBounds(string colorType, string subValue, double ceiling, double floor) {
+	public static bool CheckLogisticBounds(string colorType, string subValue, double inputFloor, double inputCeiling) {
 
 		double minFloor = -4.19;
 		double maxCeiling = -4.19;
 		string errorType = "[Error: Invalid Range]";
 		string errorTypeTab = "                      ";
-		Action InvalidRange = () => Console.WriteLine($"{errorType} Floor-Ceiling range '[{floor}, {ceiling}]' for value '{subValue}' of color type '{colorType}' is invalid.");
-		Action GiveValidRange = () => Console.WriteLine($"{errorTypeTab} Floor-Ceiling range must be within [{minFloor}, {maxCeiling}].");
+
+		private InvalidRange() {
+			Console.WriteLine($"{errorType} Floor-Ceiling range '[{inputFloor}, {inputCeiling}]' for value '{subValue}' of color type '{colorType}' is invalid.");
+		}
+		private GiveValidRange(double definedFloor, double definedCeiling) {
+			Console.WriteLine($"{errorTypeTab} Floor-Ceiling range must be within [{definedFloor}, {definedCeiling}].");
+		}
 
 		if (colorType == "HEX") {
 
 			minFloor = 0;
 			maxCeiling = 255;
 
-			if (ceiling > 255 || floor < 0) {InvalidRange(); GiveValidRange(); return false;}
+			if (inputFloor < minFloor || inputCeiling > maxCeiling) {
+				InvalidRange();
+				GiveValidRange(minFloor, maxCeiling);
+				return false;
+			}
 			else return true;
 		}
 
@@ -51,25 +60,39 @@ public class ValueDeviation {
 			minFloor = 0;
 			maxCeiling = 255;
 
-			if (ceiling > 255 || floor < 0) {InvalidRange(); GiveValidRange(); return false;}
+			if (inputFloor < minFloor || inputCeiling > maxCeiling) {
+				InvalidRange();
+				GiveValidRange(minFloor, maxCeiling);
+				return false;
+			}
 			else return true;
 		}
 
 		if (colorType == "HSV") {
 
 			// For hue only
-			minFloor = 0;
-			maxCeiling = 360;
+			double minFloorHue = 0;
+			double maxCeilingHue = 360;
 
-			if (ceiling > 255 || floor < 0) {InvalidRange(); GiveValidRange(); return false;}
+			double minFloorSV = 0;
+			double minCeilingSV = 100;
+
+			if (inputFloor < minFloorHue || inputCeiling > maxCeilingHue && subValue == "hue") {
+				InvalidRange();
+				GiveValidRange(minFloorHue, maxCeilingHue);
+				return false;
+			}
 			else return true;
 		}
 
 		if (colorType == "HSL") {
 
 			// For hue only
-			minFloor = 0;
-			maxCeiling = 360;
+			double minFloorHue = 0;
+			double maxCeilingHue = 360;
+
+			double minFloorSL = 0;
+			double minCeilingSL = 100;
 
 			if (ceiling > 255 || floor < 0) {InvalidRange(); GiveValidRange(); return false;}
 			else return true;
