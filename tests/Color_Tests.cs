@@ -2,39 +2,59 @@ using colorvalues;
 namespace tests {
 public class Color_Tests {
 
-	public static int CMYK_HasValue_Cyan(Color.CMYK InputValue) {
+	public static int Created_CMYK_HasValue_Cyan() {
 		int result;
+		double CyanValue = 1.0;
+		double MagentaValue = 1.0;
+		double YellowValue = 1.0;
+		double KeyValue = 1.0;
 
-		double? InputValue_Cyan = InputValue.Cyan;
-		Console.WriteLine("CMYK_Has_Cyan_Value");
-		result = Assert.IsNotNull(InputValue_Cyan, "InputValue.Cyan");
+		Color.CMYK CreatedCMYK = new Color.CMYK(CyanValue,MagentaValue,YellowValue,KeyValue);
+		double? CreatedCMYK_Cyan = CreatedCMYK.Cyan;
+
+		result = Assert.IsNotNull(CreatedCMYK_Cyan, "Created_CMYK_HasValue_Cyan CMYK.Cyan");
 		return result;
 	}
 
-	public static int CMYK_HasValue_Magenta(Color.CMYK InputValue) {
+	public static int Created_CMYK_HasValue_Magenta() {
 		int result;
+		double CyanValue = 1.0;
+		double MagentaValue = 1.0;
+		double YellowValue = 1.0;
+		double KeyValue = 1.0;
 
-		double? InputValue_Magenta = InputValue.Magenta;
-		Console.WriteLine("CMYK_Has_Magenta_Value");
-		result = Assert.IsNotNull(InputValue_Magenta, "InputValue.Magenta");
+		Color.CMYK CreatedCMYK = new Color.CMYK(CyanValue,MagentaValue,YellowValue,KeyValue);
+		double? CreatedCMYK_Magenta = CreatedCMYK.Magenta;
+
+		result = Assert.IsNotNull(CreatedCMYK_Magenta, "Created_CMYK_HasValue_Magenta CMYK.Magenta");
 		return result;
 	}
 
-	public static int CMYK_HasValue_Yellow(Color.CMYK InputValue) {
+	public static int Created_CMYK_HasValue_Yellow() {
 		int result;
+		double CyanValue = 1.0;
+		double MagentaValue = 1.0;
+		double YellowValue = 1.0;
+		double KeyValue = 1.0;
 
-		double? InputValue_Yellow = InputValue.Yellow;
-		Console.WriteLine("CMYK_Has_Yellow_Value");
-		result = Assert.IsNotNull(InputValue_Yellow, "InputValue.Yellow");
+		Color.CMYK CreatedCMYK = new Color.CMYK(CyanValue,MagentaValue,YellowValue,KeyValue);
+		double? CreatedCMYK_Yellow = CreatedCMYK.Yellow;
+
+		result = Assert.IsNotNull(CreatedCMYK_Yellow, "Created_CMYK_HasValue_Yellow CMYK.Yellow");
 		return result;
 	}
 
-	public static int CMYK_HasValue_Key(Color.CMYK InputValue) {
+	public static int Created_CMYK_HasValue_Key() {
 		int result;
+		double CyanValue = 1.0;
+		double MagentaValue = 1.0;
+		double YellowValue = 1.0;
+		double KeyValue = 1.0;
 
-		double? InputValue_Key = InputValue.Key;
-		Console.WriteLine("CMYK_HasValue_Key");
-		result = Assert.IsNotNull(InputValue_Key, "InputValue.Key");
+		Color.CMYK CreatedCMYK = new Color.CMYK(CyanValue,MagentaValue,YellowValue,KeyValue);
+		double? CreatedCMYK_Key = CreatedCMYK.Key;
+
+		result = Assert.IsNotNull(CreatedCMYK_Key, "Created_CMYK_HasValue_Yellow CMYK.Key");
 		return result;
 	}
 }
