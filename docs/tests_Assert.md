@@ -5,6 +5,24 @@ visibility | public
 type | class
 name | Assert
 
+## Test Code
+```csharp
+	Assert.Int32AreEqual(1, 1);
+	Assert.Int32AreEqual(1, 0);
+	Assert.Int32AreNotEqual(1, 0);
+	Assert.Int32AreNotEqual(1, 1);
+
+	Assert.BoolTrue(true);
+	Assert.BoolTrue(false);
+	Assert.BoolFalse(false);
+	Assert.BoolFalse(true);
+
+	Assert.IsType(true, true);
+	Assert.IsType(true, -4.19);
+	Assert.IsNotType(true, -4.19);
+	Assert.IsNotType(true, true);
+```
+
 ## Methods
 	Assert.Int32AreEqual
 	Assert.Int32AreNotEqual
