@@ -58,3 +58,11 @@ C:\Users\vivian.zitek\Programming\cSharp\Personal Projects\ChromaToast\obj\Debug
 C:\Users\vivian.zitek\Programming\cSharp\Personal Projects\ChromaToast\obj\Debug\net6.0-windows\ref\colorPaletteGenerator.dll
 C:\Users\vivian.zitek\Programming\cSharp\Personal Projects\ChromaToast\obj\Debug\net6.0-windows\colorPaletteGenerator.pdb
 C:\Users\vivian.zitek\Programming\cSharp\Personal Projects\ChromaToast\obj\Debug\net6.0-windows\colorPaletteGenerator.genruntimeconfig.cache
+C:\Users\vivian.zitek\Programming\cSharp\Personal_Projects\ChromaToast\obj\Debug\net6.0-windows\colorPaletteGenerator.csproj.AssemblyReference.cache
+C:\Users\vivian.zitek\Programming\cSharp\Personal_Projects\ChromaToast\obj\Debug\net6.0-windows\colorPaletteGenerator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vivian.zitek\Programming\cSharp\Personal_Projects\ChromaToast\obj\Debug\net6.0-windows\colorPaletteGenerator.AssemblyInfoInputs.cache
+C:\Users\vivian.zitek\Programming\cSharp\Personal_Projects\ChromaToast\obj\Debug\net6.0-windows\colorPaletteGenerator.AssemblyInfo.cs
+C:\Users\vivian.zitek\Programming\cSharp\Personal_Projects\ChromaToast\obj\Debug\net6.0-windows\colorPaletteGenerator.csproj.CoreCompileInputs.cache
+C:\Users\vivian.zitek\Programming\cSharp\Personal_Projects\ChromaToast\obj\Debug\net6.0-windows\colorPaletteGenerator.dll
+C:\Users\vivian.zitek\Programming\cSharp\Personal_Projects\ChromaToast\obj\Debug\net6.0-windows\ref\colorPaletteGenerator.dll
+C:\Users\vivian.zitek\Programming\cSharp\Personal_Projects\ChromaToast\obj\Debug\net6.0-windows\colorPaletteGenerator.pdb
