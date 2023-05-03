@@ -7,6 +7,8 @@ using colorharmony;
 using convertcolor;
 using savetofile;
 
+using tests;
+
 using System.Text;
 
 var paletteCMYK = new List<Color.CMYK>();
@@ -395,6 +397,16 @@ void DebugBox() {
 ||(100 100 100 100)   ||#FFFFFF  | #ffffff  ||(360 100 100)         ||(360 100 100)         ||(255 255 255)         ||
 ++=---+--------------=++=------------------=++=---------------------++----------------------++----------------------++
 ");
+
+	Console.Write("Int32AreEqual; 1 and 1 --> ");
+	Console.WriteLine(Assert.Int32AreEqual(1,1));
+	Console.Write("Int32AreEqual; 1 and 0 --> ");
+	Console.WriteLine(Assert.Int32AreEqual(1,0));
+
+	Console.Write("BoolTrue; true --> ");
+	Console.WriteLine(Assert.BoolTrue(true));
+	Console.Write("BoolTrue; false --> ");
+	Console.WriteLine(Assert.BoolTrue(false));
 
 	Console.ReadKey();
 }
