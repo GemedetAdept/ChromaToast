@@ -75,5 +75,20 @@ public class Assert {
 		Console.WriteLine($"Result = {result}");
 		return result;
 	}
+
+	public static int IsNotType(object ObjectA, object ObjectB, string message="") {
+		int result;
+
+		Console.WriteLine("");
+		Console.WriteLine(message);
+		Console.WriteLine($"Assert.IsNotType: {ObjectA} is not the typeof {ObjectB}");
+
+		if (ObjectA.GetType() != ObjectB.GetType()) {result = 1;}
+		else if (ObjectA.GetType() == ObjectB.GetType()) {result = 0;}
+		else {return -1;}
+
+		Console.WriteLine($"Result = {result}");
+		return result;
+	}
 }
 }

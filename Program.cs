@@ -397,7 +397,10 @@ void DebugBox() {
 	Assert.BoolFalse(false);
 	Assert.BoolFalse(true);
 
-	Assert.IsType(true, 1.1f);
+	Assert.IsType(true, true);
+	Assert.IsType(true, -4.19);
+	Assert.IsNotType(true, -4.19);
+	Assert.IsNotType(true, true);
 
 }
 
