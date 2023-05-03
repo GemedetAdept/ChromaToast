@@ -387,22 +387,16 @@ void DebugBox() {
 
 	Console.Clear();
 
-	Console.Write("Int32AreEqual; 1 and 1 --> ");
-	Console.WriteLine(Assert.Int32AreEqual(1,1));
-	Console.Write("Int32AreEqual; 1 and 0 --> ");
-	Console.WriteLine(Assert.Int32AreEqual(1,0));
+	Assert.Int32AreEqual(1,1);
+	Assert.Int32AreEqual(1,0);
+	Assert.Int32AreNotEqual(1,0);
+	Assert.Int32AreNotEqual(1,1);
 
-	Console.Write("BoolTrue; true --> ");
-	Console.WriteLine(Assert.BoolTrue(true));
-	Console.Write("BoolTrue; false --> ");
-	Console.WriteLine(Assert.BoolTrue(false));
+	Assert.BoolTrue(true);
+	Assert.BoolTrue(false);
+	Assert.BoolFalse(false);
+	Assert.BoolFalse(true);
 
-	Console.Write("BoolFalse; false --> ");
-	Console.WriteLine(Assert.BoolFalse(false));
-	Console.Write("BoolFalse; true --> ");
-	Console.WriteLine(Assert.BoolFalse(true));
-
-	Console.ReadKey();
 }
 
 // MainMenu();
