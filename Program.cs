@@ -386,7 +386,8 @@ void savePalette(string fileName, string path = "") {
 void DebugBox() {
 
 	Console.Clear();
-
+	Color.CMYK testCMYK = new Color.CMYK(1.0,1.0,1.0,1.0);
+	Color_Tests.CMYK_Has_Cyan_Value(testCMYK);
 
 }
 

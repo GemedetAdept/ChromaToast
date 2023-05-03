@@ -4,7 +4,6 @@ public class Assert {
 	public static int Int32AreEqual(int ObjectA, int ObjectB, string message="") {
 		int result;
 
-		Console.WriteLine("");
 		Console.WriteLine(message);
 		Console.WriteLine($"Assert.Int32AreEqual: {ObjectA} is equal to {ObjectB}");
 
@@ -19,7 +18,6 @@ public class Assert {
 	public static int Int32AreNotEqual(int ObjectA, int ObjectB, string message="") {
 		int result;
 
-		Console.WriteLine("");
 		Console.WriteLine(message);
 		Console.WriteLine($"Assert.Int32AreNotEqual: {ObjectA} is not equal to {ObjectB}");
 
@@ -34,7 +32,6 @@ public class Assert {
 	public static int BoolTrue(bool Object, string message="") {
 		int result;
 
-		Console.WriteLine("");
 		Console.WriteLine(message);
 		Console.WriteLine($"Assert.BoolTrue: {Object} is True");
 
@@ -49,7 +46,6 @@ public class Assert {
 	public static int BoolFalse(bool Object, string message="") {
 		int result;
 
-		Console.WriteLine("");
 		Console.WriteLine(message);
 		Console.WriteLine($"Assert.BoolFalse: {Object} is False");
 
@@ -64,7 +60,6 @@ public class Assert {
 	public static int IsType(object ObjectA, object ObjectB, string message="") {
 		int result;
 
-		Console.WriteLine("");
 		Console.WriteLine(message);
 		Console.WriteLine($"Assert.IsType: {ObjectA} is the typeof {ObjectB}");
 
@@ -79,7 +74,6 @@ public class Assert {
 	public static int IsNotType(object ObjectA, object ObjectB, string message="") {
 		int result;
 
-		Console.WriteLine("");
 		Console.WriteLine(message);
 		Console.WriteLine($"Assert.IsNotType: {ObjectA} is not the typeof {ObjectB}");
 
@@ -91,10 +85,9 @@ public class Assert {
 		return result;
 	}
 
-	public static int IsNull(object Object) {
+	public static int IsNull(object Object, string message="") {
 		int result;
 
-		Console.WriteLine("");
 		Console.WriteLine(message);
 		Console.WriteLine($"Assert.IsNull: {Object} is null");
 
@@ -106,10 +99,9 @@ public class Assert {
 		return result;
 	}
 
-	public static int IsNotNull(object Object) {
+	public static int IsNotNull(object Object, string message="") {
 		int result;
 
-		Console.WriteLine("");
 		Console.WriteLine(message);
 		Console.WriteLine($"Assert.IsNotNull: {Object} is not null");
 
