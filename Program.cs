@@ -387,15 +387,17 @@ void DebugBox() {
 
 	Console.Clear();
 
-	Assert.Int32AreEqual(1,1);
-	Assert.Int32AreEqual(1,0);
-	Assert.Int32AreNotEqual(1,0);
-	Assert.Int32AreNotEqual(1,1);
+	Assert.Int32AreEqual(1, 1);
+	Assert.Int32AreEqual(1, 0);
+	Assert.Int32AreNotEqual(1, 0);
+	Assert.Int32AreNotEqual(1, 1);
 
 	Assert.BoolTrue(true);
 	Assert.BoolTrue(false);
 	Assert.BoolFalse(false);
 	Assert.BoolFalse(true);
+
+	Assert.IsType(true, 1.1f);
 
 }
 
