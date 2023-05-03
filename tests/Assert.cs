@@ -90,5 +90,35 @@ public class Assert {
 		Console.WriteLine($"Result = {result}");
 		return result;
 	}
+
+	public static int IsNull(object Object) {
+		int result;
+
+		Console.WriteLine("");
+		Console.WriteLine(message);
+		Console.WriteLine($"Assert.IsNull: {Object} is null");
+
+		if (Object == null) {result = 1;}
+		else if (Object != null) {result = 0;}
+		else {return -1;}
+
+		Console.WriteLine($"Result = {result}");
+		return result;
+	}
+
+	public static int IsNotNull(object Object) {
+		int result;
+
+		Console.WriteLine("");
+		Console.WriteLine(message);
+		Console.WriteLine($"Assert.IsNotNull: {Object} is not null");
+
+		if (Object != null) {result = 1;}
+		else if (Object == null) {result = 0;}
+		else {return -1;}
+
+		Console.WriteLine($"Result = {result}");
+		return result;
+	}
 }
 }
