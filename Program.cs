@@ -385,18 +385,7 @@ void savePalette(string fileName, string path = "") {
 
 void DebugBox() {
 
-	Console.WriteLine(@"
-++=------------------=++=------------------=++=---------------------++----------------------++----------------------++
-||CMYK |>CYAN   : 100 ||HEX |>HEX: 0xFFFFFF ||HSL |>HUE       : 360 ||HSV |>HUE       : 360 ||RGB |>RED       : 255 ||
-||100  |>MAGENTA: 100 ||    |               ||360 |>SATURATION: 100 ||360 |>SATURATION: 100 ||255 |>GREEN     : 255 ||
-||100  |>YELLOW : 100 ||    |               ||100 |>LIGHTNESS : 100 ||100 |>VALUE     : 100 ||255 |>BLUE      : 255 ||
-||100  |>KEY    : 100 ||    |               ||100 |                 ||100 |                 ||255 |                 ||
-||100  |              ||--------------------||    |                 ||    |                 ||    |                 ||
-||--------------------||FFFFFF   | ffffff   ||----------------------||----------------------||----------------------||
-||(100, 100, 100, 100)||0xFFFFFF | 0xffffff ||(360, 100, 100)       ||(360, 100, 100)       ||(255, 255, 255)       ||
-||(100 100 100 100)   ||#FFFFFF  | #ffffff  ||(360 100 100)         ||(360 100 100)         ||(255 255 255)         ||
-++=---+--------------=++=------------------=++=---------------------++----------------------++----------------------++
-");
+	Console.Clear();
 
 	Console.Write("Int32AreEqual; 1 and 1 --> ");
 	Console.WriteLine(Assert.Int32AreEqual(1,1));
@@ -408,7 +397,13 @@ void DebugBox() {
 	Console.Write("BoolTrue; false --> ");
 	Console.WriteLine(Assert.BoolTrue(false));
 
+	Console.Write("BoolFalse; false --> ");
+	Console.WriteLine(Assert.BoolFalse(false));
+	Console.Write("BoolFalse; true --> ");
+	Console.WriteLine(Assert.BoolFalse(true));
+
 	Console.ReadKey();
 }
 
-MainMenu();
+// MainMenu();
+DebugBox();

@@ -14,5 +14,12 @@ public class Assert {
 		else if (Object == false) {return 0;}
 		else {return -1;}
 	}
+
+	public static int BoolFalse(bool Object) {
+
+		if (Object == false) {return 1;}
+		else if (Object == true) {return 0;}
+		else {return -1;}
+	}
 }
 }
