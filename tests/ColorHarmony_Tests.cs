@@ -144,7 +144,7 @@ public class ColorHarmony_Tests {
 		return 1;
 	}
 
-	public static int capValue_Above_Ceiling_Returns_Ceiling() {
+	public static int capValue_Above_Ceiling_Subtracts_Ceiling() {
 
 		double ceiling = 100.0;
 		double floor = 0.0;
@@ -152,6 +152,11 @@ public class ColorHarmony_Tests {
 		double outputValue;
 
 		outputValue = ColorHarmony.capValue(inputValue, ceiling, floor);
+
+		Console.WriteLine("");
+		Assert.DoubleAreEqual(outputValue, inputValue-ceiling, "capValue_Above_Ceiling_Subtracts_Ceiling 110.0 100.0");
+
+		return 1;
 	}
 }
 }

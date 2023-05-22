@@ -129,7 +129,7 @@ public class ColorHarmony {
 
 	}
 
-	static double capValue(double inputValue, double ceiling, double floor) {
+	public static double capValue(double inputValue, double ceiling, double floor) {
 
 		double outputValue = -4.19;
 

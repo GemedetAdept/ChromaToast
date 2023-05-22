@@ -399,6 +399,7 @@ void DebugBox() {
 	ColorHarmony_Tests.Tetradic_Hue_Difference_Is_240_180_240();
 	ColorHarmony_Tests.Square_Hue_Difference_Is_90();
 	ColorHarmony_Tests.Analogous_Hue_Difference_Is_30();
+	ColorHarmony_Tests.capValue_Above_Ceiling_Subtracts_Ceiling();
 
 }
 
