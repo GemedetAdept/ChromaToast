@@ -199,5 +199,18 @@ public class ConvertColor_Tests {
 		Assert.IsType(outputRGB, modelRGB, "HSVtoRGB_Produces_RGB");
 		return 1;
 	}
+
+// RGB ->
+	public static int RGBtoCMYK_Produces_CMYK() {
+
+		var inputRGB = new Color.RGB(133.0, 76.0, 199.0);
+		var modelCMYK = new Color.CMYK(0.0, 0.0, 0.0, 0.0);
+
+		var outputCMYK = ConvertColor.RGBtoCMYK(inputRGB);
+
+		Console.WriteLine("");
+		Assert.IsType(outputCMYK, modelCMYK, "RGBtoCMYK_Produces_CMYK");
+		return 1;
+	}
 }
 }
