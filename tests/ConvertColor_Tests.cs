@@ -73,12 +73,25 @@ public class ConvertColor_Tests {
 		int result;
 
 		var inputHEX = new Color.HEX("854CC7");
-		var modelHSL = new Color.HSL(360.0, 1.0, 1.0);
+		var modelHSL = new Color.HSL(0.0, 0.0, 0.0);
 
 		var outputHSL = ConvertColor.HEXtoHSL(inputHEX);
 
 		Console.WriteLine("");
 		Assert.IsType(outputHSL, modelHSL, "HEXtoHSL_Produced_HSL");
+		return 1;
+	}
+
+	public static int HEXtoHSV_Produces_HSV() {
+		int result;
+
+		var inputHEX = new Color.HEX("854CC7");
+		var modelHSV = new Color.HSV(0.0, 0.0, 0.0);
+
+		var outputHSV = ConvertColor.HEXtoHSV(inputHEX);
+
+		Console.WriteLine("");
+		Assert.IsType(outputHSV, modelHSV, "HEXtoHSV_Produces_HSV");
 		return 1;
 	}
 }
