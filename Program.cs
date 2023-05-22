@@ -395,6 +395,7 @@ void DebugBox() {
 
 	ColorHarmony_Tests.Complementary_Hue_Difference_Is_180();
 	ColorHarmony_Tests.Triadic_Hue_Difference_Is_120();
+	ColorHarmony_Tests.SplitComplementary_Hue_Difference_Is_210_150();
 
 }
 
