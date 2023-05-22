@@ -163,5 +163,17 @@ public class ConvertColor_Tests {
 		Assert.IsType(outputCMYK, modelCMYK, "HSVtoCMYK_Produces_CMYK");
 		return 1;
 	}
+
+	public static int HSVtoHEX_Produces_HEX() {
+
+		var inputHSV = new Color.HSV(286.0, 62.0, 78.0);
+		var modelHEX = new Color.HEX("000000");
+
+		var outputHEX = ConvertColor.HSVtoHEX(inputHSV);
+
+		Console.WriteLine("");
+		Assert.IsType(outputHEX, modelHEX, "HSVtoHEX_Produces_HEX");
+		return 1;
+	}
 }
 }
