@@ -4,6 +4,7 @@ using convertcolor;
 namespace tests {
 public class ConvertColor_Tests {
 
+// CMYK ->
 	public static int CMYKtoHEX_Produces_HEX() {
 		int result;
 
@@ -56,6 +57,7 @@ public class ConvertColor_Tests {
 		return 1;
 	}
 
+// HEX ->
 	public static int HEXtoCMYK_Produces_CMYK() {
 		int result;
 
