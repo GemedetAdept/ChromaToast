@@ -419,6 +419,7 @@ void DebugBox() {
 	ConvertColor_Tests.HEXtoRGB_Produces_RGB();
 
 	ConvertColor_Tests.HSLtoCMYK_Produces_CMYK();
+	ConvertColor_Tests.HSLtoHEX_Produces_HEX();
 
 }
 
