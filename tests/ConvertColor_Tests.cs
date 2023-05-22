@@ -212,5 +212,17 @@ public class ConvertColor_Tests {
 		Assert.IsType(outputCMYK, modelCMYK, "RGBtoCMYK_Produces_CMYK");
 		return 1;
 	}
+
+	public static int RGBtoHEX_Produces_HEX() {
+
+		var inputRGB = new Color.RGB(133.0, 76.0, 199.0);
+		var modelHEX = new Color.HEX("000000");
+
+		var outputHEX = ConvertColor.RGBtoHEX(inputRGB);
+
+		Console.WriteLine("");
+		Assert.IsType(outputHEX, modelHEX, "RGBtoHEX_Produces_HEX");
+		return 1;
+	}
 }
 }
