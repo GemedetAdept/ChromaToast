@@ -29,6 +29,20 @@ public class Assert {
 		return result;
 	}
 
+	public static int DoubleAreEqual(double ObjectA, double ObjectB, string message="") {
+		int result;
+
+		Console.WriteLine(message);
+		Console.WriteLine($"Assert.DoubleAreEqual: {ObjectA} is equal to {ObjectB}");
+
+		if (ObjectA == ObjectB) {result = 1;}
+		else if (ObjectA != ObjectB) {result = 0;}
+		else {return -1;}
+
+		Console.WriteLine($"Result = {result}");
+		return result;
+	}
+
 	public static int BoolTrue(bool Object, string message="") {
 		int result;
 

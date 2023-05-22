@@ -391,7 +391,11 @@ void DebugBox() {
 	Color_Tests.Created_CMYK_HasValue_Yellow(1.0,1.0,1.0,1.0);
 	Color_Tests.Created_CMYK_HasValue_Key(1.0,1.0,1.0,1.0);
 
+	Console.WriteLine("");
+
+	ColorHarmony_Tests.Complementary_Hue_Difference_Is_120();
+
 }
 
-MainMenu();
-// DebugBox();
+// MainMenu();
+DebugBox();
