@@ -80,7 +80,7 @@ public class ConvertColor_Tests {
 		var outputHSL = ConvertColor.HEXtoHSL(inputHEX);
 
 		Console.WriteLine("");
-		Assert.IsType(outputHSL, modelHSL, "HEXtoHSL_Produced_HSL");
+		Assert.IsType(outputHSL, modelHSL, "HEXtoHSL_Produces_HSL");
 		return 1;
 	}
 
@@ -94,6 +94,19 @@ public class ConvertColor_Tests {
 
 		Console.WriteLine("");
 		Assert.IsType(outputHSV, modelHSV, "HEXtoHSV_Produces_HSV");
+		return 1;
+	}
+
+	public static int HEXtoRGB_Produces_RGB() {
+		int result;
+
+		var inputHEX = new Color.HEX("854CC7");
+		var modelRGB = new Color.RGB(0.0, 0.0, 0.0);
+
+		var outputRGB = ConvertColor.HEXtoRGB(inputHEX);
+
+		Console.WriteLine("");
+		Assert.IsType(outputRGB, modelRGB, "HEXtoRGB_Produces_RGB");
 		return 1;
 	}
 }
