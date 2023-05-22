@@ -401,6 +401,7 @@ void DebugBox() {
 	ColorHarmony_Tests.Analogous_Hue_Difference_Is_30();
 	ColorHarmony_Tests.capValue_Above_Ceiling_Subtracts_Ceiling();
 	ColorHarmony_Tests.capValue_Below_Floor_Adds_Ceiling();
+	ColorHarmony_Tests.capValue_Handles_Input_Below_Negative_Ceiling();
 
 }
 

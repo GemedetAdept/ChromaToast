@@ -65,6 +65,7 @@ public class Assert {
 
 		if (ObjectA >= 0) {result = 1;}
 		else if (ObjectA < 0) {result = 0;}
+		else {return -1;}
 
 		Console.WriteLine($"Result = {result}");
 		return result;
