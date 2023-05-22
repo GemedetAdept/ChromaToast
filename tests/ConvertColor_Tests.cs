@@ -102,7 +102,7 @@ public class ConvertColor_Tests {
 		return 1;
 	}
 
-// HSL
+// HSL ->
 	public static int HSLtoCMYK_Produces_CMYK() {
 
 		var inputHSL = new Color.HSL(286.0, 62.0, 78.0);
@@ -148,6 +148,19 @@ public class ConvertColor_Tests {
 
 		Console.WriteLine("");
 		Assert.IsType(outputRGB, modelRGB, "HSLtoRGB_Produces_RGB");
+		return 1;
+	}
+
+// HSV ->
+	public static int HSVtoCMYK_Produces_CMYK() {
+
+		var inputHSV = new Color.HSV(286.0, 62.0, 78.0);
+		var modelCMYK = new Color.CMYK(0.0, 0.0, 0.0, 0.0);
+
+		var outputCMYK = ConvertColor.HSVtoCMYK(inputHSV);
+
+		Console.WriteLine("");
+		Assert.IsType(outputCMYK, modelCMYK, "HSVtoCMYK_Produces_CMYK");
 		return 1;
 	}
 }

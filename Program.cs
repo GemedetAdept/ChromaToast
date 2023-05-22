@@ -423,6 +423,8 @@ void DebugBox() {
 	ConvertColor_Tests.HSLtoHSV_Produces_HSV();
 	ConvertColor_Tests.HSLtoRGB_Produces_RGB();
 
+	ConvertColor_Tests.HSVtoCMYK_Produces_CMYK();
+
 }
 
 // MainMenu();
