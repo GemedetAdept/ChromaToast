@@ -56,6 +56,30 @@ public class ConvertColor_Tests {
 		return 1;
 	}
 
-	public static int HEXtoCMYK_Produces_CMYK() {}
+	public static int HEXtoCMYK_Produces_CMYK() {
+		int result;
+
+		var inputHEX = new Color.HEX("854CC7");
+		var modelCMYK = new Color.CMYK(0.0, 0.0, 0.0, 0.0);
+
+		var outputCMYK = ConvertColor.HEXtoCMYK(inputHEX);
+
+		Console.WriteLine("");
+		Assert.IsType(outputCMYK, modelCMYK, "HEXtoCMYK_Produces_CMYK");
+		return 1;
+	}
+
+	public static int HEXtoHSL_Produces_HSL() {
+		int result;
+
+		var inputHEX = new Color.HEX("854CC7");
+		var modelHSL = new Color.HSL(360.0, 1.0, 1.0);
+
+		var outputHSL = ConvertColor.HEXtoHSL(inputHEX);
+
+		Console.WriteLine("");
+		Assert.IsType(outputHSL, modelHSL, "HEXtoHSL_Produced_HSL");
+		return 1;
+	}
 }
 }

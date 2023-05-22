@@ -413,6 +413,9 @@ void DebugBox() {
 	ConvertColor_Tests.CMYKtoHSL_Produces_HSL();
 	ConvertColor_Tests.CMYKtoRGB_Produces_RGB();
 
+	ConvertColor_Tests.HEXtoCMYK_Produces_CMYK();
+	ConvertColor_Tests.HEXtoHSL_Produces_HSL();
+
 }
 
 // MainMenu();
