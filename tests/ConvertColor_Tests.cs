@@ -1,0 +1,61 @@
+using colorvalues;
+using convertbase;
+using convertcolor;
+namespace tests {
+public class ConvertColor_Tests {
+
+	public static int CMYKtoHEX_Produces_HEX() {
+		int result;
+
+		var inputCMYK = new Color.CMYK(0.33, 0.61, 0.0, 0.22);
+		var modelHEX = new Color.HEX("000000");
+
+		var outputHEX = ConvertColor.CMYKtoHEX(inputCMYK);
+
+		Console.WriteLine("");
+		Assert.IsType(outputHEX, modelHEX, "CMYKtoHEX_Produces_HEX");
+		return 1;
+	}
+
+	public static int CMYKtoHSV_Produces_HSV() {
+		int result;
+
+		var inputCMYK = new Color.CMYK(0.33, 0.61, 0.0, 0.22);
+		var modelHSV = new Color.HSV(360.0, 1.0, 1.0);
+
+		var outputHSV = ConvertColor.CMYKtoHSV(inputCMYK);
+
+		Console.WriteLine("");
+		Assert.IsType(outputHSV, modelHSV, "CMYKtoHSV_Produces_HSV");
+		return 1;
+	}
+
+	public static int CMYKtoHSL_Produces_HSL() {
+		int result;
+
+		var inputCMYK = new Color.CMYK(0.33, 0.61, 0.0, 0.22);
+		var modelHSL = new Color.HSL(360.0, 1.0, 1.0);
+
+		var outputHSL = ConvertColor.CMYKtoHSL(inputCMYK);
+
+		Console.WriteLine("");
+		Assert.IsType(outputHSL, modelHSL, "CMYKtoHSL_Produces_HSL");
+		return 1;
+	}
+
+	public static int CMYKtoRGB_Produces_RGB() {
+		int result;
+
+		var inputCMYK = new Color.CMYK(0.33, 0.61, 0.0, 0.22);
+		var modelRGB = new Color.RGB(255.0, 255.0, 255.0);
+
+		var outputRGB = ConvertColor.CMYKtoRGB(inputCMYK);
+
+		Console.WriteLine("");
+		Assert.IsType(outputRGB, modelRGB, "CMYKtoRGB_Produces_RGB");
+		return 1;
+	}
+
+	public static int HEXtoCMYK_Produces_CMYK() {}
+}
+}

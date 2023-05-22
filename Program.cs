@@ -386,12 +386,14 @@ void savePalette(string fileName, string path = "") {
 void DebugBox() {
 
 	Console.Clear();
+	Console.WriteLine("-- Color_Tests --");
 	Color_Tests.Created_CMYK_HasValue_Cyan(1.0,1.0,1.0,1.0);
 	Color_Tests.Created_CMYK_HasValue_Magenta(1.0,1.0,1.0,1.0);
 	Color_Tests.Created_CMYK_HasValue_Yellow(1.0,1.0,1.0,1.0);
 	Color_Tests.Created_CMYK_HasValue_Key(1.0,1.0,1.0,1.0);
 
 	Console.WriteLine("");
+	Console.WriteLine("-- ColorHarmony_Tests --");
 
 	ColorHarmony_Tests.Complementary_Hue_Difference_Is_180();
 	ColorHarmony_Tests.SplitComplementary_Hue_Difference_Is_210_150();
@@ -402,6 +404,14 @@ void DebugBox() {
 	ColorHarmony_Tests.capValue_Above_Ceiling_Subtracts_Ceiling();
 	ColorHarmony_Tests.capValue_Below_Floor_Adds_Ceiling();
 	ColorHarmony_Tests.capValue_Handles_Input_Below_Negative_Ceiling();
+
+	Console.WriteLine("");
+	Console.WriteLine("-- ConvertColor_Tests --");
+
+	ConvertColor_Tests.CMYKtoHEX_Produces_HEX();
+	ConvertColor_Tests.CMYKtoHSV_Produces_HSV();
+	ConvertColor_Tests.CMYKtoHSL_Produces_HSL();
+	ConvertColor_Tests.CMYKtoRGB_Produces_RGB();
 
 }
 
