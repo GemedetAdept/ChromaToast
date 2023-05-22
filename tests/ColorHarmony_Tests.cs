@@ -158,5 +158,20 @@ public class ColorHarmony_Tests {
 
 		return 1;
 	}
+
+	public static int capValue_Below_Floor_Adds_Ceiling() {
+
+		double ceiling = 100.0;
+		double floor = 0.0;
+		double inputValue = -40.0;
+		double outputValue;
+
+		outputValue = ColorHarmony.capValue(inputValue, ceiling, floor);
+
+		Console.WriteLine("");
+		Assert.DoubleAreEqual(outputValue, inputValue+ceiling, "capValue_Below_Floor_Adds_Ceiling -40.0 100.0");
+
+		return 1;
+	}
 }
 }
