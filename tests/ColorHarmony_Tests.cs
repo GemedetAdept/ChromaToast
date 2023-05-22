@@ -121,5 +121,27 @@ public class ColorHarmony_Tests {
 
 		return 1;
 	}
+
+	public static int Analogous_Hue_Difference_Is_30() {
+
+		var inputHSV = new Color.HSV(268.0, 62.0, 78.0);
+		var outputHSV_Array = new Color.HSV[2];
+		double AnalogousHueOffset = 30.0;
+
+		outputHSV_Array = ColorHarmony.Analogous(inputHSV);
+
+		var A_HSV = outputHSV_Array[0];
+		var B_HSV = outputHSV_Array[1];
+		var C_HSV = outputHSV_Array[2];
+
+		var AB_deltaHue = Math.Abs(A_HSV.Hue - B_HSV.Hue);
+		var AC_deltaHue = Math.Abs(A_HSV.Hue - C_HSV.Hue);
+
+		Console.WriteLine("");
+		Assert.DoubleAreEqual(AB_deltaHue, AnalogousHueOffset, "Analogous_Hue_Difference_Is_30 AB_deltahue");
+		Assert.DoubleAreEqual(AC_deltaHue, AnalogousHueOffset, "Analogous_Hue_Difference_Is_30 AC_deltahue");
+
+		return 1;
+	}
 }
 }
