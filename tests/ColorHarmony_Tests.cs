@@ -143,5 +143,15 @@ public class ColorHarmony_Tests {
 
 		return 1;
 	}
+
+	public static int capValue_Above_Ceiling_Returns_Ceiling() {
+
+		double ceiling = 100.0;
+		double floor = 0.0;
+		double inputValue = 110.0;
+		double outputValue;
+
+		outputValue = ColorHarmony.capValue(inputValue, ceiling, floor);
+	}
 }
 }
