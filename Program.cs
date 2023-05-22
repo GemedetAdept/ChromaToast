@@ -386,12 +386,12 @@ void savePalette(string fileName, string path = "") {
 void DebugBox() {
 
 	Console.Clear();
-	Color_Tests.Created_CMYK_HasValue_Cyan();
-	Color_Tests.Created_CMYK_HasValue_Magenta();
-	Color_Tests.Created_CMYK_HasValue_Yellow();
-	Color_Tests.Created_CMYK_HasValue_Key();
+	Color_Tests.Created_CMYK_HasValue_Cyan(1.0,1.0,1.0,1.0);
+	Color_Tests.Created_CMYK_HasValue_Magenta(1.0,1.0,1.0,1.0);
+	Color_Tests.Created_CMYK_HasValue_Yellow(1.0,1.0,1.0,1.0);
+	Color_Tests.Created_CMYK_HasValue_Key(1.0,1.0,1.0,1.0);
 
 }
 
-// MainMenu();
-DebugBox();
+MainMenu();
+// DebugBox();
