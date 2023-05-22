@@ -1,7 +1,7 @@
 namespace tests {
 public class Assert {
 
-	public static int PrintResult(int resultCode) {
+	private static int PrintResult(int resultCode) {
 		Console.ResetColor();
 		Console.ForegroundColor = ConsoleColor.Black;
 

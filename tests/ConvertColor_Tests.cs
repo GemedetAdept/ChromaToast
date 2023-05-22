@@ -126,5 +126,17 @@ public class ConvertColor_Tests {
 		Assert.IsType(outputHEX, modelHEX, "HSLtoHEX_Produces_HEX");
 		return 1;
 	}
+
+	public static int HSLtoHSV_Produces_HSV() {
+
+		var inputHSL = new Color.HSL(286.0, 62.0, 78.0);
+		var modelHSV = new Color.HSV(0.0, 0.0, 0.0);
+
+		var outputHSV = ConvertColor.HSLtoHSV(inputHSL);
+
+		Console.WriteLine("");
+		Assert.IsType(outputHSV, modelHSV, "HSLtoHSV_Produces_HSV");
+		return 1;
+	}
 }
 }

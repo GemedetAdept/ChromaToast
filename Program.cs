@@ -420,6 +420,7 @@ void DebugBox() {
 
 	ConvertColor_Tests.HSLtoCMYK_Produces_CMYK();
 	ConvertColor_Tests.HSLtoHEX_Produces_HEX();
+	ConvertColor_Tests.HSLtoHSV_Produces_HSV();
 
 }
 
