@@ -57,6 +57,19 @@ public class Assert {
 		return result;
 	}
 
+	public static int DoubleIsPositive(double ObjectA, string message="") {
+		int result;
+
+		Console.WriteLine(message);
+		Console.WriteLine($"Assert.DoubleIsPositive: {ObjectA} is postive");
+
+		if (ObjectA >= 0) {result = 1;}
+		else if (ObjectA < 0) {result = 0;}
+
+		Console.WriteLine($"Result = {result}");
+		return result;
+	}
+
 	public static int BoolTrue(bool Object, string message="") {
 		int result;
 
