@@ -224,5 +224,17 @@ public class ConvertColor_Tests {
 		Assert.IsType(outputHEX, modelHEX, "RGBtoHEX_Produces_HEX");
 		return 1;
 	}
+
+	public static int RGBtoHSL_Produces_HSL() {
+
+		var inputRGB = new Color.RGB(133.0, 76.0, 199.0);
+		var modelHSL= new Color.HSL(0.0, 0.0, 0.0);
+
+		var outputHSL = ConvertColor.RGBtoHSL(inputRGB);
+
+		Console.WriteLine("");
+		Assert.IsType(outputHSL, modelHSL, "RGBtoHSL_Produces_HSL");
+		return 1;
+	}
 }
 }
