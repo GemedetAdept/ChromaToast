@@ -1,6 +1,30 @@
 namespace tests {
 public class Assert {
 
+	public static int PrintResult(int resultCode) {
+		Console.ResetColor();
+		Console.ForegroundColor = ConsoleColor.Black;
+
+		string resultMessage;
+		if (resultCode == 1) {
+			Console.BackgroundColor = ConsoleColor.Green;
+			resultMessage = "Passed";
+		}
+		else if (resultCode == 0) {
+			Console.BackgroundColor = ConsoleColor.Red;
+			resultMessage = "Failed";
+		}
+		else {
+			Console.BackgroundColor = ConsoleColor.Yellow;
+			resultMessage = "[ERROR]";
+		}
+
+		Console.WriteLine($"Result = ({resultCode}) {resultMessage}.");
+		Console.ResetColor();
+
+		return 1;
+	}
+
 	public static int Int32AreEqual(int ObjectA, int ObjectB, string message="") {
 		int result;
 
@@ -11,7 +35,7 @@ public class Assert {
 		else if (ObjectA != ObjectB) {result = 0;}
 		else {return -1;}
 
-		Console.WriteLine($"Result = {result}");
+		PrintResult(result);
 		return result;
 	}
 
@@ -25,7 +49,7 @@ public class Assert {
 		else if (ObjectA == ObjectB) {result = 0;}
 		else {return -1;}
 
-		Console.WriteLine($"Result = {result}");
+		PrintResult(result);
 		return result;
 	}
 
@@ -39,7 +63,7 @@ public class Assert {
 		else if (ObjectA != ObjectB) {result = 0;}
 		else {return -1;}
 
-		Console.WriteLine($"Result = {result}");
+		PrintResult(result);
 		return result;
 	}
 
@@ -53,7 +77,7 @@ public class Assert {
 		else if (ObjectA <= ObjectB) {result = 0;}
 		else {return -1;}
 
-		Console.WriteLine($"Result = {result}");
+		PrintResult(result);
 		return result;
 	}
 
@@ -67,7 +91,7 @@ public class Assert {
 		else if (ObjectA < 0) {result = 0;}
 		else {return -1;}
 
-		Console.WriteLine($"Result = {result}");
+		PrintResult(result);
 		return result;
 	}
 
@@ -81,7 +105,7 @@ public class Assert {
 		else if (Object == false) {result = 0;}
 		else {return -1;}
 
-		Console.WriteLine($"Result = {result}");
+		PrintResult(result);
 		return result;
 	}
 
@@ -95,7 +119,7 @@ public class Assert {
 		else if (Object == true) {result = 0;}
 		else {return -1;}
 
-		Console.WriteLine($"Result = {result}");
+		PrintResult(result);
 		return result;
 	}
 
@@ -109,7 +133,7 @@ public class Assert {
 		else if (ObjectA.GetType() != ObjectB.GetType()) {result = 0;}
 		else {return -1;}
 
-		Console.WriteLine($"Result = {result}");
+		PrintResult(result);
 		return result;
 	}
 
@@ -123,7 +147,7 @@ public class Assert {
 		else if (ObjectA.GetType() == ObjectB.GetType()) {result = 0;}
 		else {return -1;}
 
-		Console.WriteLine($"Result = {result}");
+		PrintResult(result);
 		return result;
 	}
 
@@ -137,7 +161,7 @@ public class Assert {
 		else if (Object != null) {result = 0;}
 		else {return -1;}
 
-		Console.WriteLine($"Result = {result}");
+		PrintResult(result);
 		return result;
 	}
 
@@ -151,7 +175,7 @@ public class Assert {
 		else if (Object == null) {result = 0;}
 		else {return -1;}
 
-		Console.WriteLine($"Result = {result}");
+		PrintResult(result);
 		return result;
 	}
 }
