@@ -236,5 +236,17 @@ public class ConvertColor_Tests {
 		Assert.IsType(outputHSL, modelHSL, "RGBtoHSL_Produces_HSL");
 		return 1;
 	}
+
+	public static int RGBtoHSV_Produces_HSV() {
+
+		var inputRGB = new Color.RGB(133.0, 76.0, 199.0);
+		var modelHSV = new Color.HSV(0.0, 0.0, 0.0);
+
+		var outputHSV = ConvertColor.RGBtoHSV(inputRGB);
+
+		Console.WriteLine("");
+		Assert.IsType(outputHSV, modelHSV, "RGBtoHSV_Produces_HSV");
+		return 1;
+	}
 }
 }
