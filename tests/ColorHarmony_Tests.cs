@@ -69,6 +69,32 @@ public class ColorHarmony_Tests {
 		return 1;
 	}
 
+	public static int Tetradic_Hue_Difference_Is_240_180_240() {
+
+		var inputHSV = new Color.HSV(268.0, 62.0, 78.0);
+		var outputHSV_Array = new Color.HSV[3];
+		double TetradicHueOffset240 = 240.0;
+		double TetradicHueOffset180 = 180.0;
+
+		outputHSV_Array = ColorHarmony.Tetradic(inputHSV);
+
+		var A_HSV = outputHSV_Array[0];
+		var B_HSV = outputHSV_Array[1];
+		var C_HSV = outputHSV_Array[2];
+		var D_HSV = outputHSV_Array[3];
+
+		var AB_deltaHue = Math.Abs(A_HSV.Hue - B_HSV.Hue);
+		var AC_deltaHue = Math.Abs(A_HSV.Hue - C_HSV.Hue);
+		var AD_deltaHue = Math.Abs(A_HSV.Hue - D_HSV.Hue);
+
+		Console.WriteLine("");
+		Assert.DoubleAreEqual(AB_deltaHue, TetradicHueOffset240, "Tetradic_Hue_Difference_Is_240 AB_deltaHue");
+		Assert.DoubleAreEqual(AC_deltaHue, TetradicHueOffset180, "Triadic_Hue_Difference_Is_180 AC_deltaHue");
+		Assert.DoubleAreEqual(AB_deltaHue, TetradicHueOffset240, "Tetradic_Hue_Difference_Is_240 AB_deltaHue");
+
+		return 1;
+	}
+
 	public static int Square_Hue_Difference_Is_90() {
 
 		var inputHSV = new Color.HSV(268.0, 62.0, 78.0);
