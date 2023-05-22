@@ -109,5 +109,19 @@ public class ConvertColor_Tests {
 		Assert.IsType(outputRGB, modelRGB, "HEXtoRGB_Produces_RGB");
 		return 1;
 	}
+
+// HSL
+	public static int HSLtoCMYK_Produces_CMYK() {
+		int result;
+
+		var inputHSL = new Color.HSL(286.0, 62.0, 78.0);
+		var modelCMYK = new Color.CMYK(0.0, 0.0, 0.0, 0.0);
+
+		var outputCMYK = ConvertColor.HSLtoCMYK(inputHSL);
+
+		Console.WriteLine("");
+		Assert.IsType(outputCMYK, modelCMYK, "HSLtoCMYK_Produces_CMYK");
+		return 1;
+	}
 }
 }
