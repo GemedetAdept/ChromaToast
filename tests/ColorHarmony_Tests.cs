@@ -138,8 +138,8 @@ public class ColorHarmony_Tests {
 		var AC_deltaHue = Math.Abs(A_HSV.Hue - C_HSV.Hue);
 
 		Console.WriteLine("");
-		Assert.DoubleAreEqual(AB_deltaHue, AnalogousHueOffset, "Analogous_Hue_Difference_Is_30 AB_deltahue");
-		Assert.DoubleAreEqual(AC_deltaHue, AnalogousHueOffset, "Analogous_Hue_Difference_Is_30 AC_deltahue");
+		Assert.DoubleAreEqual(AB_deltaHue, AnalogousHueOffset, "Analogous_Hue_Difference_Is_30 AB_deltaHue");
+		Assert.DoubleAreEqual(AC_deltaHue, AnalogousHueOffset, "Analogous_Hue_Difference_Is_30 AC_deltaHue");
 
 		return 1;
 	}
