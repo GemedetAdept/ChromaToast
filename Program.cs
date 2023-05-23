@@ -433,6 +433,11 @@ void DebugBox() {
 	ConvertColor_Tests.RGBtoHSL_Produces_HSL();
 	ConvertColor_Tests.RGBtoHSV_Produces_HSV();
 
+	Console.WriteLine("");
+	Console.WriteLine("-- BlendColors_Tests --");
+
+	BlendColors_Tests.BlendHSV_Returns_HSV();
+
 }
 
 // MainMenu();
