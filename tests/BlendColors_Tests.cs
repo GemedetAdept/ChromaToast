@@ -11,6 +11,9 @@ public class BlendColors_Tests {
 
 		Console.WriteLine("");
 		Assert.IsType(ColorAB, modelHSV, "BlendHSV_Returns_HSV");
+		Console.WriteLine($"ColorA: {ColorA.Hue}, {ColorA.Saturation}, {ColorA.Value}");
+		Console.WriteLine($"ColorB: {ColorB.Hue}, {ColorB.Saturation}, {ColorB.Value}");
+		Console.WriteLine($"ColorAB: {ColorAB.Hue}, {ColorAB.Saturation}, {ColorAB.Value}");
 		return 1;
 	}
 }
