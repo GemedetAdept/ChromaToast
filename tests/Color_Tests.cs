@@ -10,6 +10,7 @@ public class Color_Tests {
 
 		Returned_Type_String = ColorCMYK.Type;
 
+		Console.WriteLine("");
 		Assert.StringAreEqual(Returned_Type_String, CMYK_Type_String, "CMYK_Returns_Type_When_Called");
 		return 1;
 	}
@@ -22,7 +23,21 @@ public class Color_Tests {
 
 		Returned_Type_String = ColorHEX.Type;
 
+		Console.WriteLine("");
 		Assert.StringAreEqual(Returned_Type_String, HEX_Type_String, "HEX_Returns_Type_When_Called");
+		return 1;
+	}
+
+	public static int HSL_Returns_Type_When_Called() {
+
+		var ColorHSL = new Color.HSL(267.8, 61.8, 78.0);
+		string HSL_Type_String = "HSL";
+		string Returned_Type_String;
+
+		Returned_Type_String = ColorHSL.Type;
+
+		Console.WriteLine("");
+		Assert.StringAreEqual(Returned_Type_String, HSL_Type_String, "HSL_Returns_Type_When_Called");
 		return 1;
 	}
 }
