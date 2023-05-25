@@ -16,5 +16,11 @@ public class BlendColors_Tests {
 		Console.WriteLine($"ColorAB: {ColorAB.Hue}, {ColorAB.Saturation}, {ColorAB.Value}");
 		return 1;
 	}
+
+	public static int PrintOutColorTypeof() {
+		var Color = new Color.HEX("000000");
+		Console.WriteLine(Color.GetType());
+		return 1;
+	}
 }
 }

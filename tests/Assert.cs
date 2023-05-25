@@ -178,5 +178,19 @@ public class Assert {
 		PrintResult(result);
 		return result;
 	}
+
+	public static int StringAreEqual(string ObjectA, string ObjectB, string message="") {
+		int result;
+
+		Console.WriteLine(message);
+		Console.WriteLine($"Assert.StringAreEqual: '{ObjectA}' equals '{ObjectB}'");
+
+		if (ObjectA == ObjectB) {result = 1;}
+		else if (ObjectA != ObjectB) {result = 0;}
+		else {return -1;}
+
+		PrintResult(result);
+		return result;
+	}
 }
 }

@@ -387,10 +387,7 @@ void DebugBox() {
 
 	Console.Clear();
 	Console.WriteLine("-- Color_Tests --");
-	Color_Tests.Created_CMYK_HasValue_Cyan(1.0,1.0,1.0,1.0);
-	Color_Tests.Created_CMYK_HasValue_Magenta(1.0,1.0,1.0,1.0);
-	Color_Tests.Created_CMYK_HasValue_Yellow(1.0,1.0,1.0,1.0);
-	Color_Tests.Created_CMYK_HasValue_Key(1.0,1.0,1.0,1.0);
+	
 
 	Console.WriteLine("");
 	Console.WriteLine("-- ColorHarmony_Tests --");
@@ -437,6 +434,7 @@ void DebugBox() {
 	Console.WriteLine("-- BlendColors_Tests --");
 
 	BlendColors_Tests.BlendHSV_Returns_HSV();
+	BlendColors_Tests.PrintOutColorTypeof();
 
 }
 
