@@ -40,5 +40,18 @@ public class Color_Tests {
 		Assert.StringAreEqual(Returned_Type_String, HSL_Type_String, "HSL_Returns_Type_When_Called");
 		return 1;
 	}
+
+	public static int HSV_Returns_Type_When_Called() {
+
+		var ColorHSV = new Color.HSV(267.8, 61.8, 78.0);
+		string HSV_Type_String = "HSV";
+		string Returned_Type_String;
+
+		Returned_Type_String = ColorHSV.Type;
+
+		Console.WriteLine("");
+		Assert.StringAreEqual(Returned_Type_String, HSV_Type_String, "HSV_Returns_Type_When_Called");
+		return 1;
+	}
 }
 }
