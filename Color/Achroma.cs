@@ -68,6 +68,7 @@ public class Achroma {
 				CMYK.Key = Validate("CMYK.Key", valueParts[3], 0.0, 100.0);
 				break;
 			case "HEX":
+				HEX.Value = inputParts;
 				break;
 			// case "HSL":
 			// case "HSV":
