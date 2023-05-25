@@ -387,7 +387,9 @@ void DebugBox() {
 
 	Console.Clear();
 	Console.WriteLine("-- Color_Tests --");
-	
+
+	Color_Tests.CMYK_Returns_Type_When_Called();
+	Color_Tests.HEX_Returns_Type_When_Called();
 
 	Console.WriteLine("");
 	Console.WriteLine("-- ColorHarmony_Tests --");

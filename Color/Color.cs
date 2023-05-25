@@ -7,7 +7,7 @@ public class Color {
 
 	public class CMYK {
 
-		public const string Type = "CMYK";
+		public string Type = "CMYK";
 		public const int floorCMYK = 0;
 		public const int ceilingCMYK = 100;
 		private double _cyan;
@@ -40,7 +40,7 @@ public class Color {
 	}
 	public class HEX {
 
-		public const string Type = "HEX";
+		public string Type = "HEX";
 		private string _value;
 		public HEX(string? hexValue) {
 
@@ -71,7 +71,7 @@ public class Color {
 	}
 	public class HSL {
 
-		public const string Type = "HSL";
+		public string Type = "HSL";
 		public const int floorHue = 0;
 		public const int ceilingHue = 360;
 		public const int floorSL = 0;
@@ -102,7 +102,7 @@ public class Color {
 	}
 	public class HSV {
 
-		public const string Type = "HSV";
+		public string Type = "HSV";
 		public const int floorHue = 0;
 		public const int ceilingHue = 360;
 		public const int floorSV = 0;
@@ -133,7 +133,7 @@ public class Color {
 	}
 	public class RGB {
 
-		public const string Type = "RGB";
+		public string Type = "RGB";
 		public const int floorRGB = 0;
 		public const int ceilingRGB = 255;
 		private double _red;

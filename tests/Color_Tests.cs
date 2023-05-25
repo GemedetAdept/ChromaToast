@@ -10,7 +10,20 @@ public class Color_Tests {
 
 		Returned_Type_String = ColorCMYK.Type;
 
-		Assert.
+		Assert.StringAreEqual(Returned_Type_String, CMYK_Type_String, "CMYK_Returns_Type_When_Called");
+		return 1;
+	}
+
+	public static int HEX_Returns_Type_When_Called() {
+
+		var ColorHEX = new Color.HEX("854CC7");
+		string HEX_Type_String = "HEX";
+		string Returned_Type_String;
+
+		Returned_Type_String = ColorHEX.Type;
+
+		Assert.StringAreEqual(Returned_Type_String, HEX_Type_String, "HEX_Returns_Type_When_Called");
+		return 1;
 	}
 }
 }
