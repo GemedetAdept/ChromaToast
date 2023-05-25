@@ -2,6 +2,7 @@ using colorvalues;
 namespace tests {
 public class Color_Tests {
 
+// Returns_Type_When_Called
 	public static int CMYK_Returns_Type_When_Called() {
 
 		var ColorCMYK = new Color.CMYK(0.33, 0.61, 0.0, 0.22);

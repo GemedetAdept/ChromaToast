@@ -22,5 +22,15 @@ public class BlendColors_Tests {
 		Console.WriteLine(Color.GetType());
 		return 1;
 	}
+
+	public static int BlendTwo_Returns_Any_Color_Class() {
+		var ColorA = new Color.HSV(267.0, 61.0, 78.0);
+		var ColorB = new Color.HSV(216.0, 57.0, 90.0);
+
+		var ColorAB = BlendColors.BlendTwo(ColorA, ColorB);
+
+		PrintOutColorTypeof(ColorAB);
+		return 1;	
+	}
 }
 }
