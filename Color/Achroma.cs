@@ -47,6 +47,11 @@ public class Achroma {
 		set {_rgb = value;}
 	}
 
+	public static string ProcessInput(object inputData) {
+		string inputDataType = inputData.GetType().ToString();
+		return inputDataType;
+	}
+
 	public bool LoadInput(string inputType, string inputValue) {
 
 		if (inputValue.Contains("0x")) {inputValue = inputValue.Replace("0x", "");}
@@ -68,7 +73,6 @@ public class Achroma {
 				CMYK.Key = Validate("CMYK.Key", valueParts[3], 0.0, 100.0);
 				break;
 			case "HEX":
-				HEX.Value = inputParts;
 				break;
 			// case "HSL":
 			// case "HSV":

@@ -445,7 +445,18 @@ void DebugBox() {
 	Console.WriteLine("");
 	Console.WriteLine("-- Achroma_Tests --");
 
-	Achroma_Tests.Achroma_Loads_Input();
+	// Achroma_Tests.Achroma_Loads_Input();
+
+	var inputDoubleArray = new double[4];
+	string inputString = "000000";
+
+	string outputOne = inputDoubleArray.GetType().ToString();
+	string outputTwo = inputString.GetType().ToString();
+
+	Console.WriteLine(outputOne);
+	Console.WriteLine(outputTwo);
+
+	Console.WriteLine(Achroma.ProcessInput(inputDoubleArray));
 
 }
 
