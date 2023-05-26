@@ -458,6 +458,10 @@ void DebugBox() {
 
 	Console.WriteLine(Achroma.ProcessInput(inputDoubleArray));
 
+	var valuesCMYK = new double[4] {0.0, 0.0, 0.0, 0.0};
+	var testCMYK = new CMYK(valuesCMYK);
+	Console.WriteLine(testCMYK.Type);
+
 }
 
 // MainMenu();
