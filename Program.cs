@@ -440,12 +440,6 @@ void DebugBox() {
 
 	BlendColors_Tests.BlendHSV_Returns_HSV();
 	BlendColors_Tests.PrintOutColorTypeof();
-	// BlendColors_Tests.BlendTwo_Returns_Any_Color_Class();
-
-	Console.WriteLine("");
-	Console.WriteLine("-- Achroma_Tests --");
-
-	// Achroma_Tests.Achroma_Loads_Input();
 
 	
 }
