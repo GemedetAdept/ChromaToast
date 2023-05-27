@@ -440,6 +440,11 @@ void DebugBox() {
 
 	BlendColors_Tests.PrintOutColorTypeof();
 
+	void function(object parameter) {
+		return;
+	}
+
+	function("argument");
 }
 
 // MainMenu();
