@@ -438,10 +438,8 @@ void DebugBox() {
 	Console.WriteLine("");
 	Console.WriteLine("-- BlendColors_Tests --");
 
-	BlendColors_Tests.BlendHSV_Returns_HSV();
 	BlendColors_Tests.PrintOutColorTypeof();
 
-	
 }
 
 // MainMenu();
