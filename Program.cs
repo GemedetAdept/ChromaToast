@@ -439,13 +439,7 @@ void DebugBox() {
 	Console.WriteLine("-- BlendColors_Tests --");
 
 	BlendColors_Tests.PrintOutColorTypeof();
-
-	void function(object parameter) {
-		return;
-	}
-
-	function("argument");
 }
 
-// MainMenu();
-DebugBox();
+MainMenu();
+// DebugBox();
