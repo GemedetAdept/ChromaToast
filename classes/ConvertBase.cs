@@ -25,6 +25,8 @@ public class ConvertBase {
 	return Convert.ToInt32(intValue);
 }
 
+	public static 
+
 public static string ConvertToHexadecimal(int integer) {
 	string hexadecimal = integer.ToString("X");
 	return hexadecimal;
