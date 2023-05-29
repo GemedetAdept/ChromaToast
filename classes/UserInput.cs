@@ -45,6 +45,9 @@ public class UserInput {
 
 	public static Color.HEX InputHEX(string inputHEX) {
 
+		if (inputHEX.Contains("#")) {inputHEX = inputHEX.Replace("#", "");}
+		if (inputHEX.Contains("0x")) {inputHEX = inputHEX.Replace("0x", "");}
+
 		var outputHEX = new Color.HEX(inputHEX);
 		// TODO: Data validity check.
 		return outputHEX;
