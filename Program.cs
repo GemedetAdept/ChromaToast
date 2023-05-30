@@ -439,7 +439,12 @@ void DebugBox() {
 	Console.WriteLine("-- BlendColors_Tests --");
 
 	BlendColors_Tests.PrintOutColorTypeof();
+
+	Console.WriteLine("");
+	Console.WriteLine("-- SanitizeInput_Tests --");
+
+	SanitizeInput_Tests.StripCharacters_Removes_Characters_From_String();
 }
 
-MainMenu();
-// DebugBox();
+// MainMenu();
+DebugBox();

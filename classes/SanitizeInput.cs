@@ -1,10 +1,10 @@
 namespace userinput {
 public class SanitizeInput {
 
-	public static string StripCharacter(string inputString, char targetCharacter) {
+	public static string StripCharacters(string inputString, string targetCharacters) {
 
-		if (inputString.Contains(targetCharacter) {
-			inputString = inputString.Replace(targetCharacter, "");
+		if (inputString.Contains(targetCharacters)) {
+			inputString = inputString.Replace(targetCharacters, "");
 		}
 
 		return inputString;
