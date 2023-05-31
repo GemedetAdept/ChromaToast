@@ -438,27 +438,8 @@ void DebugBox() {
 	Console.WriteLine("");
 	Console.WriteLine("-- BlendColors_Tests --");
 
-	// BlendColors_Tests.BlendHSV_Returns_HSV();
 	BlendColors_Tests.PrintOutColorTypeof();
-	// BlendColors_Tests.BlendTwo_Returns_Any_Color_Class();
 
-	Console.WriteLine("");
-	Console.WriteLine("-- Achroma_Tests --");
-
-	// Achroma_Tests.Achroma_Loads_Input();
-
-	var inputDoubleArray = new double[4];
-	string inputString = "000000";
-
-	string outputOne = inputDoubleArray.GetType().ToString();
-	string outputTwo = inputString.GetType().ToString();
-
-	Console.WriteLine(outputOne);
-	Console.WriteLine(outputTwo);
-
-	Console.WriteLine(Achroma.ProcessInput(inputDoubleArray));
-
-	Console.WriteLine(int.MaxValue);
 
 }
 
