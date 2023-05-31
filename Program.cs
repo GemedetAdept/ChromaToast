@@ -1,4 +1,4 @@
-﻿// ChromaToast by Vivian (Pluto) Zitek
+// ChromaToast by Vivian (Pluto) Zitek
 // https://github.com/GemedetAdept
 using userinput;
 using menudriver;
@@ -457,6 +457,8 @@ void DebugBox() {
 	Console.WriteLine(outputTwo);
 
 	Console.WriteLine(Achroma.ProcessInput(inputDoubleArray));
+
+	Console.WriteLine(int.MaxValue);
 
 }
 
