@@ -76,5 +76,16 @@ public class TestsDriver {
 		return 1;
 	} return 0;
 	}
+
+	public static int Run_BlendColors_Tests(bool toggle) {
+	if (toggle == true) {
+		Console.WriteLine("-- BlendColors_Tests --");
+
+		BlendColors_Tests.PrintOutColorTypeof();
+
+		Console.WriteLine("");
+		return 1;
+	} return 0;
+	}
 }
 }

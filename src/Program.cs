@@ -390,12 +390,9 @@ void DebugBox() {
 
 	TestsDriver.Run_ColorHarmony_Tests(false);
 
-	TestsDriver.Run_ConvertColor_Tests(true);
+	TestsDriver.Run_ConvertColor_Tests(false);
 
-	Console.WriteLine("");
-	Console.WriteLine("-- BlendColors_Tests --");
-
-	BlendColors_Tests.PrintOutColorTypeof();
+	TestsDriver.Run_BlendColors_Tests(true);
 
 	Console.WriteLine("");
 	Console.WriteLine("-- Value Deviation Test --");
