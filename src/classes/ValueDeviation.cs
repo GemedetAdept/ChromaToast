@@ -3,26 +3,13 @@ public class ValueDeviation {
 
 	public class UniformBounded {
 
-		private int _lowerBound;
-		private int _upperBound;
+		public UniformBounded() {
 
-		public UniformBounded(int lowerBound, int upperBound) {
-			LowerBound = lowerBound;
-			UpperBound = upperBound;
 		}
 
-		public int LowerBound {
-			get {return _lowerBound;}
-			set {_lowerBound = value;}
-		}
-		public int UpperBound {
-			get {return _upperBound;}
-			set {_upperBound = value;}
-		}
-
-		public int Next() {
+		public int Next(int lowerBound, int upperBound) {
 			Random newRandom = new Random();
-			int outputValue = newRandom.Next(LowerBound, UpperBound);
+			int outputValue = newRandom.Next(lowerBound, upperBound);
 
 			return outputValue;
 		}
