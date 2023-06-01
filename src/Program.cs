@@ -445,6 +445,7 @@ void DebugBox() {
 	var deviation = new ValueDeviation.UniformBounded();
 	Console.WriteLine(deviation.Next(0, 50));
 	Console.WriteLine(deviation.Next(0.0, 50.0));
+	Console.WriteLine(deviation.NextCentered(0, 100, 40));
 
 }
 
