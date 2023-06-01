@@ -8,7 +8,7 @@ public class ValueDeviation {
 
 		public UniformBounded(int lowerBound, int upperBound) {
 			LowerBound = lowerBound;
-			UpperBound = upperBound
+			UpperBound = upperBound;
 		}
 
 		public int LowerBound {
@@ -20,7 +20,7 @@ public class ValueDeviation {
 			set {_upperBound = value;}
 		}
 
-		public static int Next() {
+		public int Next() {
 			Random newRandom = new Random();
 			int outputValue = newRandom.Next(LowerBound, UpperBound);
 

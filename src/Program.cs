@@ -442,9 +442,10 @@ void DebugBox() {
 
 	Console.WriteLine("");
 	Console.WriteLine("-- Value Deviation Test --");
-	var deviation = new ValueDeviation.UniformBounded()
+	var deviation = new ValueDeviation.UniformBounded(0, 50);
+	Console.WriteLine(deviation.Next());
 
 }
 
-MainMenu();
-// DebugBox();
+// MainMenu();
+DebugBox();
