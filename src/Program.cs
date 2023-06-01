@@ -444,6 +444,7 @@ void DebugBox() {
 	Console.WriteLine("-- Value Deviation Test --");
 	var deviation = new ValueDeviation.UniformBounded();
 	Console.WriteLine(deviation.Next(0, 50));
+	Console.WriteLine(deviation.Next(0.0, 50.0));
 
 }
 
