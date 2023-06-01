@@ -385,14 +385,17 @@ void savePalette(string fileName, string path = "") {
 
 void DebugBox() {
 
-	Console.Clear();
-	Console.WriteLine("-- Color_Tests --");
+	TestsDriver.Initialize();
+	TestsDriver.Run_Color_Tests(false);
 
-	Color_Tests.CMYK_Returns_Type_When_Called();
-	Color_Tests.HEX_Returns_Type_When_Called();
-	Color_Tests.HSL_Returns_Type_When_Called();
-	Color_Tests.HSV_Returns_Type_When_Called();
-	Color_Tests.RGB_Returns_Type_When_Called();
+	// Console.Clear();
+	// Console.WriteLine("-- Color_Tests --");
+
+	// Color_Tests.CMYK_Returns_Type_When_Called();
+	// Color_Tests.HEX_Returns_Type_When_Called();
+	// Color_Tests.HSL_Returns_Type_When_Called();
+	// Color_Tests.HSV_Returns_Type_When_Called();
+	// Color_Tests.RGB_Returns_Type_When_Called();
 
 	Console.WriteLine("");
 	Console.WriteLine("-- ColorHarmony_Tests --");
