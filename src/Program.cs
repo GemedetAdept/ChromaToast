@@ -440,7 +440,9 @@ void DebugBox() {
 
 	BlendColors_Tests.PrintOutColorTypeof();
 
-	
+	Console.WriteLine("");
+	Console.WriteLine("-- Value Deviation Test --");
+	var deviation = new ValueDeviation.UniformBounded()
 
 }
 

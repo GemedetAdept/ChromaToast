@@ -1,18 +1,32 @@
 namespace colorvalues {
 public class ValueDeviation {
 
-	public virtual int Next(int lowerBound, int upperBound) {
-		return 1;
+	public class UniformBounded {
+
+		private int _lowerBound;
+		private int _upperBound;
+
+		public UniformBounded(int lowerBound, int upperBound) {
+			LowerBound = lowerBound;
+			UpperBound = upperBound
+		}
+
+		public int LowerBound {
+			get {return _lowerBound;}
+			set {_lowerBound = value;}
+		}
+		public int UpperBound {
+			get {return _upperBound;}
+			set {_upperBound = value;}
+		}
+
+		public static int Next() {
+			Random newRandom = new Random();
+			int outputValue = newRandom.Next(LowerBound, UpperBound);
+
+			return outputValue;
+		}
 	}
-}
 
-public class UniformBounded : ValueDeviation {
-
-	public override int Next(int lowerBound, int upperBound) {
-		Random newRandom = new Random();
-		int outputValue = newRandom.Next(lowerBound, upperBound);
-
-		return outputValue;
-	}
 }
 }
