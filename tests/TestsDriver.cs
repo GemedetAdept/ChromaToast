@@ -42,5 +42,39 @@ public class TestsDriver {
 		return 1;
 	} return 0;
 	}
+
+	public static int Run_ConvertColor_Tests(bool toggle) {
+	if (toggle == true) {
+		Console.WriteLine("-- ConvertColor_Tests --");
+
+		ConvertColor_Tests.CMYKtoHEX_Produces_HEX();
+		ConvertColor_Tests.CMYKtoHSV_Produces_HSV();
+		ConvertColor_Tests.CMYKtoHSL_Produces_HSL();
+		ConvertColor_Tests.CMYKtoRGB_Produces_RGB();
+
+		ConvertColor_Tests.HEXtoCMYK_Produces_CMYK();
+		ConvertColor_Tests.HEXtoHSL_Produces_HSL();
+		ConvertColor_Tests.HEXtoHSV_Produces_HSV();
+		ConvertColor_Tests.HEXtoRGB_Produces_RGB();
+
+		ConvertColor_Tests.HSLtoCMYK_Produces_CMYK();
+		ConvertColor_Tests.HSLtoHEX_Produces_HEX();
+		ConvertColor_Tests.HSLtoHSV_Produces_HSV();
+		ConvertColor_Tests.HSLtoRGB_Produces_RGB();
+
+		ConvertColor_Tests.HSVtoCMYK_Produces_CMYK();
+		ConvertColor_Tests.HSVtoHEX_Produces_HEX();
+		ConvertColor_Tests.HSVtoHSL_Produces_HSL();
+		ConvertColor_Tests.HSVtoRGB_Produces_RGB();
+
+		ConvertColor_Tests.RGBtoCMYK_Produces_CMYK();
+		ConvertColor_Tests.RGBtoHEX_Produces_HEX();
+		ConvertColor_Tests.RGBtoHSL_Produces_HSL();
+		ConvertColor_Tests.RGBtoHSV_Produces_HSV();
+
+		Console.WriteLine("");
+		return 1;
+	} return 0;
+	}
 }
 }
