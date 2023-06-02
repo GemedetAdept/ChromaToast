@@ -25,6 +25,34 @@ public class Assert {
 		return 1;
 	}
 
+// IsGreaterThan
+	public static int IsGreaterThan(int ObjectA, int ObjectB, string message="") {
+		int result;
+
+		Console.WriteLine(message);
+		Console.WriteLine($"IsGreaterThan: {ObjectA} is greater than {ObjectB}");
+
+		if (ObjectA > ObjectB) {result = 1;}
+		else if (ObjectA <= ObjectB) {result = 0;}
+		else {result = -1;}
+
+		PrintResult(result);
+		return result;
+	}
+	public static int IsGreaterThan(double ObjectA, double ObjectB, string message="") {
+		int result;
+
+		Console.WriteLine(message);
+		Console.WriteLine($"IsGreaterThan: {ObjectA} is greater than {ObjectB}");
+
+		if (ObjectA > ObjectB) {result = 1;}
+		else if (ObjectA <= ObjectB) {result = 0;}
+		else {result = -1;}
+
+		PrintResult(result);
+		return result;
+	}
+
 // IsGreaterThanOrEqual
 	public static int IsGreaterThanOrEqual(int ObjectA, int ObjectB, string message="") {
 		int result;
@@ -52,6 +80,8 @@ public class Assert {
 		PrintResult(result);
 		return result;
 	}
+
+
 
 // IsLessThanOrEqual
 	public static int IsLessThanOrEqual(int ObjectA, int ObjectB, string message="") {
@@ -157,34 +187,6 @@ public class Assert {
 
 		if (ObjectA != ObjectB) {result = 1;}
 		else if (ObjectA == ObjectB) {result = 0;}
-		else {result = -1;}
-
-		PrintResult(result);
-		return result;
-	}
-
-// IsGreaterThan
-	public static int IsGreaterThan(int ObjectA, int ObjectB, string message="") {
-		int result;
-
-		Console.WriteLine(message);
-		Console.WriteLine($"IsGreaterThan: {ObjectA} is greater than {ObjectB}");
-
-		if (ObjectA > ObjectB) {result = 1;}
-		else if (ObjectA <= ObjectB) {result = 0;}
-		else {result = -1;}
-
-		PrintResult(result);
-		return result;
-	}
-	public static int IsGreaterThan(double ObjectA, double ObjectB, string message="") {
-		int result;
-
-		Console.WriteLine(message);
-		Console.WriteLine($"IsGreaterThan: {ObjectA} is greater than {ObjectB}");
-
-		if (ObjectA > ObjectB) {result = 1;}
-		else if (ObjectA <= ObjectB) {result = 0;}
 		else {result = -1;}
 
 		PrintResult(result);
