@@ -123,7 +123,7 @@ public class Assert {
 	}
 
 // IsNotEqual
-	public static int Int32AreNotEqual(int ObjectA, int ObjectB, string message="") {
+	public static int IsNotEqual(int ObjectA, int ObjectB, string message="") {
 		int result;
 
 		Console.WriteLine(message);
@@ -137,6 +137,7 @@ public class Assert {
 		return result;
 	}
 
+// IsGreaterThan
 	public static int DoubleIsGreaterThanDouble(double ObjectA, double ObjectB, string message="") {
 		int result;
 
@@ -151,6 +152,7 @@ public class Assert {
 		return result;
 	}
 
+// IsPositive
 	public static int DoubleIsPositive(double ObjectA, string message="") {
 		int result;
 
@@ -165,6 +167,7 @@ public class Assert {
 		return result;
 	}
 
+// Bool
 	public static int BoolTrue(bool Object, string message="") {
 		int result;
 
@@ -178,7 +181,6 @@ public class Assert {
 		PrintResult(result);
 		return result;
 	}
-
 	public static int BoolFalse(bool Object, string message="") {
 		int result;
 
@@ -193,6 +195,7 @@ public class Assert {
 		return result;
 	}
 
+// Type
 	public static int IsType(object ObjectA, object ObjectB, string message="") {
 		int result;
 
@@ -206,7 +209,6 @@ public class Assert {
 		PrintResult(result);
 		return result;
 	}
-
 	public static int IsNotType(object ObjectA, object ObjectB, string message="") {
 		int result;
 
@@ -221,6 +223,7 @@ public class Assert {
 		return result;
 	}
 
+// Null
 	public static int IsNull(object Object, string message="") {
 		int result;
 
@@ -234,7 +237,6 @@ public class Assert {
 		PrintResult(result);
 		return result;
 	}
-
 	public static int IsNotNull(object Object, string message="") {
 		int result;
 
