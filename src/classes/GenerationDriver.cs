@@ -11,6 +11,22 @@ public class GenerationDriver {
 		private Color.HSV[] _paletteHSV;
 		private Color.RGB[] _paletteRGB;
 
+		public Color.CMYK[] PaletteCMYK {get;set;}
+		public Color.HEX[] PaletteHEX {get;set;}
+		public Color.HSL[] PaletteHSL {get;set;}
+		public Color.HSV[] PaletteHSV {get;set;}
+		public Color.RGB[] PaletteRGB {get;set;}
+
+		public int LoadPalettes(Color.HSV BaseHSV) {
+			PaletteHSV = ColorHarmony.Complementary(BaseHSV);
+
+			PaletteCMYK = GenerateCMYK(PaletteHSV);
+			PaletteHEX = GenerateHEX(PaletteHSV);
+			PaletteHSL = GenerateHSL(PaletteHSV);
+			PaletteRGB = GenerateRGB(PaletteHSV);
+
+			return 1;
+		}
 	}
 
 	public static Color.CMYK[] GenerateCMYK(Color.HSV[] paletteHSV) {
@@ -55,28 +71,17 @@ public class GenerationDriver {
 	}
 
 	// 'Complementary' Generators
-	public class Complementary {
+	public class Complementary : HarmonyBase {
 
 		private Color.HSV _baseHSV;
 		private Color.HSV[] _paletteHSV;
 
 		public Complementary(Color.HSV inputHSV) {
 			BaseHSV = inputHSV;
-			PaletteHSV = ColorHarmony.Complementary(BaseHSV);
-
-			PaletteCMYK = GenerateCMYK(PaletteHSV);
-			PaletteHEX = GenerateHEX(PaletteHSV);
-			PaletteHSL = GenerateHSL(PaletteHSV);
-			PaletteRGB = GenerateRGB(PaletteHSV);
+			LoadPalettes(BaseHSV);
 		}
 
 		public Color.HSV BaseHSV {get;set;}
-
-		public Color.CMYK[] PaletteCMYK {get;set;}
-		public Color.HEX[] PaletteHEX {get;set;}
-		public Color.HSL[] PaletteHSL {get;set;}
-		public Color.HSV[] PaletteHSV {get;set;}
-		public Color.RGB[] PaletteRGB {get;set;}
 
 	}
 	// 'Split Complementary' Generators
