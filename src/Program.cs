@@ -398,6 +398,7 @@ void DebugBox() {
 
 void MenuBetaTest() {
 	MenuBeta testMenu = new MenuBeta();
+	testMenu.Options = new string[]{"Option 0", "Option 1", "Option 2"};
 	while (testMenu.MenuLoop == true) {
 		testMenu.LoadMenu();
 		testMenu.UpdateCursor();

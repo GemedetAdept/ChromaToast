@@ -1,18 +1,10 @@
 namespace menudriver {
 
 public class MenuBeta {
-	private string _title;
-	private string[] _options;
-	private string _cursor;
-	private int _cursorSpacer;
-	private int _activeItem;
-	private int _selectedItem;
-	private bool _menuLoop;
 
 	public string Title {get;set;}
 	public string[] Options{get;set;}
 	public string Cursor {get;set;}
-	public string CursorSpacer {get;set;}
 	public int ActiveItem {get;set;}
 	public int SelectedItem{get;set;}
 	public bool MenuLoop;
@@ -20,7 +12,7 @@ public class MenuBeta {
 	public MenuBeta() {
 		Title = "-- Lorem Ipsum --";
 		Options = new string[] {""};
-		Cursor = Cursor + CursorSpacer;
+		Cursor = "> ";
 		ActiveItem = 0;
 		SelectedItem = -1; // Initalize with non-functional value
 		MenuLoop = true;
@@ -59,6 +51,8 @@ public class MenuBeta {
 
 		string optionString = "";
 
+		Console.Clear();
+		Console.WriteLine(Title);
 		// When paired with UpdateCursor(), this responds to user input with arrow keys
 		for (int i=0; i < Options.Length; i++) {
 
@@ -68,6 +62,8 @@ public class MenuBeta {
 
 			optionString += Options[i];
 			Console.WriteLine(optionString);
+			
+			optionString = "";
 		}
 		return 1;
 	}
@@ -81,9 +77,9 @@ public class MenuBeta {
 		var keyInput = Console.ReadKey(false);
 		int optionsLength = Options.Length;
 
-		if (keyInput == UpArrow && ActiveItem > 0) {activeItem -= 1;}
-		else if (keyInput == DownArrow && ActiveItem < optionsLength) {activeItem += 1;}
-		else if (keyInput == Enter) {SelectedItem = ActiveItem;}
+		if (keyInput.Key == UpArrow && ActiveItem > 0) {ActiveItem -= 1;}
+		else if (keyInput.Key == DownArrow && ActiveItem < optionsLength-1) {ActiveItem += 1;}
+		else if (keyInput.Key == Enter) {SelectedItem = ActiveItem;}
 
 		return 1;
 	}
