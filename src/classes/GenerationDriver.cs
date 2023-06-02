@@ -4,7 +4,16 @@ using convertcolor;
 namespace generation {
 public class GenerationDriver {
 	
-	public Color.CMYK[] GenerateCMYK(Color.HSV[] paletteHSV) {
+	public class HarmonyBase {
+		private Color.CMYK[] _paletteCMYK;
+		private Color.HEX[] _paletteHEX;
+		private Color.HSL[] _paletteHSL;
+		private Color.HSV[] _paletteHSV;
+		private Color.RGB[] _paletteRGB;
+
+	}
+
+	public static Color.CMYK[] GenerateCMYK(Color.HSV[] paletteHSV) {
 		int elementCount = paletteHSV.Length;
 		Color.CMYK[] paletteCMYK = new Color.CMYK[elementCount];
 
@@ -24,16 +33,17 @@ public class GenerationDriver {
 		public Complementary(Color.HSV inputHSV) {
 			BaseHSV = inputHSV;
 			PaletteHSV = ColorHarmony.Complementary(BaseHSV);
+
+			PaletteCMYK = GenerateCMYK(PaletteHSV);
 		}
 
-		public Color.HSV BaseHSV {
-			get {return _baseHSV;}
-			set {_baseHSV = value;}
-		}
-		public Color.HSV[] PaletteHSV {
-			get {return _paletteHSV;}
-			set {_paletteHSV = value;}
-		}
+		public Color.HSV BaseHSV {get;set;}
+
+		public Color.CMYK[] PaletteCMYK {get;set;}
+		public Color.HEX[] PaletteHEX {get;set;}
+		public Color.HSL[] PaletteHSL {get;set;}
+		public Color.HSV[] PaletteHSV {get;set;}
+		public Color.RGB[] PaletteRGB {get;set;}
 
 	}
 	// 'Split Complementary' Generators
