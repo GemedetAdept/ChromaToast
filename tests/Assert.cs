@@ -164,11 +164,24 @@ public class Assert {
 	}
 
 // IsGreaterThan
-	public static int DoubleIsGreaterThanDouble(double ObjectA, double ObjectB, string message="") {
+	public static int IsGreaterThan(int ObjectA, int ObjectB, string message="") {
 		int result;
 
 		Console.WriteLine(message);
-		Console.WriteLine($"DoubleIsGreaterThanDouble: {ObjectA} is greater than {ObjectB}");
+		Console.WriteLine($"IsGreaterThan: {ObjectA} is greater than {ObjectB}");
+
+		if (ObjectA > ObjectB) {result = 1;}
+		else if (ObjectA <= ObjectB) {result = 0;}
+		else {result = -1;}
+
+		PrintResult(result);
+		return result;
+	}
+	public static int IsGreaterThan(double ObjectA, double ObjectB, string message="") {
+		int result;
+
+		Console.WriteLine(message);
+		Console.WriteLine($"IsGreaterThan: {ObjectA} is greater than {ObjectB}");
 
 		if (ObjectA > ObjectB) {result = 1;}
 		else if (ObjectA <= ObjectB) {result = 0;}
