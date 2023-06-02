@@ -395,13 +395,6 @@ void DebugBox() {
 	TestsDriver.Run_BlendColors_Tests(true);
 
 	TestsDriver.Run_ValueDeviation_Tests(true);
-	
-	var deviation = new ValueDeviation.UniformBounded();
-	Console.WriteLine(deviation.Next(0, 50));
-	Console.WriteLine(deviation.Next(0.0, 50.0));
-	Console.WriteLine(deviation.NextCentered(0, 100, 40));
-	Console.WriteLine(deviation.NextCentered(0.0, 100.0, 40.0));
-
 }
 
 // MainMenu();
