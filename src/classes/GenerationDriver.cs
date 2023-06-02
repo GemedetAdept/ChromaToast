@@ -65,6 +65,9 @@ public class GenerationDriver {
 			PaletteHSV = ColorHarmony.Complementary(BaseHSV);
 
 			PaletteCMYK = GenerateCMYK(PaletteHSV);
+			PaletteHEX = GenerateHEX(PaletteHSV);
+			PaletteHSL = GenerateHSL(PaletteHSV);
+			PaletteRGB = GenerateRGB(PaletteHSV);
 		}
 
 		public Color.HSV BaseHSV {get;set;}
