@@ -43,6 +43,16 @@ public class GenerationDriver {
 
 		return paletteHSL;
 	}
+	public static Color.RGB[] GenerateRGB(Color.HSV[] paletteHSV) {
+		int elementCount = paletteHSV.Length;
+		Color.RGB[] paletteRGB = new Color.RGB[elementCount];
+
+		for (int i = 0; i < elementCount; i++) {
+			paletteRGB[i] = ConvertColor.HSVtoRGB(paletteHSV[i]);
+		}
+
+		return paletteRGB;
+	}
 
 	// 'Complementary' Generators
 	public class Complementary {
