@@ -72,7 +72,7 @@ public class GenerationDriver {
 		return paletteRGB;
 	}
 
-	// 'Complementary' Generators
+
 	public class Complementary : HarmonyBase {
 
 		public Complementary(Color.HSV inputHSV) {
@@ -82,7 +82,7 @@ public class GenerationDriver {
 			LoadPalettes();
 		}
 	}
-	// 'Split Complementary' Generators
+
 	public class SplitComplementary : HarmonyBase {
 
 		public SplitComplementary(Color.HSV inputHSV) {
@@ -92,7 +92,7 @@ public class GenerationDriver {
 			LoadPalettes();
 		}
 	}
-	// 'Triadic' Generators
+
 	public class Triadic : HarmonyBase {
 
 		public Triadic(Color.HSV inputHSV) {
@@ -102,7 +102,7 @@ public class GenerationDriver {
 			LoadPalettes();
 		}
 	}
-	// 'Tetradic' Generators
+
 	public class Tetradic : HarmonyBase {
 
 		public Tetradic(Color.HSV inputHSV) {
@@ -112,7 +112,7 @@ public class GenerationDriver {
 			LoadPalettes();
 		}
 	}
-	// 'Square' Generators
+
 	public class Square : HarmonyBase {
 
 		public Square(Color.HSV inputHSV) {
@@ -122,7 +122,7 @@ public class GenerationDriver {
 			LoadPalettes();
 		}
 	}
-	// 'Analogous' Generators
+
 	public class Analogous : HarmonyBase {
 
 		public Analogous(Color.HSV inputHSV) {
@@ -132,7 +132,7 @@ public class GenerationDriver {
 			LoadPalettes();
 		}
 	}
-	// 'Monochromatic' Generators
+
 	public class Monochromatic : HarmonyBase {
 
 		public Monochromatic(Color.HSV inputHSV) {
