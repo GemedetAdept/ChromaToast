@@ -224,7 +224,7 @@ public class Assert {
 		int result;
 
 		Console.WriteLine(message);
-		Console.WriteLine($"IsPositive: {ObjectA} is postive");
+		Console.WriteLine($"(int)IsPositive: {ObjectA} is postive");
 
 		if (ObjectA >= 0) {result = 1;}
 		else if (ObjectA < 0) {result = 0;}
@@ -237,10 +237,38 @@ public class Assert {
 		int result;
 
 		Console.WriteLine(message);
-		Console.WriteLine($"IsPositive: {ObjectA} is postive");
+		Console.WriteLine($"(double)IsPositive: {ObjectA} is postive");
 
 		if (ObjectA >= 0) {result = 1;}
 		else if (ObjectA < 0) {result = 0;}
+		else {result = -1;}
+
+		PrintResult(result);
+		return result;
+	}
+
+// IsNegative
+	public static int IsNegative(int ObjectA, string message="") {
+		int result;
+
+		Console.WriteLine(message);
+		Console.WriteLine($"(int)IsNegative: {ObjectA} is negative");
+
+		if (ObjectA < 0) {result = 1;}
+		else if (ObjectA >= 0) {result = 0;}
+		else {result = -1;}
+
+		PrintResult(result);
+		return result;
+	}
+	public static int IsNegative(double ObjectA, string message="") {
+		int result;
+
+		Console.WriteLine(message);
+		Console.WriteLine($"(double)IsNegative: {ObjectA} is negative");
+
+		if (ObjectA < 0) {result = 1;}
+		else if (ObjectA >= 0) {result = 0;}
 		else {result = -1;}
 
 		PrintResult(result);
