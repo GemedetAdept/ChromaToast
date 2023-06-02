@@ -83,13 +83,13 @@ public class MenuBeta {
 
 		if (keyInput == UpArrow && ActiveItem > 0) {activeItem -= 1;}
 		else if (keyInput == DownArrow && ActiveItem < optionsLength) {activeItem += 1;}
-		else if (keyInput == Enter) {SelectedItem = ActiveItem}
+		else if (keyInput == Enter) {SelectedItem = ActiveItem;}
 
 		return 1;
 	}
 
 	public int SelectionCheck() {
-		if (SelectedItem == ActiveItem) {return 1;}
+		if (SelectedItem == ActiveItem) {MenuLoop = false; return 1;}
 		else if (SelectedItem != ActiveItem) {return 0;}
 		else {return -1;}
 	}

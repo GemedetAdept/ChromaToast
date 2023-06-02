@@ -396,5 +396,15 @@ void DebugBox() {
 	TestsDriver.Run_ValueDeviation_Tests(true);
 }
 
-MainMenu();
+void MenuBetaTest() {
+	MenuBeta testMenu = new MenuBeta();
+	while (testMenu.MenuLoop == true) {
+		testMenu.LoadMenu();
+		testMenu.UpdateCursor();
+		testMenu.SelectionCheck();
+	}
+}
+
+// MainMenu();
 // DebugBox();
+MenuBetaTest();
