@@ -396,5 +396,5 @@ void DebugBox() {
 	TestsDriver.Run_ValueDeviation_Tests(true);
 }
 
-MainMenu();
-// DebugBox();
+// MainMenu();
+DebugBox();
