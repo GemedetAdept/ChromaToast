@@ -149,6 +149,19 @@ public class Assert {
 		PrintResult(result);
 		return result;
 	}
+	public static int IsNotEqual(string ObjectA, string ObjectB, string message="") {
+		int result;
+
+		Console.WriteLine(message);
+		Console.WriteLine($"(string)IsNotEqual: {ObjectA} is not equal to {ObjectB}");
+
+		if (ObjectA != ObjectB) {result = 1;}
+		else if (ObjectA == ObjectB) {result = 0;}
+		else {result = -1;}
+
+		PrintResult(result);
+		return result;
+	}
 
 // IsGreaterThan
 	public static int DoubleIsGreaterThanDouble(double ObjectA, double ObjectB, string message="") {
