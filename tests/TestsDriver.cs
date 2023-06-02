@@ -93,6 +93,7 @@ public class TestsDriver {
 		Console.WriteLine("-- ValueDeviation_Tests --");
 
 		ValueDeviation_Tests.Int32_UniformBounded_Next_Is_Within_Bounds();
+		ValueDeviation_Tests.Double_UniformBounded_Next_Is_Within_Bounds();
 
 		Console.WriteLine("");
 		return 1;
