@@ -33,6 +33,16 @@ public class GenerationDriver {
 
 		return paletteHEX;
 	}
+	public static Color.HSL[] GenerateHSL(Color.HSV[] paletteHSV) {
+		int elementCount = paletteHSV.Length;
+		Color.HSL[] paletteHSL = new Color.HSL[elementCount];
+
+		for (int i = 0; i < elementCount; i++) {
+			paletteHSL[i] = ConvertColor.HSVtoHSL(paletteHSV[i]);
+		}
+
+		return paletteHSL;
+	}
 
 	// 'Complementary' Generators
 	public class Complementary {
