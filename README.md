@@ -6,3 +6,45 @@ Example of the console application, operated via arrow keys and Enter. The resul
 
 ![Simple demonstration of ChromaToast](https://i.imgur.com/NpefxNH.gif)
 ![Generated tetradic palette](https://i.imgur.com/DyNVvNd.png)
+
+## Custom Unit Testing Framework
+
+### Why Make a Custom Framework?
+Two reasons I'm creating this instead of using one of the many unit testing frameworks:
+1. I've loaned this machine from the engineering department and do not have the admin permissions to install all the framework dependencies needed.
+2. I frankly like making my own things.
+
+
+### Current Assert Methods
+* PrintResult
+	- Driver for displaying unit test results based on the Assert outcome.
+
+* (int)IsGreaterThan
+* (int)IsGreaterThanOrEqual
+* (int)IsLessThan
+* (int)IsLessThanOrEqual
+* (int)IsEqual
+* (int)IsNotEqual
+* (int)IsPositive
+* (int)IsNegative
+
+* (double)IsGreaterThan
+* (double)IsGreaterThanOrEqual
+* (double)IsLessThan
+* (double)IsLessThanOrEqual
+* (double)IsEqual
+* (double)IsNotEqual
+* (double)IsPositive
+* (double)IsNegative
+
+* (string)IsEqual
+* (string)IsNotEqual
+
+* (bool)IsTrue
+* (bool)IsFalse
+
+* (Type)IsType
+* (Type)IsNotType
+
+* (Null)IsNull
+* (Null)IsNotNull
