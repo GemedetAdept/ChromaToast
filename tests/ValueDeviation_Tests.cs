@@ -16,10 +16,10 @@ public class ValueDeviation_Tests {
 	}
 	public static int Double_UniformBounded_Next_Is_Within_Bounds() {
 		var random = new ValueDeviation.UniformBounded();
-		int lowerBound = 0.0;
-		int upperBound = 360.0;
+		double lowerBound = 0.0;
+		double upperBound = 360.0;
 
-		int generatedValue = random.Next(lowerBound, upperBound);
+		double generatedValue = random.Next(lowerBound, upperBound);
 
 		Console.WriteLine("");
 		Assert.IsGreaterThanOrEqual(generatedValue, lowerBound, "Int32_UniformBounded_Next_Is_Within_Bounds");
