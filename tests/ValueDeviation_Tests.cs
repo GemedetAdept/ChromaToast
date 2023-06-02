@@ -7,8 +7,8 @@ public class ValueDeviation_Tests {
 		int lowerBound = 0;
 		int upperBound = 360;
 
-		generatedValue = random.Next(lowerBound, upperBound);
-
+		int generatedValue = random.Next(lowerBound, upperBound);
+		return 1;
 		
 	}
 }

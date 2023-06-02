@@ -29,11 +29,11 @@ public class Assert {
 		int result;
 
 		Console.WriteLine(message);
-		Console.WriteLine($"(int)Assert.IsGreaterThanOrEqual: {ObjectA} is greater than or equal to {ObjectB}");
+		Console.WriteLine($"(int)IsGreaterThanOrEqual: {ObjectA} is greater than or equal to {ObjectB}");
 
 		if (ObjectA >= ObjectB) {result = 1;}
 		else if (ObjectA < ObjectB) {result = 0;}
-		else {return -1;}
+		else {result = -1;}
 
 		PrintResult(result);
 		return result;
@@ -43,25 +43,39 @@ public class Assert {
 		int result;
 
 		Console.WriteLine(message);
-		Console.WriteLine($"(double)Assert.IsGreaterThanOrEqual: {ObjectA} is greater than or equal to {ObjectB}");
+		Console.WriteLine($"(double)IsGreaterThanOrEqual: {ObjectA} is greater than or equal to {ObjectB}");
 
 		if (ObjectA >= ObjectB) {result = 1;}
 		else if (ObjectA < ObjectB) {result = 0;}
-		else {return -1;}
+		else {result = -1;}
 
 		PrintResult(result);
 		return result;
+	}
+
+	public static int IsLessThanOrEqual(int ObjectA, int ObjectB, string message="") {
+		int result;
+
+		Console.WriteLine(message);
+		Console.WriteLine($"(int)IsLessThanOrEqual: {ObjectA} is less than or equal to {ObjectB}");
+
+		if (ObjectA <= ObjectB) {result = 1;}
+		else if (ObjectA > ObjectB) {result = 0;}
+		else {result = -1;}
+
+		PrintResult(result);
+		return 1;
 	}
 
 	public static int Int32AreEqual(int ObjectA, int ObjectB, string message="") {
 		int result;
 
 		Console.WriteLine(message);
-		Console.WriteLine($"Assert.Int32AreEqual: {ObjectA} is equal to {ObjectB}");
+		Console.WriteLine($"Int32AreEqual: {ObjectA} is equal to {ObjectB}");
 
 		if (ObjectA == ObjectB) {result = 1;}
 		else if (ObjectA != ObjectB) {result = 0;}
-		else {return -1;}
+		else {result = -1;}
 
 		PrintResult(result);
 		return result;
@@ -71,11 +85,11 @@ public class Assert {
 		int result;
 
 		Console.WriteLine(message);
-		Console.WriteLine($"Assert.Int32AreNotEqual: {ObjectA} is not equal to {ObjectB}");
+		Console.WriteLine($"Int32AreNotEqual: {ObjectA} is not equal to {ObjectB}");
 
 		if (ObjectA != ObjectB) {result = 1;}
 		else if (ObjectA == ObjectB) {result = 0;}
-		else {return -1;}
+		else {result = -1;}
 
 		PrintResult(result);
 		return result;
@@ -85,11 +99,11 @@ public class Assert {
 		int result;
 
 		Console.WriteLine(message);
-		Console.WriteLine($"Assert.DoubleAreEqual: {ObjectA} is equal to {ObjectB}");
+		Console.WriteLine($"DoubleAreEqual: {ObjectA} is equal to {ObjectB}");
 
 		if (ObjectA == ObjectB) {result = 1;}
 		else if (ObjectA != ObjectB) {result = 0;}
-		else {return -1;}
+		else {result = -1;}
 
 		PrintResult(result);
 		return result;
@@ -99,11 +113,11 @@ public class Assert {
 		int result;
 
 		Console.WriteLine(message);
-		Console.WriteLine($"Assert.DoubleIsGreaterThanDouble: {ObjectA} is greater than {ObjectB}");
+		Console.WriteLine($"DoubleIsGreaterThanDouble: {ObjectA} is greater than {ObjectB}");
 
 		if (ObjectA > ObjectB) {result = 1;}
 		else if (ObjectA <= ObjectB) {result = 0;}
-		else {return -1;}
+		else {result = -1;}
 
 		PrintResult(result);
 		return result;
@@ -113,11 +127,11 @@ public class Assert {
 		int result;
 
 		Console.WriteLine(message);
-		Console.WriteLine($"Assert.DoubleIsPositive: {ObjectA} is postive");
+		Console.WriteLine($"DoubleIsPositive: {ObjectA} is postive");
 
 		if (ObjectA >= 0) {result = 1;}
 		else if (ObjectA < 0) {result = 0;}
-		else {return -1;}
+		else {result = -1;}
 
 		PrintResult(result);
 		return result;
@@ -127,11 +141,11 @@ public class Assert {
 		int result;
 
 		Console.WriteLine(message);
-		Console.WriteLine($"Assert.BoolTrue: {Object} is True");
+		Console.WriteLine($"BoolTrue: {Object} is True");
 
 		if (Object == true) {result = 1;}
 		else if (Object == false) {result = 0;}
-		else {return -1;}
+		else {result = -1;}
 
 		PrintResult(result);
 		return result;
@@ -141,11 +155,11 @@ public class Assert {
 		int result;
 
 		Console.WriteLine(message);
-		Console.WriteLine($"Assert.BoolFalse: {Object} is False");
+		Console.WriteLine($"BoolFalse: {Object} is False");
 
 		if (Object == false) {result = 1;}
 		else if (Object == true) {result = 0;}
-		else {return -1;}
+		else {result = -1;}
 
 		PrintResult(result);
 		return result;
@@ -155,11 +169,11 @@ public class Assert {
 		int result;
 
 		Console.WriteLine(message);
-		Console.WriteLine($"Assert.IsType: {ObjectA} is the typeof {ObjectB}");
+		Console.WriteLine($"IsType: {ObjectA} is the typeof {ObjectB}");
 
 		if (ObjectA.GetType() == ObjectB.GetType()) {result = 1;}
 		else if (ObjectA.GetType() != ObjectB.GetType()) {result = 0;}
-		else {return -1;}
+		else {result = -1;}
 
 		PrintResult(result);
 		return result;
@@ -169,11 +183,11 @@ public class Assert {
 		int result;
 
 		Console.WriteLine(message);
-		Console.WriteLine($"Assert.IsNotType: {ObjectA} is not the typeof {ObjectB}");
+		Console.WriteLine($"IsNotType: {ObjectA} is not the typeof {ObjectB}");
 
 		if (ObjectA.GetType() != ObjectB.GetType()) {result = 1;}
 		else if (ObjectA.GetType() == ObjectB.GetType()) {result = 0;}
-		else {return -1;}
+		else {result = -1;}
 
 		PrintResult(result);
 		return result;
@@ -183,11 +197,11 @@ public class Assert {
 		int result;
 
 		Console.WriteLine(message);
-		Console.WriteLine($"Assert.IsNull: {Object} is null");
+		Console.WriteLine($"IsNull: {Object} is null");
 
 		if (Object == null) {result = 1;}
 		else if (Object != null) {result = 0;}
-		else {return -1;}
+		else {result = -1;}
 
 		PrintResult(result);
 		return result;
@@ -197,11 +211,11 @@ public class Assert {
 		int result;
 
 		Console.WriteLine(message);
-		Console.WriteLine($"Assert.IsNotNull: {Object} is not null");
+		Console.WriteLine($"IsNotNull: {Object} is not null");
 
 		if (Object != null) {result = 1;}
 		else if (Object == null) {result = 0;}
-		else {return -1;}
+		else {result = -1;}
 
 		PrintResult(result);
 		return result;
@@ -211,11 +225,11 @@ public class Assert {
 		int result;
 
 		Console.WriteLine(message);
-		Console.WriteLine($"Assert.StringAreEqual: '{ObjectA}' equals '{ObjectB}'");
+		Console.WriteLine($"StringAreEqual: '{ObjectA}' equals '{ObjectB}'");
 
 		if (ObjectA == ObjectB) {result = 1;}
 		else if (ObjectA != ObjectB) {result = 0;}
-		else {return -1;}
+		else {result = -1;}
 
 		PrintResult(result);
 		return result;

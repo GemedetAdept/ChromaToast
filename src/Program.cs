@@ -386,11 +386,11 @@ void savePalette(string fileName, string path = "") {
 void DebugBox() {
 
 	TestsDriver.Initialize();
-	TestsDriver.Run_Color_Tests(false);
+	TestsDriver.Run_Color_Tests(true);
 
-	TestsDriver.Run_ColorHarmony_Tests(false);
+	TestsDriver.Run_ColorHarmony_Tests(true);
 
-	TestsDriver.Run_ConvertColor_Tests(false);
+	TestsDriver.Run_ConvertColor_Tests(true);
 
 	TestsDriver.Run_BlendColors_Tests(true);
 
