@@ -29,10 +29,24 @@ public class Assert {
 		int result;
 
 		Console.WriteLine(message);
-		Console.WriteLine($"Assert.IsGreaterThanOrEqual: {ObjectA} is greater than or equal to {ObjectB}");
+		Console.WriteLine($"(int)Assert.IsGreaterThanOrEqual: {ObjectA} is greater than or equal to {ObjectB}");
 
 		if (ObjectA >= ObjectB) {result = 1;}
-		else if (ObjectA <) {result = 0;}
+		else if (ObjectA < ObjectB) {result = 0;}
+		else {return -1;}
+
+		PrintResult(result);
+		return result;
+	}
+
+	public static double IsGreaterThanOrEqual(double ObjectA, double ObjectB, string message="") {
+		int result;
+
+		Console.WriteLine(message);
+		Console.WriteLine($"(double)Assert.IsGreaterThanOrEqual: {ObjectA} is greater than or equal to {ObjectB}");
+
+		if (ObjectA >= ObjectB) {result = 1;}
+		else if (ObjectA < ObjectB) {result = 0;}
 		else {return -1;}
 
 		PrintResult(result);
