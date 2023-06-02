@@ -1,8 +1,19 @@
 using colorvalues;
+using colorharmony;
+using convertcolor;
 namespace generation {
 public class GenerationDriver {
 	
-	
+	public Color.CMYK[] GenerateCMYK(Color.HSV[] paletteHSV) {
+		int elementCount = paletteHSV.Length;
+		Color.CMYK[] paletteCMYK = new Color.CMYK[elementCount];
+
+		for (int i = 0; i < elementCount; i++) {
+			paletteCMYK[i] = ConvertColor.HSVtoCMYK(paletteHSV[i]);
+		}
+
+		return paletteCMYK;
+	}
 
 	// 'Complementary' Generators
 	public class Complementary {
