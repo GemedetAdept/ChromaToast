@@ -14,7 +14,7 @@ public class MenuBeta {
 		Options = new string[] {""};
 		Cursor = "> ";
 		ActiveItem = 0;
-		SelectedItem = -1; // Initalize with non-functional value
+		SelectedItem = 0;
 		MenuLoop = true;
 	}
 
@@ -62,7 +62,7 @@ public class MenuBeta {
 
 			optionString += Options[i];
 			Console.WriteLine(optionString);
-			
+
 			optionString = "";
 		}
 		return 1;
