@@ -74,7 +74,7 @@ public class Assert {
 		Console.WriteLine($"(double)IsLessThanOrEqual: {ObjectA} is less than or equal to {ObjectB}");
 
 		if (ObjectA <= ObjectB) {result = 1;}
-		else if (Object > ObjectB) {result = 0;}
+		else if (ObjectA > ObjectB) {result = 0;}
 		else {result = -1;}
 
 		PrintResult(result);

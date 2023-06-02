@@ -87,5 +87,16 @@ public class TestsDriver {
 		return 1;
 	} return 0;
 	}
+
+	public static int Run_ValueDeviation_Tests(bool toggle) {
+	if (toggle == true) {
+		Console.WriteLine("-- ValueDeviation_Tests --");
+
+		ValueDeviation_Tests.Int32_UniformBounded_Next_Is_Within_Bounds();
+
+		Console.WriteLine("");
+		return 1;
+	} return 0;
+	}
 }
 }
