@@ -25,6 +25,20 @@ public class Assert {
 		return 1;
 	}
 
+	public static int IsGreaterThanOrEqual(int ObjectA, int ObjectB, string message="") {
+		int result;
+
+		Console.WriteLine(message);
+		Console.WriteLine($"Assert.IsGreaterThanOrEqual: {ObjectA} is greater than or equal to {ObjectB}");
+
+		if (ObjectA >= ObjectB) {result = 1;}
+		else if (ObjectA <) {result = 0;}
+		else {return -1;}
+
+		PrintResult(result);
+		return result;
+	}
+
 	public static int Int32AreEqual(int ObjectA, int ObjectB, string message="") {
 		int result;
 
