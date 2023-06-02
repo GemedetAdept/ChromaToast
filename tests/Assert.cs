@@ -220,11 +220,11 @@ public class Assert {
 	}
 
 // Bool
-	public static int BoolTrue(bool Object, string message="") {
+	public static int IsTrue(bool Object, string message="") {
 		int result;
 
 		Console.WriteLine(message);
-		Console.WriteLine($"BoolTrue: {Object} is True");
+		Console.WriteLine($"IsTrue: {Object} is True");
 
 		if (Object == true) {result = 1;}
 		else if (Object == false) {result = 0;}
@@ -233,11 +233,11 @@ public class Assert {
 		PrintResult(result);
 		return result;
 	}
-	public static int BoolFalse(bool Object, string message="") {
+	public static int IsFalse(bool Object, string message="") {
 		int result;
 
 		Console.WriteLine(message);
-		Console.WriteLine($"BoolFalse: {Object} is False");
+		Console.WriteLine($"IsFalse: {Object} is False");
 
 		if (Object == false) {result = 1;}
 		else if (Object == true) {result = 0;}
