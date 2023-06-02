@@ -184,7 +184,7 @@ public class ColorHarmony_Tests {
 		outputValue = ColorHarmony.capValue(inputValue, ceiling, floor);
 
 		Console.WriteLine("");
-		Assert.DoubleIsPositive(outputValue, "capValue_Handles_Input_Below_Negative_Ceiling -110.0 100.0");
+		Assert.IsPositive(outputValue, "capValue_Handles_Input_Below_Negative_Ceiling -110.0 100.0");
 
 		return 1;
 	}

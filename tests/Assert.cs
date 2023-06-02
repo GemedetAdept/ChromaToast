@@ -192,11 +192,24 @@ public class Assert {
 	}
 
 // IsPositive
-	public static int DoubleIsPositive(double ObjectA, string message="") {
+	public static int IsPositive(int ObjectA, string message="") {
 		int result;
 
 		Console.WriteLine(message);
-		Console.WriteLine($"DoubleIsPositive: {ObjectA} is postive");
+		Console.WriteLine($"IsPositive: {ObjectA} is postive");
+
+		if (ObjectA >= 0) {result = 1;}
+		else if (ObjectA < 0) {result = 0;}
+		else {result = -1;}
+
+		PrintResult(result);
+		return result;
+	}
+	public static int IsPositive(double ObjectA, string message="") {
+		int result;
+
+		Console.WriteLine(message);
+		Console.WriteLine($"IsPositive: {ObjectA} is postive");
 
 		if (ObjectA >= 0) {result = 1;}
 		else if (ObjectA < 0) {result = 0;}
