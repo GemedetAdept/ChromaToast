@@ -280,7 +280,7 @@ void generationDriver() {
 	
 	paletteHSV = HarmonyMenu(normalizedInputHSV);
 
-	for (int i = 0; i <paletteHSV.Count; i++) {
+	for (int i = 0; i < paletteHSV.Count; i++) {
 		paletteCMYK.Add(ConvertColor.HSVtoCMYK(paletteHSV[i]));
 	}
 	for (int i = 0; i < paletteHSV.Count; i++) {
