@@ -12,7 +12,7 @@ public class SanitizeInput_Tests {
 		OutputString = SanitizeInput.StripCharacters(InputString, TargetCharacters);
 
 		Console.WriteLine("");
-		Assert.StringAreEqual(OutputString, ExpectedString, "StripCharacters_Removes_Characters_From_String");
+		Assert.IsEqual(OutputString, ExpectedString, "StripCharacters_Removes_Characters_From_String");
 		return 1;
 	}
 }

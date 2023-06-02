@@ -17,7 +17,7 @@ public class ColorHarmony_Tests {
 		var AB_deltaHue = Math.Abs(A_HSV.Hue - B_HSV.Hue);
 
 		Console.WriteLine("");
-		Assert.DoubleAreEqual(AB_deltaHue, ComplementaryHueOffset, "Complementary_Hue_Difference_Is_120");
+		Assert.IsEqual(AB_deltaHue, ComplementaryHueOffset, "Complementary_Hue_Difference_Is_120");
 
 		return 1;
 	}
@@ -39,8 +39,8 @@ public class ColorHarmony_Tests {
 		var AC_deltaHue = Math.Abs(A_HSV.Hue - C_HSV.Hue);
 
 		Console.WriteLine("");
-		Assert.DoubleAreEqual(AB_deltaHue, SplitComplementaryHueOffset210, "SplitComplementary_Hue_Difference_Is_210");
-		Assert.DoubleAreEqual(AC_deltaHue, SplitComplementaryHueOffset150, "SplitComplementary_Hue_Difference_Is_150");
+		Assert.IsEqual(AB_deltaHue, SplitComplementaryHueOffset210, "SplitComplementary_Hue_Difference_Is_210");
+		Assert.IsEqual(AC_deltaHue, SplitComplementaryHueOffset150, "SplitComplementary_Hue_Difference_Is_150");
 
 		return 1;
 	}
@@ -62,9 +62,9 @@ public class ColorHarmony_Tests {
 		var BC_deltaHue = Math.Abs(B_HSV.Hue - C_HSV.Hue);
 
 		Console.WriteLine("");
-		Assert.DoubleAreEqual(AB_deltaHue, TriadicHueOffset, "Triadic_Hue_Difference_Is_120 AB_deltaHue");
-		Assert.DoubleAreEqual(AC_deltaHue, TriadicHueOffset, "Triadic_Hue_Difference_Is_120 AC_deltaHue");
-		Assert.DoubleAreEqual(BC_deltaHue, TriadicHueOffset, "Triadic_Hue_Difference_Is_120 BC_deltaHue");
+		Assert.IsEqual(AB_deltaHue, TriadicHueOffset, "Triadic_Hue_Difference_Is_120 AB_deltaHue");
+		Assert.IsEqual(AC_deltaHue, TriadicHueOffset, "Triadic_Hue_Difference_Is_120 AC_deltaHue");
+		Assert.IsEqual(BC_deltaHue, TriadicHueOffset, "Triadic_Hue_Difference_Is_120 BC_deltaHue");
 
 		return 1;
 	}
@@ -88,9 +88,9 @@ public class ColorHarmony_Tests {
 		var AD_deltaHue = Math.Abs(A_HSV.Hue - D_HSV.Hue);
 
 		Console.WriteLine("");
-		Assert.DoubleAreEqual(AB_deltaHue, TetradicHueOffset240, "Tetradic_Hue_Difference_Is_240 AB_deltaHue");
-		Assert.DoubleAreEqual(AC_deltaHue, TetradicHueOffset180, "Triadic_Hue_Difference_Is_180 AC_deltaHue");
-		Assert.DoubleAreEqual(AB_deltaHue, TetradicHueOffset240, "Tetradic_Hue_Difference_Is_240 AB_deltaHue");
+		Assert.IsEqual(AB_deltaHue, TetradicHueOffset240, "Tetradic_Hue_Difference_Is_240 AB_deltaHue");
+		Assert.IsEqual(AC_deltaHue, TetradicHueOffset180, "Triadic_Hue_Difference_Is_180 AC_deltaHue");
+		Assert.IsEqual(AB_deltaHue, TetradicHueOffset240, "Tetradic_Hue_Difference_Is_240 AB_deltaHue");
 
 		return 1;
 	}
@@ -114,10 +114,10 @@ public class ColorHarmony_Tests {
 		var DA_deltaHue = Math.Abs(D_HSV.Hue - A_HSV.Hue);
 
 		Console.WriteLine("");
-		Assert.DoubleAreEqual(AB_deltaHue, SquareHueOffset, "Square_Hue_Difference_Is_90 AB_deltaHue");
-		Assert.DoubleAreEqual(BC_deltaHue, SquareHueOffset, "Square_Hue_Difference_Is_90 BC_deltaHue");
-		Assert.DoubleAreEqual(CD_deltaHue, SquareHueOffset, "Square_Hue_Difference_Is_90 CD_deltaHue");
-		Assert.DoubleAreEqual(DA_deltaHue, SquareHueOffset, "Square_Hue_Difference_Is_90 DA_deltaHue");
+		Assert.IsEqual(AB_deltaHue, SquareHueOffset, "Square_Hue_Difference_Is_90 AB_deltaHue");
+		Assert.IsEqual(BC_deltaHue, SquareHueOffset, "Square_Hue_Difference_Is_90 BC_deltaHue");
+		Assert.IsEqual(CD_deltaHue, SquareHueOffset, "Square_Hue_Difference_Is_90 CD_deltaHue");
+		Assert.IsEqual(DA_deltaHue, SquareHueOffset, "Square_Hue_Difference_Is_90 DA_deltaHue");
 
 		return 1;
 	}
@@ -138,8 +138,8 @@ public class ColorHarmony_Tests {
 		var AC_deltaHue = Math.Abs(A_HSV.Hue - C_HSV.Hue);
 
 		Console.WriteLine("");
-		Assert.DoubleAreEqual(AB_deltaHue, AnalogousHueOffset, "Analogous_Hue_Difference_Is_30 AB_deltaHue");
-		Assert.DoubleAreEqual(AC_deltaHue, AnalogousHueOffset, "Analogous_Hue_Difference_Is_30 AC_deltaHue");
+		Assert.IsEqual(AB_deltaHue, AnalogousHueOffset, "Analogous_Hue_Difference_Is_30 AB_deltaHue");
+		Assert.IsEqual(AC_deltaHue, AnalogousHueOffset, "Analogous_Hue_Difference_Is_30 AC_deltaHue");
 
 		return 1;
 	}
@@ -154,7 +154,7 @@ public class ColorHarmony_Tests {
 		outputValue = ColorHarmony.capValue(inputValue, ceiling, floor);
 
 		Console.WriteLine("");
-		Assert.DoubleAreEqual(outputValue, inputValue-ceiling, "capValue_Above_Ceiling_Subtracts_Ceiling 110.0 100.0");
+		Assert.IsEqual(outputValue, inputValue-ceiling, "capValue_Above_Ceiling_Subtracts_Ceiling 110.0 100.0");
 
 		return 1;
 	}
@@ -169,7 +169,7 @@ public class ColorHarmony_Tests {
 		outputValue = ColorHarmony.capValue(inputValue, ceiling, floor);
 
 		Console.WriteLine("");
-		Assert.DoubleAreEqual(outputValue, inputValue+ceiling, "capValue_Below_Floor_Adds_Ceiling -40.0 100.0");
+		Assert.IsEqual(outputValue, inputValue+ceiling, "capValue_Below_Floor_Adds_Ceiling -40.0 100.0");
 
 		return 1;
 	}

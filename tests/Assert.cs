@@ -25,6 +25,7 @@ public class Assert {
 		return 1;
 	}
 
+// IsGreaterThanOrEqual
 	public static int IsGreaterThanOrEqual(int ObjectA, int ObjectB, string message="") {
 		int result;
 
@@ -38,8 +39,7 @@ public class Assert {
 		PrintResult(result);
 		return result;
 	}
-
-	public static double IsGreaterThanOrEqual(double ObjectA, double ObjectB, string message="") {
+	public static int IsGreaterThanOrEqual(double ObjectA, double ObjectB, string message="") {
 		int result;
 
 		Console.WriteLine(message);
@@ -53,6 +53,7 @@ public class Assert {
 		return result;
 	}
 
+// IsLessThanOrEqual
 	public static int IsLessThanOrEqual(int ObjectA, int ObjectB, string message="") {
 		int result;
 
@@ -66,8 +67,7 @@ public class Assert {
 		PrintResult(result);
 		return result;
 	}
-
-	public static double IsLessThanOrEqual(double ObjectA, double ObjectB, string message="") {
+	public static int IsLessThanOrEqual(double ObjectA, double ObjectB, string message="") {
 		int result;
 
 		Console.WriteLine(message);
@@ -81,7 +81,8 @@ public class Assert {
 		return result;
 	}
 
-	public static int Int32AreEqual(int ObjectA, int ObjectB, string message="") {
+// IsEqual
+	public static int IsEqual(int ObjectA, int ObjectB, string message="") {
 		int result;
 
 		Console.WriteLine(message);
@@ -94,7 +95,34 @@ public class Assert {
 		PrintResult(result);
 		return result;
 	}
+	public static int IsEqual(double ObjectA, double ObjectB, string message="") {
+		int result;
 
+		Console.WriteLine(message);
+		Console.WriteLine($"DoubleAreEqual: {ObjectA} is equal to {ObjectB}");
+
+		if (ObjectA == ObjectB) {result = 1;}
+		else if (ObjectA != ObjectB) {result = 0;}
+		else {result = -1;}
+
+		PrintResult(result);
+		return result;
+	}
+	public static int IsEqual(string ObjectA, string ObjectB, string message="") {
+		int result;
+
+		Console.WriteLine(message);
+		Console.WriteLine($"StringAreEqual: '{ObjectA}' equals '{ObjectB}'");
+
+		if (ObjectA == ObjectB) {result = 1;}
+		else if (ObjectA != ObjectB) {result = 0;}
+		else {result = -1;}
+
+		PrintResult(result);
+		return result;
+	}
+
+// IsNotEqual
 	public static int Int32AreNotEqual(int ObjectA, int ObjectB, string message="") {
 		int result;
 
@@ -103,20 +131,6 @@ public class Assert {
 
 		if (ObjectA != ObjectB) {result = 1;}
 		else if (ObjectA == ObjectB) {result = 0;}
-		else {result = -1;}
-
-		PrintResult(result);
-		return result;
-	}
-
-	public static int DoubleAreEqual(double ObjectA, double ObjectB, string message="") {
-		int result;
-
-		Console.WriteLine(message);
-		Console.WriteLine($"DoubleAreEqual: {ObjectA} is equal to {ObjectB}");
-
-		if (ObjectA == ObjectB) {result = 1;}
-		else if (ObjectA != ObjectB) {result = 0;}
 		else {result = -1;}
 
 		PrintResult(result);
@@ -229,20 +243,6 @@ public class Assert {
 
 		if (Object != null) {result = 1;}
 		else if (Object == null) {result = 0;}
-		else {result = -1;}
-
-		PrintResult(result);
-		return result;
-	}
-
-	public static int StringAreEqual(string ObjectA, string ObjectB, string message="") {
-		int result;
-
-		Console.WriteLine(message);
-		Console.WriteLine($"StringAreEqual: '{ObjectA}' equals '{ObjectB}'");
-
-		if (ObjectA == ObjectB) {result = 1;}
-		else if (ObjectA != ObjectB) {result = 0;}
 		else {result = -1;}
 
 		PrintResult(result);
