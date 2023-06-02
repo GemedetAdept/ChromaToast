@@ -14,7 +14,7 @@ public class MenuBeta {
 		Options = new string[] {""};
 		Cursor = "> ";
 		ActiveItem = 0;
-		SelectedItem = 0;
+		SelectedItem = -1;
 		MenuLoop = true;
 	}
 
@@ -78,7 +78,7 @@ public class MenuBeta {
 		int optionsLength = Options.Length;
 
 		if (keyInput.Key == UpArrow && ActiveItem > 0) {ActiveItem -= 1;}
-		else if (keyInput.Key == DownArrow && ActiveItem < optionsLength-1) {ActiveItem += 1;}
+		else if (keyInput.Key == DownArrow && ActiveItem < optionsLength) {ActiveItem += 1;}
 		else if (keyInput.Key == Enter) {SelectedItem = ActiveItem;}
 
 		return 1;
