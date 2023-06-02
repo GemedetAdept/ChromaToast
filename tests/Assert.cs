@@ -81,7 +81,33 @@ public class Assert {
 		return result;
 	}
 
+// IsLessThan
+	public static int IsLessThan(int ObjectA, int ObjectB, string message="") {
+		int result;
 
+		Console.WriteLine(message);
+		Console.WriteLine($"(int)IsLessThan: {ObjectA} is less than {ObjectB}");
+
+		if (ObjectA < ObjectB) {result = 1;}
+		else if (ObjectA >= ObjectB) {result = 0;}
+		else {result = -1;}
+
+		PrintResult(result);
+		return result;
+	}
+	public static int IsLessThan(double ObjectA, double ObjectB, string message="") {
+		int result;
+
+		Console.WriteLine(message);
+		Console.WriteLine($"(double)IsLessThan: {ObjectA} is less than {ObjectB}");
+
+		if (ObjectA < ObjectB) {result = 1;}
+		else if (ObjectA >= ObjectB) {result = 0;}
+		else {result = -1;}
+
+		PrintResult(result);
+		return result;
+	}
 
 // IsLessThanOrEqual
 	public static int IsLessThanOrEqual(int ObjectA, int ObjectB, string message="") {
