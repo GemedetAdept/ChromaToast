@@ -64,7 +64,21 @@ public class Assert {
 		else {result = -1;}
 
 		PrintResult(result);
-		return 1;
+		return result;
+	}
+
+	public static double IsLessThanOrEqual(double ObjectA, double ObjectB, string message="") {
+		int result;
+
+		Console.WriteLine(message);
+		Console.WriteLine($"(double)IsLessThanOrEqual: {ObjectA} is less than or equal to {ObjectB}");
+
+		if (ObjectA <= ObjectB) {result = 1;}
+		else if (Object > ObjectB) {result = 0;}
+		else {result = -1;}
+
+		PrintResult(result);
+		return result;
 	}
 
 	public static int Int32AreEqual(int ObjectA, int ObjectB, string message="") {
