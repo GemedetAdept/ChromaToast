@@ -23,6 +23,16 @@ public class GenerationDriver {
 
 		return paletteCMYK;
 	}
+	public static Color.HEX[] GenerateHEX(Color.HSV[] paletteHSV) {
+		int elementCount = paletteHSV.Length;
+		Color.HEX[] paletteHEX = new Color.HEX[elementCount];
+
+		for (int i = 0; i < elementCount; i++) {
+			paletteHEX[i] = ConvertColor.HSVtoHEX(paletteHSV[i]);
+		}
+
+		return paletteHEX;
+	}
 
 	// 'Complementary' Generators
 	public class Complementary {
