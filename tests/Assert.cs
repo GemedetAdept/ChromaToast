@@ -86,7 +86,7 @@ public class Assert {
 		int result;
 
 		Console.WriteLine(message);
-		Console.WriteLine($"Int32AreEqual: {ObjectA} is equal to {ObjectB}");
+		Console.WriteLine($"(int)IsEqual: {ObjectA} is equal to {ObjectB}");
 
 		if (ObjectA == ObjectB) {result = 1;}
 		else if (ObjectA != ObjectB) {result = 0;}
@@ -99,7 +99,7 @@ public class Assert {
 		int result;
 
 		Console.WriteLine(message);
-		Console.WriteLine($"DoubleAreEqual: {ObjectA} is equal to {ObjectB}");
+		Console.WriteLine($"(double)IsEqual: {ObjectA} is equal to {ObjectB}");
 
 		if (ObjectA == ObjectB) {result = 1;}
 		else if (ObjectA != ObjectB) {result = 0;}
@@ -112,7 +112,7 @@ public class Assert {
 		int result;
 
 		Console.WriteLine(message);
-		Console.WriteLine($"StringAreEqual: '{ObjectA}' equals '{ObjectB}'");
+		Console.WriteLine($"(string)IsEqual: '{ObjectA}' equals '{ObjectB}'");
 
 		if (ObjectA == ObjectB) {result = 1;}
 		else if (ObjectA != ObjectB) {result = 0;}
@@ -127,7 +127,20 @@ public class Assert {
 		int result;
 
 		Console.WriteLine(message);
-		Console.WriteLine($"Int32AreNotEqual: {ObjectA} is not equal to {ObjectB}");
+		Console.WriteLine($"(int)IsNotEqual: {ObjectA} is not equal to {ObjectB}");
+
+		if (ObjectA != ObjectB) {result = 1;}
+		else if (ObjectA == ObjectB) {result = 0;}
+		else {result = -1;}
+
+		PrintResult(result);
+		return result;
+	}
+	public static int IsNotEqual(double ObjectA, double ObjectB, string message="") {
+		int result;
+
+		Console.WriteLine(message);
+		Console.WriteLine($"(double)IsNotEqual: {ObjectA} is not equal to {ObjectB}");
 
 		if (ObjectA != ObjectB) {result = 1;}
 		else if (ObjectA == ObjectB) {result = 0;}
