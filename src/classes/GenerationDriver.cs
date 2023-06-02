@@ -5,6 +5,9 @@ namespace generation {
 public class GenerationDriver {
 	
 	public class HarmonyBase {
+		private Color.HSV _baseHSV;
+		public Color.HSV BaseHSV {get;set;}
+
 		private Color.CMYK[] _paletteCMYK;
 		private Color.HEX[] _paletteHEX;
 		private Color.HSL[] _paletteHSL;
@@ -17,8 +20,7 @@ public class GenerationDriver {
 		public Color.HSV[] PaletteHSV {get;set;}
 		public Color.RGB[] PaletteRGB {get;set;}
 
-		public int LoadPalettes(Color.HSV BaseHSV) {
-			PaletteHSV = ColorHarmony.Complementary(BaseHSV);
+		public int LoadPalettes() {
 
 			PaletteCMYK = GenerateCMYK(PaletteHSV);
 			PaletteHEX = GenerateHEX(PaletteHSV);
@@ -73,40 +75,72 @@ public class GenerationDriver {
 	// 'Complementary' Generators
 	public class Complementary : HarmonyBase {
 
-		private Color.HSV _baseHSV;
-		private Color.HSV[] _paletteHSV;
-
 		public Complementary(Color.HSV inputHSV) {
 			BaseHSV = inputHSV;
-			LoadPalettes(BaseHSV);
+			PaletteHSV = ColorHarmony.Complementary(BaseHSV);
+
+			LoadPalettes();
 		}
-
-		public Color.HSV BaseHSV {get;set;}
-
 	}
 	// 'Split Complementary' Generators
-	public class SplitComplementary {
-		public SplitComplementary() {}
+	public class SplitComplementary : HarmonyBase {
+
+		public SplitComplementary(Color.HSV inputHSV) {
+			BaseHSV = inputHSV;
+			PaletteHSV = ColorHarmony.SplitComplementary(BaseHSV);
+
+			LoadPalettes();
+		}
 	}
 	// 'Triadic' Generators
-	public class Triadic {
-		public Triadic() {}
+	public class Triadic : HarmonyBase {
+
+		public Triadic(Color.HSV inputHSV) {
+			BaseHSV = inputHSV;
+			PaletteHSV = ColorHarmony.Triadic(BaseHSV);
+
+			LoadPalettes();
+		}
 	}
 	// 'Tetradic' Generators
-	public class Tetradic {
-		public Tetradic() {}
+	public class Tetradic : HarmonyBase {
+
+		public Tetradic(Color.HSV inputHSV) {
+			BaseHSV = inputHSV;
+			PaletteHSV = ColorHarmony.Tetradic(BaseHSV);
+
+			LoadPalettes();
+		}
 	}
 	// 'Square' Generators
-	public class Square {
-		public Square() {}
+	public class Square : HarmonyBase {
+
+		public Square(Color.HSV inputHSV) {
+			BaseHSV = inputHSV;
+			PaletteHSV = ColorHarmony.Square(BaseHSV);
+
+			LoadPalettes();
+		}
 	}
 	// 'Analogous' Generators
-	public class Analogous {
-		public Analogous() {}
+	public class Analogous : HarmonyBase {
+
+		public Analogous(Color.HSV inputHSV) {
+			BaseHSV = inputHSV;
+			PaletteHSV = ColorHarmony.Analogous(BaseHSV);
+
+			LoadPalettes();
+		}
 	}
 	// 'Monochromatic' Generators
-	public class Monochromatic {
-		public Monochromatic() {}
+	public class Monochromatic : HarmonyBase {
+
+		public Monochromatic(Color.HSV inputHSV) {
+			BaseHSV = inputHSV;
+			PaletteHSV = ColorHarmony.Monochromatic(BaseHSV);
+
+			LoadPalettes();
+		}
 	}
 }
 }
