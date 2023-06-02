@@ -73,7 +73,25 @@ public class MenuBeta {
 	}
 
 	public int UpdateCursor() {
+
+		ConsoleKey UpArrow = ConsoleKey.UpArrow;
+		ConsoleKey DownArrow = ConsoleKey.DownArrow;
+		ConsoleKey Enter = ConsoleKey.Enter;
+
+		var keyInput = Console.ReadKey(false);
+		int optionsLength = Options.Length;
+
+		if (keyInput == UpArrow && ActiveItem > 0) {activeItem -= 1;}
+		else if (keyInput == DownArrow && ActiveItem < optionsLength) {activeItem += 1;}
+		else if (keyInput == Enter) {SelectedItem = ActiveItem}
+
 		return 1;
+	}
+
+	public int SelectionCheck() {
+		if (SelectedItem == ActiveItem) {return 1;}
+		else if (SelectedItem != ActiveItem) {return 0;}
+		else {return -1;}
 	}
 }
 }
