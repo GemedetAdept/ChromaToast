@@ -23,7 +23,6 @@ MenuDriver mainMenu = new MenuDriver();
 
 		"Generate New Color Palette",
 		"Quit Program",
-		"", // Feature testing & Debugging
 	};
 	mainMenu.AddOptions(mainMenuOptions);
 
@@ -397,5 +396,5 @@ void DebugBox() {
 	TestsDriver.Run_ValueDeviation_Tests(true);
 }
 
-// MainMenu();
-DebugBox();
+MainMenu();
+// DebugBox();
