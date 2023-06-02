@@ -20,8 +20,7 @@ public class MenuBeta {
 	public MenuBeta() {
 		Title = "-- Lorem Ipsum --";
 		Options = new string[] {""};
-		Cursor = ">";
-		CursorSpacer = " ";
+		Cursor = Cursor + CursorSpacer;
 		ActiveItem = 0;
 		SelectedItem = -1; // Initalize with non-functional value
 		MenuLoop = true;
@@ -57,10 +56,23 @@ public class MenuBeta {
 	}
 
 	public int LoadMenu() {
+
+		string optionString = "";
+
+		// When paired with UpdateCursor(), this responds to user input with arrow keys
+		for (int i=0; i < Options.Length; i++) {
+
+			if (i == ActiveItem) {
+				optionString += Cursor;
+			}
+
+			optionString += Options[i];
+			Console.WriteLine(optionString);
+		}
 		return 1;
 	}
 
-	public int LoadCursor() {
+	public int UpdateCursor() {
 		return 1;
 	}
 }
