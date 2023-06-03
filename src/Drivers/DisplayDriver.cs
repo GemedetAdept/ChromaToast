@@ -14,23 +14,23 @@ public class SinglePalette : Display {
 	public Color.HSV[] HSVArray {get;set;}
 	public Color.RGB[] RGBArray {get;set;}
 
-	public static int LoadCMYK(Color.CMYK[] inputCMYK) {
+	public static int LoadData(Color.CMYK[] inputCMYK) {
 		CMYKArray = inputCMYK;
 		return 1;
 	}
-	public static int LoadHEX(Color.HEX[] inputHEX) {
+	public static int LoadData(Color.HEX[] inputHEX) {
 		HEXArray = inputHEX;
 		return 1;
 	}
-	public static int LoadHSL(Color.HSL[] inputHSL) {
+	public static int LoadData(Color.HSL[] inputHSL) {
 		HSLArray = inputHSL;
 		return 1;
 	}
-	public static int LoadHSV(Color.HSV[] inputHSV) {
+	public static int LoadData(Color.HSV[] inputHSV) {
 		HSVArray = inputHSV;
 		return 1;
 	}
-	public static int LoadRGB(Color.RGB[] inputRGB) {
+	public static int LoadData(Color.RGB[] inputRGB) {
 		RGBArray = inputRGB;
 		return 1;
 	}
