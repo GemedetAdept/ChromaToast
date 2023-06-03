@@ -2,6 +2,7 @@ using userinput;
 using convertcolor;
 using colorvalues;
 using generation;
+using display;
 namespace menudriver {
 public class MenuBetaDriver {
 
@@ -9,6 +10,7 @@ public class MenuBetaDriver {
 
 	public static int RunTestMenu() {
 		MenuBeta testMenu = new MenuBeta();
+		testMenu.Title = "~.,.~ Test Menu ~.,.~\n";
 		testMenu.Options = new string[]{"Option 0", "Option 1", "Option 2", "Exit Program"};
 		while (testMenu.MenuLoop == true) {
 			testMenu.LoadMenu();
@@ -28,6 +30,7 @@ public class MenuBetaDriver {
 
 	public static int RunMainMenu() {
 		MenuBeta mainMenu = new MenuBeta();
+		mainMenu.Title = "~.,.~ Main Menu ~.,.~\n";
 		mainMenu.Options = new string[] {
 			"Generate New Color Palette",
 			"Exit Program"
@@ -50,6 +53,7 @@ public class MenuBetaDriver {
 
 	public static int RunHarmonyMenu(Color.HSV inputHSV) {
 		MenuBeta harmonyMenu = new MenuBeta();
+		harmonyMenu.Title = "~.,.~ Harmony Menu ~.,.~\n";
 		harmonyMenu.Options = new string[] {
 			"Complementary",
 			"Split Complementary",
@@ -57,7 +61,8 @@ public class MenuBetaDriver {
 			"Tetradic",
 			"Square",
 			"Analogous",
-			"Monochromatic"
+			"Monochromatic",
+			"Exit Program"
 		};
 
 		while (harmonyMenu.MenuLoop == true) {
@@ -82,6 +87,7 @@ public class MenuBetaDriver {
 					break;
 			case 6: harmonyObject.Monochromatic();
 					break;
+			case 7: Console.Clear(); Environment.Exit(0); break;
 			default:
 					break;
 		}
@@ -91,13 +97,13 @@ public class MenuBetaDriver {
 
 	public static Color.HSV RunInputTypeMenu() {
 		MenuBeta inputTypeMenu = new MenuBeta();
+		inputTypeMenu.Title = "~.,.~ Input Type Menu ~.,.~\n";
 		inputTypeMenu.Options = new string[] {
 			"CMYK",
 			"HEX",
 			"HSL",
 			"HSV",
 			"RGB",
-			"Default Colors",
 			"Exit Program"
 		};
 
@@ -147,10 +153,12 @@ public class MenuBetaDriver {
 					normHSV = ConvertColor.RGBtoHSV(inputRGB);
 					return normHSV;
 					break;
+			case 5: Console.Clear(); Environment.Exit(0); break;
 			default:
 				return normHSV;
 				break;
 		}
+		return normHSV;
 	}
 
 	public static int RunGenerationDriver() {
@@ -158,6 +166,16 @@ public class MenuBetaDriver {
 		var inputHSV = RunInputTypeMenu();
 		RunHarmonyMenu(inputHSV);
 
+		SinglePalette.LoadData(harmonyObject.PaletteCMYK);
+		SinglePalette.LoadData(harmonyObject.PaletteHEX);
+		SinglePalette.LoadData(harmonyObject.PaletteHSL);
+		SinglePalette.LoadData(harmonyObject.PaletteHSV);
+		SinglePalette.LoadData(harmonyObject.PaletteRGB);
+
+		SinglePalette.PrintAll();
+		Console.ReadKey();
+
+		RunMainMenu();
 
 		return 1;
 	}

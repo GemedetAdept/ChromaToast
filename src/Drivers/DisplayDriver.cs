@@ -8,6 +8,9 @@ public class Display {
 }
 
 public class SinglePalette : Display {
+
+	public static string DisplayTitle = "~.,.~ Generated Palette ~.,.~";
+
 	public static Color.CMYK[] CMYKArray {get;set;}
 	public static Color.HEX[] HEXArray {get;set;}
 	public static Color.HSL[] HSLArray {get;set;}
@@ -35,6 +38,12 @@ public class SinglePalette : Display {
 		return 1;
 	}
 
+	public static int PrintTitle() {
+		Console.WriteLine($"{DisplayTitle}");
+		Console.WriteLine("");
+		return 1;
+	}
+
 	public static int PrintLine(string valueAlpha) {
 		Console.WriteLine($"{valueAlpha}");
 		return 1;
@@ -45,6 +54,19 @@ public class SinglePalette : Display {
 	}
 	public static int PrintLine(double valueAlpha, double valueBeta, double valueGamma, double valueDelta) {
 		Console.WriteLine($"({valueAlpha}, {valueBeta}, {valueGamma}, {valueDelta})");
+		return 1;
+	}
+
+	public static int PrintAll() {
+		Console.Clear();
+		PrintTitle();
+
+		PrintCMYK();
+		PrintHEX();
+		PrintHSL();
+		PrintHSV();
+		PrintRGB();
+
 		return 1;
 	}
 
