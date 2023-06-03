@@ -95,6 +95,53 @@ public class MenuBetaDriver {
 	return 1;
 	}
 
+	public static Color.HEX RunBaseColorMenu() {
+		MenuBeta baseColorMenu = new MenuBeta();
+		baseColorMenu.Title = "~.,.~ Base Color Menu ~.,.~\n";
+		baseColorMenu.Options = new string[] {
+			"Black",
+			"Blue",
+			"Cyan",
+			"Gray",
+			"Green",
+			"Grey",
+			"Lime",
+			"Magneta",
+			"Orange",
+			"Purple",
+			"Red",
+			"Violet",
+			"White",
+			"Yellow",
+		};
+	
+		while (baseColorMenu.MenuLoop == true) {
+			baseColorMenu.LoadMenu();
+			baseColorMenu.UpdateCursor();
+			baseColorMenu.SelectionCheck();
+		}
+
+		Color.HEX normHEX = new Color.HEX("000000");
+		switch(baseColorMenu.SelectedItem) {
+			case 0: return new Color.HEX(BaseColor.Black); break;
+			case 1: return new Color.HEX(BaseColor.Blue); break;
+			case 2: return new Color.HEX(BaseColor.Cyan); break;
+			case 3: return new Color.HEX(BaseColor.Gray); break;
+			case 4: return new Color.HEX(BaseColor.Green); break;
+			case 5: return new Color.HEX(BaseColor.Grey); break;
+			case 6: return new Color.HEX(BaseColor.Lime); break;
+			case 7: return new Color.HEX(BaseColor.Magneta); break;
+			case 8: return new Color.HEX(BaseColor.Orange); break;
+			case 9: return new Color.HEX(BaseColor.Purple); break;
+			case 10: return new Color.HEX(BaseColor.Red); break;
+			case 11: return new Color.HEX(BaseColor.Violet); break;
+			case 12: return new Color.HEX(BaseColor.White); break;
+			case 13: return new Color.HEX(BaseColor.Yellow); break;
+			default: break;
+		}
+		return normHEX;
+	}
+
 	public static Color.HSV RunInputTypeMenu() {
 		MenuBeta inputTypeMenu = new MenuBeta();
 		inputTypeMenu.Title = "~.,.~ Input Type Menu ~.,.~\n";
@@ -104,6 +151,7 @@ public class MenuBetaDriver {
 			"HSL",
 			"HSV",
 			"RGB",
+			"Base Colors",
 			"Exit Program"
 		};
 
@@ -153,7 +201,13 @@ public class MenuBetaDriver {
 					normHSV = ConvertColor.RGBtoHSV(inputRGB);
 					return normHSV;
 					break;
-			case 5: Console.Clear(); Environment.Exit(0); break;
+
+			case 5: var baseColorHex = RunBaseColorMenu();
+					normHSV = ConvertColor.HEXtoHSV(baseColorHex);
+					return normHSV;
+					break;
+
+			case 6: Console.Clear(); Environment.Exit(0); break;
 			default:
 				return normHSV;
 				break;
