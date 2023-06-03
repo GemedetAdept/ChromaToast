@@ -78,6 +78,8 @@ public class SinglePalette : Display {
 
 			PrintLine(CMYKElement.Cyan, CMYKElement.Magenta, CMYKElement.Yellow, CMYKElement.Key);
 		}
+		
+		Console.WriteLine("");
 		return 1;
 	}
 	public static int PrintHEX() {
@@ -88,6 +90,8 @@ public class SinglePalette : Display {
 
 			PrintLine(HEXElement.Value);
 		}
+		
+		Console.WriteLine("");
 		return 1;
 	}
 	public static int PrintHSL() {
@@ -98,6 +102,8 @@ public class SinglePalette : Display {
 
 			PrintLine(HSLElement.Hue, HSLElement.Saturation, HSLElement.Lightness);
 		}
+		
+		Console.WriteLine("");
 		return 1;
 	}
 	public static int PrintHSV() {
@@ -108,6 +114,8 @@ public class SinglePalette : Display {
 
 			PrintLine(HSVElement.Hue, HSVElement.Saturation, HSVElement.Value);
 		}
+		
+		Console.WriteLine("");
 		return 1;
 	}
 	public static int PrintRGB() {
@@ -118,6 +126,8 @@ public class SinglePalette : Display {
 
 			PrintLine(RGBElement.Red, RGBElement.Green, RGBElement.Blue);
 		}
+
+		Console.WriteLine("");
 		return 1;
 	}
 }

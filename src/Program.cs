@@ -58,12 +58,4 @@ void DebugBox() {
 	TestsDriver.Run_ValueDeviation_Tests(true);
 }
 
-void MenuBetaTest() {
-
-	MenuBetaDriver.RunMainMenu();
-	MenuBetaDriver.RunGenerationDriver();
-}
-
-// MainMenu();
 // DebugBox();
-// MenuBetaTest();
