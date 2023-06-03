@@ -1,6 +1,7 @@
 using userinput;
 using convertcolor;
 using colorvalues;
+using generation;
 namespace menudriver {
 public class MenuBetaDriver {
 
@@ -18,7 +19,7 @@ public class MenuBetaDriver {
 			case 1: Console.WriteLine("Printout 1"); break;
 			case 2: Console.WriteLine("Printout 2"); break;
 			case 3: Console.Clear(); Environment.Exit(0); break;
-			default: Console.WriteLine("You Broke It!"); break;
+			default: break;
 		}
 	return 1;
 	}
@@ -34,6 +35,41 @@ public class MenuBetaDriver {
 			mainMenu.LoadMenu();
 			mainMenu.UpdateCursor();
 			mainMenu.SelectionCheck();
+		}
+
+		switch(mainMenu.SelectedItem) {
+			case 0: RunGenerationDriver(); break;
+			case 1: Console.Clear(); Environment.Exit(0); break;
+			default: break;
+		}
+
+	return 1;
+	}
+
+	public static int RunHarmonyMenu(Color.HSV inputHSV) {
+		MenuBeta harmonyMenu = new MenuBeta();
+		harmonyMenu.Options = new string[] {
+			"Complementary",
+			"Split Complementary",
+			"Triadic",
+			"Tetradic",
+			"Square",
+			"Analogous",
+			"Monochromatic"
+		};
+
+		while (harmonyMenu.MenuLoop == true) {
+			harmonyMenu.LoadMenu();
+			harmonyMenu.UpdateCursor();
+			harmonyMenu.SelectionCheck();			
+		}
+
+		var harmonyObject = new GenerationDriver.HarmonyBase(inputHSV);
+		switch(harmonyMenu.SelectedItem) {
+			case 0: harmonyObject.Complementary();
+					break;
+			case 1: harmonyObject.SplitComplementary();
+					break;
 		}
 
 	return 1;
@@ -95,6 +131,13 @@ public class MenuBetaDriver {
 			default:
 				return normHSV;
 		}
+	}
+
+	public static int RunGenerationDriver() {
+
+		var inputHSV = RunInputTypeMenu();
+
+		return 1;
 	}
 }
 }

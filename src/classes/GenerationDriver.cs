@@ -3,7 +3,7 @@ using colorharmony;
 using convertcolor;
 namespace generation {
 public class GenerationDriver {
-	
+
 	public class HarmonyBase {
 		private Color.HSV _baseHSV;
 		public Color.HSV BaseHSV {get;set;}
@@ -20,6 +20,10 @@ public class GenerationDriver {
 		public Color.HSV[] PaletteHSV {get;set;}
 		public Color.RGB[] PaletteRGB {get;set;}
 
+		public HarmonyBase(Color.HSV inputHSV) {
+			BaseHSV = inputHSV;
+		}
+
 		public int LoadPalettes() {
 
 			PaletteCMYK = GenerateCMYK(PaletteHSV);
@@ -27,6 +31,49 @@ public class GenerationDriver {
 			PaletteHSL = GenerateHSL(PaletteHSV);
 			PaletteRGB = GenerateRGB(PaletteHSV);
 
+			return 1;
+		}
+
+		public int Complementary() {
+			PaletteHSV = ColorHarmony.Complementary(BaseHSV);
+
+			LoadPalettes();
+			return 1;
+		}
+		public int SplitComplementary() {
+			PaletteHSV = ColorHarmony.SplitComplementary(BaseHSV);
+
+			LoadPalettes();
+			return 1;
+		}
+		public int Triadic() {
+			PaletteHSV = ColorHarmony.Triadic(BaseHSV);
+
+			LoadPalettes();
+			return 1;
+		}
+		public int Tetradic() {
+			PaletteHSV = ColorHarmony.Tetradic(BaseHSV);
+
+			LoadPalettes();
+			return 1;
+		}
+		public int Square() {
+			PaletteHSV = ColorHarmony.Square(BaseHSV);
+
+			LoadPalettes();
+			return 1;
+		}
+		public int Analogous() {
+			PaletteHSV = ColorHarmony.Analogous(BaseHSV);
+
+			LoadPalettes();
+			return 1;
+		}
+		public int Monochromatic() {
+			PaletteHSV = ColorHarmony.Monochromatic(BaseHSV);
+
+			LoadPalettes();
 			return 1;
 		}
 	}
@@ -72,75 +119,5 @@ public class GenerationDriver {
 		return paletteRGB;
 	}
 
-
-	public class Complementary : HarmonyBase {
-
-		public Complementary(Color.HSV inputHSV) {
-			BaseHSV = inputHSV;
-			PaletteHSV = ColorHarmony.Complementary(BaseHSV);
-
-			LoadPalettes();
-		}
-	}
-
-	public class SplitComplementary : HarmonyBase {
-
-		public SplitComplementary(Color.HSV inputHSV) {
-			BaseHSV = inputHSV;
-			PaletteHSV = ColorHarmony.SplitComplementary(BaseHSV);
-
-			LoadPalettes();
-		}
-	}
-
-	public class Triadic : HarmonyBase {
-
-		public Triadic(Color.HSV inputHSV) {
-			BaseHSV = inputHSV;
-			PaletteHSV = ColorHarmony.Triadic(BaseHSV);
-
-			LoadPalettes();
-		}
-	}
-
-	public class Tetradic : HarmonyBase {
-
-		public Tetradic(Color.HSV inputHSV) {
-			BaseHSV = inputHSV;
-			PaletteHSV = ColorHarmony.Tetradic(BaseHSV);
-
-			LoadPalettes();
-		}
-	}
-
-	public class Square : HarmonyBase {
-
-		public Square(Color.HSV inputHSV) {
-			BaseHSV = inputHSV;
-			PaletteHSV = ColorHarmony.Square(BaseHSV);
-
-			LoadPalettes();
-		}
-	}
-
-	public class Analogous : HarmonyBase {
-
-		public Analogous(Color.HSV inputHSV) {
-			BaseHSV = inputHSV;
-			PaletteHSV = ColorHarmony.Analogous(BaseHSV);
-
-			LoadPalettes();
-		}
-	}
-
-	public class Monochromatic : HarmonyBase {
-
-		public Monochromatic(Color.HSV inputHSV) {
-			BaseHSV = inputHSV;
-			PaletteHSV = ColorHarmony.Monochromatic(BaseHSV);
-
-			LoadPalettes();
-		}
-	}
 }
 }
