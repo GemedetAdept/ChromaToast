@@ -1,9 +1,13 @@
+using userinput;
 namespace menudriver {
 
 public class MenuBeta {
 
 	public string Title {get;set;}
 	public string[] Options{get;set;}
+	public string QueryHeader {get; set;}
+	public string[] QueryMessages {get;set;}
+	public string QueryInput {get;set;}
 	public string Cursor {get;set;}
 	public int ActiveItem {get;set;}
 	public int SelectedItem{get;set;}
@@ -12,6 +16,8 @@ public class MenuBeta {
 	public MenuBeta() {
 		Title = "-- Lorem Ipsum --";
 		Options = new string[] {""};
+		QueryHeader = "";
+		QueryMessages = new string[] {""};
 		Cursor = "> ";
 		ActiveItem = 0;
 		SelectedItem = -1;
@@ -24,6 +30,14 @@ public class MenuBeta {
 	}
 	public int SetOptions(string[] options) {
 		Options = options;
+		return 1;
+	}
+	public int SetQueryHeader(string queryHeader) {
+		QueryHeader = queryHeader;
+		return 1;
+	}
+	public int SetQueryMessages(string[] queryMessages) {
+		QueryMessages = queryMessages;
 		return 1;
 	}
 	public int SetCursor(string cursor) {
@@ -78,7 +92,7 @@ public class MenuBeta {
 		int optionsLength = Options.Length;
 
 		if (keyInput.Key == UpArrow && ActiveItem > 0) {ActiveItem -= 1;}
-		else if (keyInput.Key == DownArrow && ActiveItem < optionsLength) {ActiveItem += 1;}
+		else if (keyInput.Key == DownArrow && ActiveItem < optionsLength-1) {ActiveItem += 1;}
 		else if (keyInput.Key == Enter) {SelectedItem = ActiveItem;}
 
 		return 1;

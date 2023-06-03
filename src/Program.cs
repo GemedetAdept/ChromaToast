@@ -398,7 +398,8 @@ void DebugBox() {
 
 void MenuBetaTest() {
 
-	MenuBetaDriver.RunTestMenu();
+	// MenuBetaDriver.RunTestMenu();
+	MenuBetaDriver.RunInputTypeMenu();
 }
 
 // MainMenu();

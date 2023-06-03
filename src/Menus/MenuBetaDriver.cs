@@ -1,3 +1,6 @@
+using userinput;
+using convertcolor;
+using colorvalues;
 namespace menudriver {
 public class MenuBetaDriver {
 
@@ -25,7 +28,7 @@ public class MenuBetaDriver {
 		mainMenu.Options = new string[] {
 			"Generate New Color Palette",
 			"Exit Program"
-		}
+		};
 
 		while (mainMenu.MenuLoop == true) {
 			mainMenu.LoadMenu();
@@ -36,21 +39,61 @@ public class MenuBetaDriver {
 	return 1;
 	}
 
-	public static int RunInputTypeMenu() {
+	public static Color.HSV RunInputTypeMenu() {
 		MenuBeta inputTypeMenu = new MenuBeta();
-		mainMenu.Options = new string[] {
+		inputTypeMenu.Options = new string[] {
 			"CMYK",
 			"HEX",
 			"HSL",
 			"HSV",
+			"RGB",
 			"Default Colors",
 			"Exit Program"
-		}
+		};
+
+		inputTypeMenu.QueryHeader = "Enter a value between: ";
+		inputTypeMenu.QueryMessages = new string[] {
+			"(0.0, 0.0, 0.0, 0.0) - (100.0, 100.0, 100.0, 100.0",
+			"#000000 - #FFFFFF",
+			"(0.0, 0.0, 0.0) - (360.0, 100.0, 100.0)",
+			"(0.0, 0.0, 0.0) - (360.0, 100.0, 100.0)",
+			"(0, 0, 0) - (255, 255, 255)",
+		};
 
 		while (inputTypeMenu.MenuLoop == true) {
-			mainMenu.LoadMenu();
-			mainMenu.UpdateCursor();
-			mainMenu.SelectionCheck();		
+			inputTypeMenu.LoadMenu();
+			inputTypeMenu.UpdateCursor();
+			inputTypeMenu.SelectionCheck();		
+		}
+
+		Color.HSV normHSV = new Color.HSV(0.0, 0.0, 0.0);
+		switch(inputTypeMenu.SelectedItem) {
+			case 0: inputTypeMenu.QueryInput = UserInput.Query(inputTypeMenu.QueryHeader+inputTypeMenu.QueryMessages[0]);
+					var inputCMYK = UserInput.InputCMYK(inputTypeMenu.QueryInput);
+					normHSV = ConvertColor.CMYKtoHSV(inputCMYK);
+					return normHSV;
+
+			case 1: inputTypeMenu.QueryInput = UserInput.Query(inputTypeMenu.QueryHeader+inputTypeMenu.QueryMessages[1]);
+					var inputHEX = UserInput.InputHEX(inputTypeMenu.QueryInput);
+					normHSV = ConvertColor.HEXtoHSV(inputHEX);
+					return normHSV;
+
+			case 2: inputTypeMenu.QueryInput = UserInput.Query(inputTypeMenu.QueryHeader+inputTypeMenu.QueryMessages[2]);
+					var inputHSL = UserInput.InputHSL(inputTypeMenu.QueryInput);
+					normHSV = ConvertColor.HSLtoHSV(inputHSL);
+					return normHSV;
+
+			case 3: inputTypeMenu.QueryInput = UserInput.Query(inputTypeMenu.QueryHeader+inputTypeMenu.QueryMessages[3]);
+					var inputHSV = UserInput.InputHSV(inputTypeMenu.QueryInput);
+					normHSV = inputHSV;
+					return normHSV;
+
+			case 4: inputTypeMenu.QueryInput = UserInput.Query(inputTypeMenu.QueryHeader+inputTypeMenu.QueryMessages[4]);
+					var inputRGB = UserInput.InputRGB(inputTypeMenu.QueryInput);
+					normHSV = ConvertColor.RGBtoHSV(inputRGB);
+					return normHSV;
+			default:
+				return normHSV;
 		}
 	}
 }
