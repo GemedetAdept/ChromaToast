@@ -5,6 +5,8 @@ using generation;
 namespace menudriver {
 public class MenuBetaDriver {
 
+	public static GenerationDriver.HarmonyBase harmonyObject = new GenerationDriver.HarmonyBase();
+
 	public static int RunTestMenu() {
 		MenuBeta testMenu = new MenuBeta();
 		testMenu.Options = new string[]{"Option 0", "Option 1", "Option 2", "Exit Program"};
@@ -64,11 +66,23 @@ public class MenuBetaDriver {
 			harmonyMenu.SelectionCheck();			
 		}
 
-		var harmonyObject = new GenerationDriver.HarmonyBase(inputHSV);
+		harmonyObject.LoadInputHSV(inputHSV);
 		switch(harmonyMenu.SelectedItem) {
 			case 0: harmonyObject.Complementary();
 					break;
 			case 1: harmonyObject.SplitComplementary();
+					break;
+			case 2: harmonyObject.Triadic();
+					break;
+			case 3: harmonyObject.Tetradic();
+					break;
+			case 4: harmonyObject.Square();
+					break;
+			case 5: harmonyObject.Analogous();
+					break;
+			case 6: harmonyObject.Monochromatic();
+					break;
+			default:
 					break;
 		}
 
@@ -108,34 +122,42 @@ public class MenuBetaDriver {
 					var inputCMYK = UserInput.InputCMYK(inputTypeMenu.QueryInput);
 					normHSV = ConvertColor.CMYKtoHSV(inputCMYK);
 					return normHSV;
+					break;
 
 			case 1: inputTypeMenu.QueryInput = UserInput.Query(inputTypeMenu.QueryHeader+inputTypeMenu.QueryMessages[1]);
 					var inputHEX = UserInput.InputHEX(inputTypeMenu.QueryInput);
 					normHSV = ConvertColor.HEXtoHSV(inputHEX);
 					return normHSV;
+					break;
 
 			case 2: inputTypeMenu.QueryInput = UserInput.Query(inputTypeMenu.QueryHeader+inputTypeMenu.QueryMessages[2]);
 					var inputHSL = UserInput.InputHSL(inputTypeMenu.QueryInput);
 					normHSV = ConvertColor.HSLtoHSV(inputHSL);
 					return normHSV;
+					break;
 
 			case 3: inputTypeMenu.QueryInput = UserInput.Query(inputTypeMenu.QueryHeader+inputTypeMenu.QueryMessages[3]);
 					var inputHSV = UserInput.InputHSV(inputTypeMenu.QueryInput);
 					normHSV = inputHSV;
 					return normHSV;
+					break;
 
 			case 4: inputTypeMenu.QueryInput = UserInput.Query(inputTypeMenu.QueryHeader+inputTypeMenu.QueryMessages[4]);
 					var inputRGB = UserInput.InputRGB(inputTypeMenu.QueryInput);
 					normHSV = ConvertColor.RGBtoHSV(inputRGB);
 					return normHSV;
+					break;
 			default:
 				return normHSV;
+				break;
 		}
 	}
 
 	public static int RunGenerationDriver() {
 
 		var inputHSV = RunInputTypeMenu();
+		RunHarmonyMenu(inputHSV);
+
 
 		return 1;
 	}

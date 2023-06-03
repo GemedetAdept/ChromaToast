@@ -20,8 +20,12 @@ public class GenerationDriver {
 		public Color.HSV[] PaletteHSV {get;set;}
 		public Color.RGB[] PaletteRGB {get;set;}
 
-		public HarmonyBase(Color.HSV inputHSV) {
+		public HarmonyBase() {
+		}
+
+		public int LoadInputHSV(Color.HSV inputHSV) {
 			BaseHSV = inputHSV;
+			return 1;
 		}
 
 		public int LoadPalettes() {
