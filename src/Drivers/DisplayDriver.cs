@@ -35,6 +35,10 @@ public class SinglePalette : Display {
 		return 1;
 	}
 
+	public static int PrintLine(string valueAlpha) {
+		Console.WriteLine($"{valueAlpha}");
+		return 1;
+	}
 	public static int PrintLine(double valueAlpha, double valueBeta, double valueGamma) {
 		Console.WriteLine($"({valueAlpha}, {valueBeta}, {valueGamma})");
 		return 1;
@@ -51,6 +55,46 @@ public class SinglePalette : Display {
 			var CMYKElement = CMYKArray[i];
 
 			PrintLine(CMYKElement.Cyan, CMYKElement.Magenta, CMYKElement.Yellow, CMYKElement.Key);
+		}
+		return 1;
+	}
+	public static int PrintHEX() {
+		Console.WriteLine("HEX: ");
+
+		for (int i=0; i < HEXArray.Length; i++) {
+			var HEXElement = HEXArray[i];
+
+			PrintLine(HEXElement.Value);
+		}
+		return 1;
+	}
+	public static int PrintHSL() {
+		Console.WriteLine("HSL: ");
+
+		for (int i=0; i < HSLArray.Length; i++) {
+			var HSLElement = HSLArray[i];
+
+			PrintLine(HSLElement.Hue, HSLElement.Saturation, HSLElement.Lightness);
+		}
+		return 1;
+	}
+	public static int PrintHSV() {
+		Console.WriteLine("HSV: ");
+
+		for (int i=0; i < HSVArray.Length; i++) {
+			var HSVElement = HSVArray[i];
+
+			PrintLine(HSVElement.Hue, HSVElement.Saturation, HSVElement.Value);
+		}
+		return 1;
+	}
+	public static int PrintRGB() {
+		Console.WriteLine("RGB: ");
+
+		for (int i=0; i < RGBArray.Length; i++) {
+			var RGBElement = RGBArray[i];
+
+			PrintLine(RGBElement.Red, RGBElement.Green, RGBElement.Blue);
 		}
 		return 1;
 	}
