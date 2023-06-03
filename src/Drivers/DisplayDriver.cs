@@ -8,11 +8,11 @@ public class Display {
 }
 
 public class SinglePalette : Display {
-	public Color.CMYK[] CMYKArray {get;set;}
-	public Color.HEX[] HEXArray {get;set;}
-	public Color.HSL[] HSLArray {get;set;}
-	public Color.HSV[] HSVArray {get;set;}
-	public Color.RGB[] RGBArray {get;set;}
+	public static Color.CMYK[] CMYKArray {get;set;}
+	public static Color.HEX[] HEXArray {get;set;}
+	public static Color.HSL[] HSLArray {get;set;}
+	public static Color.HSV[] HSVArray {get;set;}
+	public static Color.RGB[] RGBArray {get;set;}
 
 	public static int LoadData(Color.CMYK[] inputCMYK) {
 		CMYKArray = inputCMYK;
@@ -35,6 +35,24 @@ public class SinglePalette : Display {
 		return 1;
 	}
 
-	public static int PrintOutCMYK() {return 1;}
+	public static int PrintLine(double valueAlpha, double valueBeta, double valueGamma) {
+		Console.WriteLine($"({valueAlpha}, {valueBeta}, {valueGamma})");
+		return 1;
+	}
+	public static int PrintLine(double valueAlpha, double valueBeta, double valueGamma, double valueDelta) {
+		Console.WriteLine($"({valueAlpha}, {valueBeta}, {valueGamma}, {valueDelta})");
+		return 1;
+	}
+
+	public static int PrintCMYK() {
+		Console.WriteLine("CMYK: ");
+
+		for (int i=0; i < CMYKArray.Length; i++) {
+			var CMYKElement = CMYKArray[i];
+
+			PrintLine(CMYKElement.Cyan, CMYKElement.Magenta, CMYKElement.Yellow, CMYKElement.Key);
+		}
+		return 1;
+	}
 }
 }
