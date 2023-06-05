@@ -6,6 +6,7 @@ using colorvalues;
 using colorharmony;
 using convertcolor;
 using savetofile;
+using datahandling;
 
 using tests;
 
@@ -384,17 +385,19 @@ void savePalette(string fileName, string path = "") {
 
 void DebugBox() {
 
-	TestsDriver.Initialize();
-	TestsDriver.Run_Color_Tests(true);
+	Request.Ping();
 
-	TestsDriver.Run_ColorHarmony_Tests(true);
+	// TestsDriver.Initialize();
+	// TestsDriver.Run_Color_Tests(true);
 
-	TestsDriver.Run_ConvertColor_Tests(true);
+	// TestsDriver.Run_ColorHarmony_Tests(true);
 
-	TestsDriver.Run_BlendColors_Tests(true);
+	// TestsDriver.Run_ConvertColor_Tests(true);
 
-	TestsDriver.Run_ValueDeviation_Tests(true);
+	// TestsDriver.Run_BlendColors_Tests(true);
+
+	// TestsDriver.Run_ValueDeviation_Tests(true);
 }
 
-MainMenu();
-// DebugBox();
+// MainMenu();
+DebugBox();
