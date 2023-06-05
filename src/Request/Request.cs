@@ -7,8 +7,12 @@ public class Request {
 
 		DateTime response = DateTime.Now;
 
-		Console.WriteLine($"Response in: {response.Subtract(request)}");
+		Console.WriteLine($"Response in: {response.Subtract(request).TotalMilliseconds} ms");
 
+		return 1;
+	}
+
+	public static int Menu(int menuCode) {
 		return 1;
 	}
 }
