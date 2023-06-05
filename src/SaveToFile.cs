@@ -1,6 +1,22 @@
 namespace savetofile {
 public class SaveToFile {
 
+	public class CSVBeta {
+
+		public string FileName {get;set;}
+		public string FilePath {get;set;}
+		public string Title {get;set;}
+		public string HarmonyType {get;set;}
+		public DateTime CreationDate {get;set;}
+		public string[] Headers {get;set;}
+		public string[] RowLabels {get;set;}
+		public string[] RowData {get;set;}
+
+		public CSVBeta() {
+			CreationDate = DateTime.Now();
+		}
+	}
+
 	public class Timestamped {
 
 		private DateTime _currentTime;
