@@ -15,16 +15,6 @@ public class Menus {
 		return 1;
 	}
 
-	public MenuBeta MainMenu() {
-		var mainMenu = new MenuBeta();
 
-		mainMenu.Title = "Main Menu";
-		mainMenu.Options = new Option[] {
-			new Option("Generate New Palette", () => MenuBetaDriver.RunGenerationDriver()),
-			new Option("Exit Program", () => ExitProgram())
-		};
-
-		return mainMenu;
-	}
 }
 }
