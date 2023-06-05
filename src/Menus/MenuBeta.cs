@@ -1,10 +1,21 @@
 using userinput;
 namespace menudriver {
 
+public class Option {
+
+	public string Label {get;}
+	public Action Procedure {get;}
+
+	public Option(string label, Action procedure) {
+		Label = label;
+		Procedure = procedure;
+	}
+}
+
 public class MenuBeta {
 
 	public string Title {get;set;}
-	public string[] Options{get;set;}
+	public Option[] Options {get;set;}
 	public string QueryHeader {get; set;}
 	public string[] QueryMessages {get;set;}
 	public string QueryInput {get;set;}
@@ -15,13 +26,16 @@ public class MenuBeta {
 
 	public MenuBeta() {
 		Title = "-- Lorem Ipsum --";
-		Options = new string[] {""};
 		QueryHeader = "";
 		QueryMessages = new string[] {""};
 		Cursor = "> ";
 		ActiveItem = 0;
 		SelectedItem = -1;
 		MenuLoop = true;
+	}
+
+	public int PrintMenu() {
+		
 	}
 
 	public int LoadMenu() {
