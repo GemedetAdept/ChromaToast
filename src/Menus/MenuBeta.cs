@@ -24,43 +24,6 @@ public class MenuBeta {
 		MenuLoop = true;
 	}
 
-	public int SetTitle(string title) {
-		Title = title;
-		return 1;
-	}
-	public int SetOptions(string[] options) {
-		Options = options;
-		return 1;
-	}
-	public int SetQueryHeader(string queryHeader) {
-		QueryHeader = queryHeader;
-		return 1;
-	}
-	public int SetQueryMessages(string[] queryMessages) {
-		QueryMessages = queryMessages;
-		return 1;
-	}
-	public int SetCursor(string cursor) {
-		Cursor = cursor;
-		return 1;
-	}
-	public int SetCursorSpacer(string cursorSpacer) {
-		cursorSpacer = cursorSpacer;
-		return 1;
-	}
-	public int SetActiveItem(int activeItem) {
-		ActiveItem = activeItem;
-		return 1;
-	}
-	public int SetSelectedItem(int selectedItem) {
-		SelectedItem = selectedItem;
-		return 1;
-	}
-	public int SetMenuLoop(bool menuLoop) {
-		MenuLoop = menuLoop;
-		return 1;
-	}
-
 	public int LoadMenu() {
 
 		string optionString = "";
