@@ -47,8 +47,8 @@ public class MenuGamma {
 		return 1;
 	}
 
-	public int KillLoop(int keyInputCode) {
-		if (keyInputCode == 2) {
+	public int KillLoop(int stateCode) {
+		if (stateCode == 2) {
 			MenuLoop = false;
 			return 1;
 		}
@@ -72,6 +72,13 @@ public class MenuGamma {
 		}
 
 		return 0;
+	}
+
+	public int KillProgram(int stateCode) {
+		if (stateCode == 1) {
+			Console.Clear();
+			Environment.Exit(0);
+		}
 	}
 }
 }

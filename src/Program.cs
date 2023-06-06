@@ -11,28 +11,28 @@ using tests;
 
 using System.Text;
 
-// MenuBetaDriver.RunMainMenu();
-// MenuBetaDriver.RunGenerationDriver();
-
-Option[] testOptions = {
-	new Option("A", () => Console.WriteLine("A")),
-	new Option("B", () => Console.WriteLine("B")),
-	new Option("C", () => Console.WriteLine("C")),
-	new Option("D", () => Console.WriteLine("D")),
-	new Option("E", () => Console.WriteLine("E")),	
+Option[] mainMenuOptions = {
+	new Option("Generate New Palette", () => Console.WriteLine("A")),
+	new Option("Exit Program", () => )
 };
 
-MenuGamma gammaTest = new MenuGamma(testOptions);
-
-do {
-	gammaTest.DisplayMenu();
-	gammaTest.UpdateKeyInput();
-	
-} while (gammaTest.MenuLoop);
-
-// gammaTest.DisplayMenu();
-
 void DebugBox() {
+
+	Option[] testOptions = {
+		new Option("A", () => Console.WriteLine("A")),
+		new Option("B", () => Console.WriteLine("B")),
+		new Option("C", () => Console.WriteLine("C")),
+		new Option("D", () => Console.WriteLine("D")),
+		new Option("E", () => Console.WriteLine("E")),	
+	};
+
+	MenuGamma gammaTest = new MenuGamma(testOptions);
+
+	do {
+		gammaTest.DisplayMenu();
+		gammaTest.UpdateKeyInput();
+
+	} while (gammaTest.MenuLoop);
 
 	TestsDriver.Initialize();
 	TestsDriver.Run_Color_Tests(true);
