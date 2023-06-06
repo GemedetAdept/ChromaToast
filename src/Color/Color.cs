@@ -10,10 +10,10 @@ public class Color {
 		public string Type = "CMYK";
 		public const int floorCMYK = 0;
 		public const int ceilingCMYK = 100;
-		private double _cyan;
-		private double _magenta;
-		private double _yellow;
-		private double _key;
+		public double Cyan {get;set;}
+		public double Magenta {get;set;}
+		public double Yellow {get;set;}
+		public double Key {get;set;}
 
 		public CMYK(double cyan, double magenta, double yellow, double key) {
 			Cyan = cyan;
@@ -21,27 +21,10 @@ public class Color {
 			Yellow = yellow;
 			Key = key;
 		}
-		public double Cyan {
-			get {return _cyan;}
-			set {_cyan = value;}
-		}
-		public double Magenta {
-			get {return _magenta;}
-			set {_magenta = value;}
-		}
-		public double Yellow {
-			get {return _yellow;}
-			set {_yellow = value;}
-		}
-		public double Key {
-			get {return _key;}
-			set {_key = value;}
-		}
 	}
 	public class HEX {
 
 		public string Type = "HEX";
-		private string _value;
 		public HEX(string? hexValue) {
 
 			Value = hexValue;
@@ -62,7 +45,7 @@ public class Color {
 		}
 
 		public string Value {
-			get {return _value;}
+			get;
 			set {
 				if (value.Contains("#")) {_value = value.Substring(1);}
 				else {_value = value;}
@@ -76,9 +59,9 @@ public class Color {
 		public const int ceilingHue = 360;
 		public const int floorSL = 0;
 		public const int ceilingSL = 100;
-		private double _hue;
-		private double _saturation;
-		private double _lightness;
+		public double Hue {get;set;}
+		public double Saturation {get;set;}
+		public double Lightness {get;set;}
 
 		public HSL(double hueHSL, double saturationHSL, double lightnessHSL) {
 
@@ -87,18 +70,6 @@ public class Color {
 			Lightness = lightnessHSL;
 		}
 
-		public double Hue {
-			get {return _hue;}
-			set {_hue = value;}
-		}
-		public double Saturation {
-			get {return _saturation;}
-			set {_saturation = value;}
-		}
-		public double Lightness {
-			get {return _lightness;}
-			set {_lightness = value;}
-		}
 	}
 	public class HSV {
 
@@ -107,9 +78,9 @@ public class Color {
 		public const int ceilingHue = 360;
 		public const int floorSV = 0;
 		public const int ceilingSV = 100;
-		private double _hue;
-		private double _saturation;
-		private double _value;
+		public double Hue {get;set;}
+		public double Saturation {get;set;}
+		public double Value {get;set;}
 
 		public HSV(double hueHSV, double saturationHSV, double valueHSV) {
 
@@ -118,27 +89,15 @@ public class Color {
 			Value = valueHSV;
 		}
 
-		public double Hue {
-			get {return _hue;}
-			set {_hue = value;}
-		}
-		public double Saturation {
-			get {return _saturation;}
-			set {_saturation = value;}
-		}
-		public double Value {
-			get {return _value;}
-			set {_value = value;}
-		}
 	}
 	public class RGB {
 
 		public string Type = "RGB";
 		public const int floorRGB = 0;
 		public const int ceilingRGB = 255;
-		private double _red;
-		private double _green;
-		private double _blue;
+		public double Red {get;set;}
+		public double Green {get;set;}
+		public double Blue {get;set;}
 
 		public RGB(double redRGB, double greenRGB, double blueRGB) {
 
@@ -147,18 +106,6 @@ public class Color {
 			Blue = blueRGB;
 		}
 		
-		public double Red {
-			get {return _red;}
-			set {_red = value;}
-		}
-		public double Green {
-			get {return _green;}
-			set {_green = value;}
-		}
-		public double Blue {
-			get {return _blue;}
-			set {_blue = value;}
-		}
 	}
 	}
 

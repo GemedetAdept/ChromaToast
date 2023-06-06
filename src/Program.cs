@@ -11,17 +11,50 @@ using tests;
 
 using System.Text;
 
-public int KillProgram(int stateCode) {
+int KillProgram(int stateCode) {
 	if (stateCode == 1) {
 		Console.Clear();
 		Environment.Exit(0);
+		return 1;
 	}
+	else {return 0;}
 }
 
-Option[] mainMenuOptions = {
-	new Option("Generate New Palette", () => Console.WriteLine("A")),
-	new Option("Exit Program", () => )
-};
+// Main Menu
+void MainMenu() {
+	Option[] mainMenuOptions = {
+		new Option("Generate New Palette", () => Console.WriteLine("A")),
+		new Option("Exit Program", () => KillProgram(1))
+	};
+
+	MenuGamma mainMenu = new MenuGamma(mainMenuOptions);
+
+	do {
+		mainMenu.DisplayMenu();
+		mainMenu.UpdateKeyInput();
+	} while (mainMenu.MenuLoop);
+}
+
+
+// Color Type Menu
+void ColorTypeMenu() {
+	Option[] colorTypeMenuOptions = {
+		new Option("CMYK", () => ),
+		new Option("HEX", () => ),
+		new Option("HSL", () => ),
+		new Option("HSV", () => ),
+		new Option("RGB", () => ),
+		new Option("Base Colors", () => ),
+		new Option("Exit Program", () => )
+	};
+}
+
+MenuGamma colorTypeMenu = new MenuGamma(colorTypeMenuOptions);
+
+do {
+	colorTypeMenu.DisplayMenu();
+	colorTypeMenu.UpdateKeyInput();
+} while (colorTypeMenu.MenuLoop);
 
 void DebugBox() {
 
