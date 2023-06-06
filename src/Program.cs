@@ -39,13 +39,13 @@ void MainMenu() {
 // Color Type Menu
 void ColorTypeMenu() {
 	Option[] colorTypeMenuOptions = {
-		new Option("CMYK", () => ),
-		new Option("HEX", () => ),
-		new Option("HSL", () => ),
-		new Option("HSV", () => ),
-		new Option("RGB", () => ),
-		new Option("Base Colors", () => ),
-		new Option("Exit Program", () => )
+		new Option("CMYK", () => Console.WriteLine("CMYK")),
+		new Option("HEX", () => Console.WriteLine("HEX")),
+		new Option("HSL", () => Console.WriteLine("HSL")),
+		new Option("HSV", () => Console.WriteLine("HSV")),
+		new Option("RGB", () => Console.WriteLine("RGB")),
+		new Option("Base Colors", () => Console.WriteLine("Base Colors")),
+		new Option("Exit Program", () => Console.WriteLine("Exit Program"))
 	};
 }
 

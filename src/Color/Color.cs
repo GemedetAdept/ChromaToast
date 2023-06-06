@@ -25,6 +25,7 @@ public class Color {
 	public class HEX {
 
 		public string Type = "HEX";
+		private string _value;
 		public HEX(string? hexValue) {
 
 			Value = hexValue;
@@ -45,7 +46,7 @@ public class Color {
 		}
 
 		public string Value {
-			get;
+			get {return _value;}
 			set {
 				if (value.Contains("#")) {_value = value.Substring(1);}
 				else {_value = value;}
