@@ -38,5 +38,10 @@ public class MenuGamma {
 
 		return 1;
 	}
+
+	public int ExecuteProcedure(int SelectedItem) {
+		Options[SelectedItem].Procedure();
+		return 1;
+	}
 }
 }

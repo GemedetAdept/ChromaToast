@@ -24,6 +24,8 @@ Option[] testOptions = {
 
 MenuGamma gammaTest = new MenuGamma(testOptions);
 gammaTest.DisplayMenu();
+gammaTest.ExecuteProcedure(0);
+
 // foreach(Option option in testOptions) {
 // 	option.Procedure();
 // }
