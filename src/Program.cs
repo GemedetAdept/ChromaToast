@@ -45,16 +45,19 @@ void ColorTypeMenu() {
 		new Option("HSV", () => Console.WriteLine("HSV")),
 		new Option("RGB", () => Console.WriteLine("RGB")),
 		new Option("Base Colors", () => Console.WriteLine("Base Colors")),
-		new Option("Exit Program", () => Console.WriteLine("Exit Program"))
+		new Option("Exit Program", () => KillProgram(1))
 	};
+
+	MenuGamma colorTypeMenu = new MenuGamma(colorTypeMenuOptions);
+
+	do {
+		colorTypeMenu.DisplayMenu();
+		colorTypeMenu.UpdateKeyInput();
+	} while (colorTypeMenu.MenuLoop);
+
 }
 
-MenuGamma colorTypeMenu = new MenuGamma(colorTypeMenuOptions);
-
-do {
-	colorTypeMenu.DisplayMenu();
-	colorTypeMenu.UpdateKeyInput();
-} while (colorTypeMenu.MenuLoop);
+ColorTypeMenu();
 
 void DebugBox() {
 
