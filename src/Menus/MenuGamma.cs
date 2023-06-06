@@ -73,12 +73,5 @@ public class MenuGamma {
 
 		return 0;
 	}
-
-	public int KillProgram(int stateCode) {
-		if (stateCode == 1) {
-			Console.Clear();
-			Environment.Exit(0);
-		}
-	}
 }
 }

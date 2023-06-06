@@ -11,6 +11,13 @@ using tests;
 
 using System.Text;
 
+public int KillProgram(int stateCode) {
+	if (stateCode == 1) {
+		Console.Clear();
+		Environment.Exit(0);
+	}
+}
+
 Option[] mainMenuOptions = {
 	new Option("Generate New Palette", () => Console.WriteLine("A")),
 	new Option("Exit Program", () => )
