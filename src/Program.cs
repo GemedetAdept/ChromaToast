@@ -23,8 +23,14 @@ Option[] testOptions = {
 };
 
 MenuGamma gammaTest = new MenuGamma(testOptions);
-gammaTest.DisplayMenu();
-gammaTest.ExecuteProcedure(0);
+
+do {
+	gammaTest.DisplayMenu();
+	gammaTest.UpdateKeyInput();
+	
+} while (gammaTest.MenuLoop);
+
+// gammaTest.DisplayMenu();
 
 void DebugBox() {
 
