@@ -11,8 +11,22 @@ using tests;
 
 using System.Text;
 
-MenuBetaDriver.RunMainMenu();
-MenuBetaDriver.RunGenerationDriver();
+// MenuBetaDriver.RunMainMenu();
+// MenuBetaDriver.RunGenerationDriver();
+
+Option[] testOptions = {
+	new Option("A", () => Console.WriteLine("A")),
+	new Option("B", () => Console.WriteLine("B")),
+	new Option("C", () => Console.WriteLine("C")),
+	new Option("D", () => Console.WriteLine("D")),
+	new Option("E", () => Console.WriteLine("E")),	
+};
+
+MenuGamma gammaTest = new MenuGamma(testOptions);
+gammaTest.DisplayMenu();
+// foreach(Option option in testOptions) {
+// 	option.Procedure();
+// }
 
 // void savePalette(string fileName, string path = "") {
 
