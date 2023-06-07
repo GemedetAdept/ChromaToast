@@ -42,11 +42,11 @@ void ColorTypeMenu() {
 	var outputHSV = new Color.HSV(0.0, 0.0, 0.0);
 
 	Option[] colorTypeMenuOptions = {
-		new Option("CMYK", () => MenuProcedure.EnterCMYK(outputHSV)),
-		new Option("HEX", () => MenuProcedure.EnterHEX(outputHSV)),
-		new Option("HSL", () => MenuProcedure.EnterHSL(outputHSV)),
-		new Option("HSV", () => MenuProcedure.EnterHSV(outputHSV)),
-		new Option("RGB", () => MenuProcedure.EnterRGB(outputHSV)),
+		new Option("CMYK", () => outputHSV = MenuProcedure.EnterCMYK()),
+		new Option("HEX", () => outputHSV = MenuProcedure.EnterHEX()),
+		new Option("HSL", () => outputHSV = MenuProcedure.EnterHSL()),
+		new Option("HSV", () => outputHSV = MenuProcedure.EnterHSV()),
+		new Option("RGB", () => outputHSV = MenuProcedure.EnterRGB()),
 		new Option("Base Colors", () => Console.WriteLine("Base Colors")),
 		new Option("Exit Program", () => KillProgram(1))
 	};
@@ -58,6 +58,7 @@ void ColorTypeMenu() {
 		colorTypeMenu.UpdateKeyInput();
 	} while (colorTypeMenu.MenuLoop);
 
+	Console.WriteLine($"{outputHSV.Hue}, {outputHSV.Saturation}, {outputHSV.Value}");
 }
 
 ColorTypeMenu();
