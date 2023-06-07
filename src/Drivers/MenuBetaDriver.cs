@@ -157,7 +157,7 @@ public class MenuBetaDriver {
 
 		inputTypeMenu.QueryHeader = "Enter a value between: ";
 		inputTypeMenu.QueryMessages = new string[] {
-			"(0.0, 0.0, 0.0, 0.0) - (100.0, 100.0, 100.0, 100.0",
+			"(0.0, 0.0, 0.0, 0.0) - (100.0, 100.0, 100.0, 100.0)",
 			"#000000 - #FFFFFF",
 			"(0.0, 0.0, 0.0) - (360.0, 100.0, 100.0)",
 			"(0.0, 0.0, 0.0) - (360.0, 100.0, 100.0)",

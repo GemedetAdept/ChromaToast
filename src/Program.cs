@@ -38,12 +38,15 @@ void MainMenu() {
 
 // Color Type Menu
 void ColorTypeMenu() {
+
+	var outputHSV = new Color.HSV(0.0, 0.0, 0.0);
+
 	Option[] colorTypeMenuOptions = {
-		new Option("CMYK", () => Console.WriteLine("CMYK")),
-		new Option("HEX", () => Console.WriteLine("HEX")),
-		new Option("HSL", () => Console.WriteLine("HSL")),
-		new Option("HSV", () => Console.WriteLine("HSV")),
-		new Option("RGB", () => Console.WriteLine("RGB")),
+		new Option("CMYK", () => MenuProcedure.EnterCMYK(outputHSV)),
+		new Option("HEX", () => MenuProcedure.EnterHEX(outputHSV)),
+		new Option("HSL", () => MenuProcedure.EnterHSL(outputHSV)),
+		new Option("HSV", () => MenuProcedure.EnterHSV(outputHSV)),
+		new Option("RGB", () => MenuProcedure.EnterRGB(outputHSV)),
 		new Option("Base Colors", () => Console.WriteLine("Base Colors")),
 		new Option("Exit Program", () => KillProgram(1))
 	};
