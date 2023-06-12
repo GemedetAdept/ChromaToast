@@ -13,7 +13,7 @@ public class SaveToFile {
 		public string[] RowData {get;set;}
 
 		public CSVBeta() {
-			CreationDate = DateTime.Now();
+			CreationDate = DateTime.Now;
 		}
 	}
 

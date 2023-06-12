@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<palette type="triadic">
+	<card>
+		<color type="CMYK">
+			<cyan>23.66</cyan>
+			<magenta>62.05</magenta>
+			<yellow>0.0</yellow>
+			<key>12.15</key>
+		</color>
+		<color type="HEX">
+			<value>AB55E0</value>
+		</color>
+		<color type="HSL">
+			<hue>277</hue>
+			<saturation>69</saturation>
+			<lightness>61</lightness>
+		</color>
+		<color type="HSV">
+			<hue>277</hue>
+			<saturation>62</saturation>
+			<value>88</value>
+		</color>
+		<color type="RGB">
+			<red>171</red>
+			<green>85</green>
+			<blue>224</blue>
+		</color>
+	</card>
+	<card>
+		<color type="CMYK">
+			<cyan>0.0</cyan>
+			<magenta>23.66</magenta>
+			<yellow>62.05</yellow>
+			<key>12.15</key>
+		</color>
+		<color type="HEX">
+			<value>E0AB55</value>
+		</color>
+		<color type="HSL">
+			<hue>37</hue>
+			<saturation>69</saturation>
+			<lightness>61</lightness>
+		</color>
+		<color type="HSV">
+			<hue>37</hue>
+			<saturation>62</saturation>
+			<value>88</value>
+		</color>
+		<color type="RGB">
+			<red>224</red>
+			<green>171</green>
+			<blue>85</blue>
+		</color>
+	</card>
+	<card>
+		<color type="CMYK">
+			<cyan>62.05</cyan>
+			<magenta>0.0</magenta>
+			<yellow>23.66</yellow>
+			<key>12.15</key>
+		</color>
+		<color type="HEX">
+			<value>55E0AB</value>
+		</color>
+		<color type="HSL">
+			<hue>157</hue>
+			<saturation>69</saturation>
+			<lightness>61</lightness>
+		</color>
+		<color type="HSV">
+			<hue>157</hue>
+			<saturation>62</saturation>
+			<value>88</value>
+		</color>
+		<color type="RGB">
+			<red>85</red>
+			<green>224</green>
+			<blue>171</blue>
+		</color>
+	</card>
+</palette>
