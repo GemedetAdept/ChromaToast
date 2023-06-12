@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<palette>
+	<card>
+		<color type="CMYK">
+			<cyan></cyan>
+			<magenta></magenta>
+			<yellow></yellow>
+			<key></key>
+		</color>
+		<color type="HEX">
+			<value></value>
+		</color>
+		<color type="HSL">
+			<hue></hue>
+			<saturation></saturation>
+			<lightness></lightness>
+		</color>
+		<color type="HSV">
+			<hue></hue>
+			<saturation></saturation>
+			<value></value>
+		</color>
+		<color type="RGB">
+			<red></red>
+			<green></green>
+			<blue></blue>
+		</color>
+	</card>
+</palette>
