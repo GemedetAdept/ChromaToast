@@ -61,5 +61,12 @@ public class MenuProcedure {
 		outputPalette = ColorHarmony.Complementary(inputHSV);
 		return outputPalette;
 	}
+
+	public static Color.HSV[] OutputSplitComplementary(Color.HSV inputHSV) {
+
+		var outputPalette = new Color.HSV[];
+		outputPalette = ColorHarmony.SplitComplementary(inputHSV);
+		return outputPalette;
+	}
 }
 }
