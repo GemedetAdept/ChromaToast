@@ -68,5 +68,40 @@ public class MenuProcedure {
 		outputPalette = ColorHarmony.SplitComplementary(inputHSV);
 		return outputPalette;
 	}
+
+	public static Color.HSV[] OutputTriadic(Color.HSV inputHSV) {
+
+		var outputPalette = new Color.HSV[];
+		outputPalette = ColorHarmony.Triadic(inputHSV);
+		return outputPalette;
+	}
+
+	public static Color.HSV[] OutputTetradic(Color.HSV inputHSV) {
+
+		var outputPalette = new Color.HSV[];
+		outputPalette = ColorHarmony.Tetradic(inputHSV);
+		return outputPalette;
+	}
+
+	public static Color.HSV[] OutputSquare(Color.HSV inputHSV) {
+
+		var outputPalette = new Color.HSV[];
+		outputPalette = ColorHarmony.Square(inputHSV);
+		return outputPalette;
+	}
+
+	public static Color.HSV[] OutputAnalogous(Color.HSV inputHSV) {
+
+		var outputPalette = new Color.HSV[];
+		outputPalette = ColorHarmony.Analogous(inputHSV);
+		return outputPalette;
+	}
+
+	public static Color.HSV[] OutputMonochromatic(Color.HSV inputHSV) {
+
+		var outputPalette = new Color.HSV[];
+		outputPalette = ColorHarmony.Monochromatic(inputHSV);
+		return outputPalette;
+	}
 }
 }
