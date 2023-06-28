@@ -23,7 +23,7 @@ int KillProgram(int stateCode) {
 // Main Menu
 void MainMenu() {
 	Option[] mainMenuOptions = {
-		new Option("Generate New Palette", () => Console.WriteLine("A")),
+		new Option("Generate New Palette", () => ColorTypeMenu()),
 		new Option("Exit Program", () => KillProgram(1))
 	};
 
@@ -61,7 +61,20 @@ void ColorTypeMenu() {
 	Console.WriteLine($"{outputHSV.Hue}, {outputHSV.Saturation}, {outputHSV.Value}");
 }
 
-ColorTypeMenu();
+void ColorHarmonyMenu() {
+
+	var ouputPalette = new Color.HSV[];
+
+	Option[] colorTypeMenuOptions = {
+		new Option("Complementary", () => outputPalette = MenuProcedure.OutputComplementary()),
+		new Option("SplitComplementary", () => outputPalette = ),
+		new Option("Triadic", () => outputPalette = ),
+		new Option("Tetradic", () => outputPalette = ),
+		new Option("Square", () => outputPalette = ),
+		new Option("Analogous", () => outputPalette = ),
+		new Option("Monochromatic", () => outputPalette = ),
+	};
+}
 
 void DebugBox() {
 
@@ -93,4 +106,4 @@ void DebugBox() {
 	TestsDriver.Run_ValueDeviation_Tests(true);
 }
 
-// DebugBox();
+MainMenu();

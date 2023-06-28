@@ -1,5 +1,6 @@
 using colorvalues;
 using convertcolor;
+using colorharmony;
 using userinput;
 namespace menudriver {
 public class MenuProcedure {
@@ -52,6 +53,13 @@ public class MenuProcedure {
 
 		var outputHSV = ConvertColor.RGBtoHSV(inputRGB);
 		return outputHSV;
+	}
+
+	public static Color.HSV[] OutputComplementary(Color.HSV inputHSV) {
+
+		var outputPalette = new Color.HSV[];
+		outputPalette = ColorHarmony.Complementary(inputHSV);
+		return outputPalette;
 	}
 }
 }
